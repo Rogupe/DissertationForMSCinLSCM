@@ -383,3 +383,38 @@ def load_oem_b_inventory(fert_only: bool = False) -> pd.DataFrame:
     if fert_only:
         df = df[df["Item Type"] == "FERT"]
     return df
+def load_oem_b_production_plan() -> pd.DataFrame:
+    """OEM-B workbook's plant-wide two-week production plan.
+
+    Same shape as the OEM-A version but with trustworthy dates
+    (2026-02-23 to 2026-03-08), so columns carry real date and shift:
+    prod_<date>_<a|b|c>. Formulas are flattened to values at source,
+    and it shows: one row's pasted Total (5,001) disagrees with its
+    own shift cells (3,301), so the shift detail is canonical and the
+    true planned volume is 653,335 - not the Total column's 655,035.
+    """
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="PRODUCTION PLAN",
+                        header=None)
+    dates, shifts = raw.iloc[1], raw.iloc[2]
+
+    cols = []
+    for i in range(raw.shape[1]):
+        if isinstance(dates[i], datetime.datetime):
+            shift = str(shifts[i]).strip()[0].lower()
+            cols.append(f"prod_{dates[i].date()}_{shift}")
+        elif pd.notna(shifts[i]):
+            cols.append(str(shifts[i]).strip())
+        elif pd.notna(dates[i]):
+            cols.append(str(dates[i]).strip())
+        else:
+            cols.append(f"col{i}")
+
+    df = raw.iloc[3:].copy()
+    df.columns = cols
+    df = df.dropna(subset=["Item No."])
+
+    prod_cols = [c for c in df.columns if c.startswith("prod_")]
+    for c in prod_cols + ["Total"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+
+    return df

@@ -16,6 +16,7 @@ from src.data.loaders import (
     load_june_export,
     load_oem_a_daily_po,
     load_oem_a_xref,
+    load_oem_b_production_plan,
     load_production_plan,
     load_shipping_management,
     load_shipping_plan,
@@ -161,3 +162,16 @@ def test_oem_b_inventory():
     raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="INV(WIP,FG)",
                         header=None, nrows=1)
     assert int(raw.iloc[0, 4]) == 174159
+def test_oem_b_production_plan():
+    pp = load_oem_b_production_plan()
+    prod = [c for c in pp.columns if c.startswith("prod_")]
+    assert len(pp) == 403
+    assert len(prod) == 42
+    # Shift detail is canonical: one row's pasted Total drifted 1,700
+    # units from its own shift cells (formulas flattened to values).
+    assert int(pp[prod].sum().sum()) == 653335
+    assert int(pp["Total"].sum()) == 655035
+    mismatch = (pp["Total"] - pp[prod].sum(axis=1)).abs() > 0.5
+    assert int(mismatch.sum()) == 1
+    assert pp["W/C"].nunique() == 54
+    assert pp["Item No."].nunique() == 386
