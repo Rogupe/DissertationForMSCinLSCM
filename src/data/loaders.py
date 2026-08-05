@@ -320,3 +320,20 @@ def load_production_plan() -> pd.DataFrame:
         df[c] = pd.to_numeric(df[c], errors="coerce")
 
     return df
+OEM_B_WEEKLY = DATA_DIR / "OEM-B_AS_WEEKLY_SHIPPING_MGMT_20260223_ANON.xlsx"
+def load_oem_b_xref() -> pd.DataFrame:
+    """OEM-B part cross-reference (Cross Reference sheet) - the join
+    spine of the workbook.
+
+    Clean single-row header on Excel row 2. Customer PN is many-to-many
+    across ship-tos (467 unique PNs over 932 rows), so joins must key
+    on (Customer PN, Ship to), never on Customer PN alone. String keys
+    are stripped: trailing-space variants exist at source.
+    """
+    df = pd.read_excel(OEM_B_WEEKLY, sheet_name="Cross Reference", header=1)
+    df = df.dropna(subset=["Customer PN"])
+
+    for c in ("Customer PN", "Tier1 PN", "CISCO", "Ship to"):
+        df[c] = df[c].map(lambda v: v.strip() if isinstance(v, str) else v)
+
+    return df

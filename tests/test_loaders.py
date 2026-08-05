@@ -6,6 +6,7 @@ means a loader's behaviour changed - or the underlying file did.
 """
 
 import pytest
+
 from src.data.loaders import (
     DATA_DIR,
     load_daily_order,
@@ -17,6 +18,7 @@ from src.data.loaders import (
     load_production_plan,
     load_shipping_management,
     load_shipping_plan,
+    load_oem_b_xref
 )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
@@ -110,6 +112,20 @@ def test_production_plan():
     assert pp["Item No."].nunique() == 349
     channels = pp["Sales Type"].value_counts().to_dict()
     assert channels == {"OEM": 124, "ITC": 86, "DEX": 36, "ASP": 4, "CKD": 3}
+def test_oem_b_xref():
+    xref = load_oem_b_xref()
+    assert xref.shape == (932, 20)
+    assert xref["Customer PN"].nunique() == 467
+    assert len(xref.drop_duplicates(["Customer PN", "Ship to"])) == 930
+    assert xref["Tier1 PN"].nunique() == 310
+    # The extract carries no price VALUES - only this ERP flag. 843 of
+    # 932 rows are 'Y': unit prices exist in the company's ERP but were
+    # excluded from the anonymised extract, so the cost objective stays
+    # resource-based and prices are a candidate data request.
+    flags = xref["Has Unit Price"].value_counts()
+    assert int(flags["Y"]) == 843
+    assert int(flags["N"]) == 70
+    assert int(xref["Has Unit Price"].isna().sum()) == 19
 def test_cross_sheet_edi_reconciliation(daily_order, shipping_mgmt):
     """The daily and weekly views bin the same order book: their EDI
     totals must agree."""
