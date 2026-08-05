@@ -9,6 +9,7 @@ import pytest
 import pandas as pd
 from src.data.loaders import (
     DATA_DIR,
+    OEM_B_WEEKLY,
     load_daily_order,
     load_forecast,
     load_inventory,
@@ -19,7 +20,8 @@ from src.data.loaders import (
     load_shipping_management,
     load_shipping_plan,
     load_oem_b_xref,
-    load_oem_b_weekly_po
+    load_oem_b_weekly_po,
+    load_oem_b_inventory
 )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
@@ -145,3 +147,17 @@ def test_oem_b_weekly_po():
     assert int((po[late].fillna(0) != 0).sum().sum()) == 261
     assert po["Part Number"].nunique() == 75
     assert po["Ship To Location"].nunique() == 3
+def test_oem_b_inventory():
+    inv = load_oem_b_inventory()
+    assert len(inv) == 2077
+    assert int(inv["SCL Quantity"].sum()) == 179529
+    assert inv["W/H"].nunique() == 6
+    fert = load_oem_b_inventory(fert_only=True)
+    assert len(fert) == 1788
+    assert int(fert["SCL Quantity"].sum()) == 154921
+    # The left summary block's own grand total (cell E1) disagrees with
+    # the ERP block by 5,370 units - it is a stale '(Copy Values)'
+    # paste. The ERP block is canonical; this documents the drift.
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="INV(WIP,FG)",
+                        header=None, nrows=1)
+    assert int(raw.iloc[0, 4]) == 174159

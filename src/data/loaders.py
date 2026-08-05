@@ -362,3 +362,24 @@ def load_oem_b_weekly_po() -> pd.DataFrame:
 
     df.attrs["week_of"] = week_of
     return df
+def load_oem_b_inventory(fert_only: bool = False) -> pd.DataFrame:
+    """OEM-B workbook's plant-wide lot-level stock (INV(WIP,FG) sheet).
+
+    Same two-table layout as the OEM-A workbook, with a twist: the
+    left summary block is a stale '(Copy Values)' paste whose own
+    grand total disagrees with the ERP block by 5,370 units, so only
+    the right-hand ERP block (columns G onwards) is read - it is
+    canonical. Row filter is Item No.: 312 genuine lots carry no lot
+    number, and a junk '.' row closes the sheet.
+
+    fert_only=True keeps shippable finished goods (Item Type FERT).
+    """
+    df = pd.read_excel(OEM_B_WEEKLY, sheet_name="INV(WIP,FG)",
+                       header=1, usecols="G:AG")
+    df.columns = [c[:-2] if str(c).endswith(".1") else c for c in df.columns]
+    df = df.dropna(subset=["Item No."])
+    df["SCL Quantity"] = pd.to_numeric(df["SCL Quantity"], errors="coerce")
+
+    if fert_only:
+        df = df[df["Item Type"] == "FERT"]
+    return df
