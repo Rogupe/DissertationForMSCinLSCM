@@ -25,5 +25,8 @@ venv/
 .vscode/
 .idea/
 
+# Claude Code (configuración local)
+.claude/settings.local.json
+
 # Archivos temporales de Office
 ~$*
