@@ -1,3 +1,27 @@
+# Data — the anonymised industry dataset must NEVER be committed.
+# Only synthetic samples or schema documentation may be added, deliberately (git add -f).
+data/
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.db
+*.sqlite
+
+# Model artefacts / experiment outputs
+*.pt
+*.pth
+*.keras
+*.ckpt
+results/
+outputs/
+
 # Windows
 Thumbs.db
 Desktop.ini
