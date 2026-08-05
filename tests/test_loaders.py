@@ -22,7 +22,8 @@ from src.data.loaders import (
     load_shipping_plan,
     load_oem_b_xref,
     load_oem_b_weekly_po,
-    load_oem_b_inventory
+    load_oem_b_inventory,
+    load_oem_b_shipping_mng
 )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
@@ -175,3 +176,19 @@ def test_oem_b_production_plan():
     assert int(mismatch.sum()) == 1
     assert pp["W/C"].nunique() == 54
     assert pp["Item No."].nunique() == 386
+def test_oem_b_shipping_mng():
+    board = load_oem_b_shipping_mng()
+    edi = [c for c in board.columns if c.startswith("edi_wk")]
+    short = [c for c in board.columns if c.startswith("short_wk")]
+    ship = [c for c in board.columns if c.startswith("ship_d")]
+    assert len(board) == 91
+    assert (len(edi), len(short), len(ship)) == (7, 7, 12)
+    assert edi[0].endswith("2026-02-23") and edi[-1].endswith("2026-04-06")
+    assert int(board[edi].sum().sum()) == 2188
+    assert int(board[short].sum().sum()) == -8206
+    assert int((board[short] < 0).sum().sum()) == 160
+    # Snapshot state: shift plan, shipped and backorder columns are all
+    # zero, as in every other board in this dataset.
+    zeros = board[ship].sum().sum() + board["Shipped QTY"].sum() + board["B/ORDER"].sum()
+    assert int(zeros) == 0
+    assert int(board[["FR", "RK"]].sum().sum()) == 325

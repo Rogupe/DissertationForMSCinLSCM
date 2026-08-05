@@ -418,3 +418,50 @@ def load_oem_b_production_plan() -> pd.DataFrame:
         df[c] = pd.to_numeric(df[c], errors="coerce")
 
     return df
+def load_oem_b_shipping_mng() -> pd.DataFrame:
+    """OEM-B weekly shipping management board (SHIPPING MNG sheet).
+
+    Real header on Excel row 10 under two band rows. The band is
+    template-worn - week dates drift a column and stray values bleed
+    into it - so week dates are derived arithmetically from the
+    'Week n' labels (week 1 commences 2026-02-23, the snapshot date).
+    Columns become ship_d<k>_<day|night>, edi_wk<date>, short_wk<date>.
+    Ten 'NO C-X' placeholder rows (Customer PN '0', no cross-reference)
+    close the table and are excluded.
+    """
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="SHIPPING MNG", header=None)
+    band, header = raw.iloc[8], raw.iloc[9]
+    anchor = pd.Timestamp("2026-02-23")
+
+    cols, cur_day, cur_week = [], None, None
+    for i in range(raw.shape[1]):
+        h = str(header[i]).strip() if pd.notna(header[i]) else None
+        b = str(band[i]).strip() if pd.notna(band[i]) else None
+        if b == "D-DAY":
+            cur_day = 0
+        elif b and b.startswith("D+"):
+            cur_day = int(b[2:])
+        elif b and b.startswith("Week "):
+            cur_week = anchor + pd.Timedelta(days=7 * (int(b.split()[1]) - 1))
+        if h in ("Day", "Night"):
+            cols.append(f"ship_d{cur_day}_{h.lower()}")
+        elif h == "EDI":
+            cols.append(f"edi_wk{cur_week.date()}")
+        elif h and h.lower() == "shortage":
+            cols.append(f"short_wk{cur_week.date()}")
+        elif h:
+            cols.append(h)
+        else:
+            cols.append(f"col{i}")
+
+    df = raw.iloc[10:].copy()
+    df.columns = cols
+    df = df[df["Customer PN"].notna()]
+    df = df[df["Customer PN"].astype(str) != "0"]
+
+    text_cols = ("CISCO", "Ship to", "Ship to name", "Customer PN", "Tier1 PN")
+    for c in df.columns:
+        if c not in text_cols and not c.startswith("col"):
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+
+    return df
