@@ -1,6 +1,9 @@
 # Data — the anonymised industry dataset must NEVER be committed.
 # Only synthetic samples or schema documentation may be added, deliberately (git add -f).
-data/
+# The anonymisation mapping key reverses the pseudonymisation — never commit or share it.
+PRIVATE_*
+*mapping_key*
+/data/
 *.csv
 *.tsv
 *.xlsx
