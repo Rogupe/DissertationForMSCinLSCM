@@ -89,3 +89,27 @@ def load_oem_a_daily_po() -> pd.DataFrame:
 
     df["transit_days"] = (df["Receipt Date"] - df["Ship Date"]).dt.days
     return df
+
+def load_inventory(fert_only: bool = False) -> pd.DataFrame:
+    """Lot-level warehouse stock (INV(WIP,FG) sheet, whole plant).
+
+    Two tables sit side by side in this sheet: columns A-E are a helper
+    pivot feeding the shipping views, so only the ERP lot extract
+    (columns G onwards) is read - which also sidesteps the duplicated
+    column names between the two blocks. Padding rows below the real lots 
+    are dropped via the item number — 290 genuine stock rows carry no lot 
+    number at source.
+
+    fert_only=True keeps finished goods (Item Type FERT) - the stock
+    that can actually ship. WIP (HALB) and raw (ROH) stay out.
+    """
+    df = pd.read_excel(OEM_A_DAILY, sheet_name="INV(WIP,FG)",
+                       header=1, usecols="G:AG")
+    # pandas mangles duplicate header names across the whole row BEFORE
+    # usecols is applied, so the ERP block arrives with .1 suffixes.
+    df.columns = [c[:-2] if c.endswith(".1") else c for c in df.columns]
+    df = df.dropna(subset=["Item No."])
+
+    if fert_only:
+        df = df[df["Item Type"] == "FERT"]
+    return df
