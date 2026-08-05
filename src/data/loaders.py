@@ -287,3 +287,36 @@ def load_shipping_management() -> pd.DataFrame:
             df[c] = pd.to_numeric(df[c], errors="coerce")
 
     return df
+def load_production_plan() -> pd.DataFrame:
+    """Plant-wide 14-day master production schedule (PRODUCTION PLAN).
+
+    Work-centre x item x shift granularity. The printed header dates
+    are a year stale (January 2025 on a February 2026 snapshot) - a
+    template that was never re-dated - so columns are named by day
+    OFFSET (prod_d0_a .. prod_d13_c), never by the printed dates.
+    The trailing Total column is kept as a built-in reconciliation:
+    it must equal the sum of the 42 shift columns.
+    """
+    raw = pd.read_excel(OEM_A_DAILY, sheet_name="PRODUCTION PLAN",
+                        header=None)
+    header = raw.iloc[2]
+
+    cols = []
+    for i in range(raw.shape[1]):
+        if 8 <= i <= 49:
+            shift = str(header[i]).strip()[0].lower()   # 'A Shift' -> 'a'
+            cols.append(f"prod_d{(i - 8) // 3}_{shift}")
+        elif pd.notna(header[i]):
+            cols.append(str(header[i]).strip())
+        else:
+            cols.append(f"col{i}")
+
+    df = raw.iloc[3:].copy()
+    df.columns = cols
+    df = df.dropna(subset=["Item No."])
+
+    prod_cols = [c for c in df.columns if c.startswith("prod_")]
+    for c in prod_cols + ["Total"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+
+    return df

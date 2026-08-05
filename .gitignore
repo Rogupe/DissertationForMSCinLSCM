@@ -57,3 +57,5 @@ venv/
 
 # Archivos temporales de Office
 ~$*
+# Test cache
+.pytest_cache/
