@@ -6,7 +6,7 @@ means a loader's behaviour changed - or the underlying file did.
 """
 
 import pytest
-
+import pandas as pd
 from src.data.loaders import (
     DATA_DIR,
     load_daily_order,
@@ -18,7 +18,8 @@ from src.data.loaders import (
     load_production_plan,
     load_shipping_management,
     load_shipping_plan,
-    load_oem_b_xref
+    load_oem_b_xref,
+    load_oem_b_weekly_po
 )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
@@ -132,3 +133,15 @@ def test_cross_sheet_edi_reconciliation(daily_order, shipping_mgmt):
     daily = [c for c in daily_order.columns if c.startswith("edi_")]
     weekly = [c for c in shipping_mgmt.columns if c.startswith("edi_")]
     assert int(daily_order[daily].sum().sum()) == int(shipping_mgmt[weekly].sum().sum()) == 19344
+def test_oem_b_weekly_po():
+    po = load_oem_b_weekly_po()
+    weeks = [c for c in po.columns if str(c).startswith("Week ")]
+    assert len(po) == 91
+    assert len(weeks) == 52
+    assert po.attrs["week_of"] == pd.Timestamp("2026-01-19")
+    assert int(po[weeks].sum().sum()) == 11645
+    assert int(po["Pieces Past Due"].sum()) == 0
+    late = [c for c in weeks if int(str(c).split()[1]) > 8]
+    assert int((po[late].fillna(0) != 0).sum().sum()) == 261
+    assert po["Part Number"].nunique() == 75
+    assert po["Ship To Location"].nunique() == 3

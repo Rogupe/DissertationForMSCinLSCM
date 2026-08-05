@@ -337,3 +337,28 @@ def load_oem_b_xref() -> pd.DataFrame:
         df[c] = df[c].map(lambda v: v.strip() if isinstance(v, str) else v)
 
     return df
+def load_oem_b_weekly_po() -> pd.DataFrame:
+    """OEM-B 52-week schedule confirmation (Weekly PO sheet).
+
+    Customer EDI release (830/862 style): weekly open and recommended
+    order quantities per part per ship-to. Header on Excel row 3;
+    week 1 commences 2026-01-19 (anchor read from cell C2, exposed as
+    df.attrs['week_of']) - a January release inside a February
+    workbook. Three scratch-note rows sit ~50 rows below the real table 
+    (Tier1 PNs, no ship-to, zero quantities); requiring a
+    ship-to location excludes them - two genuine demand lines lack a
+    part description at source, so description must NOT be required.
+    """
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="Weekly PO",
+                        header=None, nrows=3)
+    week_of = pd.Timestamp(raw.iloc[1, 2])
+
+    df = pd.read_excel(OEM_B_WEEKLY, sheet_name="Weekly PO", header=2)
+    df = df.dropna(subset=["Part Number", "Ship To Location"])
+
+    week_cols = [c for c in df.columns if str(c).startswith("Week ")]
+    for c in week_cols + ["Pieces Past Due"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+
+    df.attrs["week_of"] = week_of
+    return df
