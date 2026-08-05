@@ -15,6 +15,7 @@ JUNE_EXPORT = DATA_DIR / "JUNE_2026_EXPORT_ANON.xlsx"
 
 
 def load_june_export() -> pd.DataFrame:
+
     """June 2026 export shipment register (SAP extract), one row per delivery.
 
     Single flat header on row 1. Three header names are duplicated at
@@ -42,4 +43,49 @@ def load_june_export() -> pd.DataFrame:
     df["short_ship"] = df["B/L. Qty"] < df["Qty"]
     df["cleared"] = df["Cls. Qty"] == df["Qty"]
 
+    return df
+OEM_A_DAILY = DATA_DIR / "OEM-A_AS_DAILY_SHIPPING_MGMT_20260225_ANON.xlsx"
+def _col(df: pd.DataFrame, prefix: str) -> str:
+    """First column starting with prefix - several X-REF headers are
+    truncated in the source cells (e.g. QUANTITY_PER_PALLE~)."""
+    return next(c for c in df.columns if c.startswith(prefix))
+
+def load_oem_a_xref(dedupe: bool = True) -> pd.DataFrame:
+    """OEM-A part master / cross-reference (X-REF sheet).
+
+    Header on Excel row 2, ~129 records, then blank formatted rows.
+    The sheet carries 24 duplicate part rows at source - trailing-space
+    variants and superseded revisions - so by default only the
+    highest-rank revision of each stripped part number is kept.
+    """
+    df = pd.read_excel(OEM_A_DAILY, sheet_name="X-REF", header=1)
+    df = df.dropna(how="all")
+    df["PART_NO"] = df["PART_NO"].str.strip()
+
+    # 18 unpriced rows carry the literal string 'NO' in PRICE.
+    df["PRICE"] = pd.to_numeric(df["PRICE"], errors="coerce")
+
+    if dedupe:
+        df = df[df[_col(df, "HIGHEST_RANK")] == "Y"]
+        df = df.drop_duplicates("PART_NO")
+    return df
+
+def load_oem_a_daily_po() -> pd.DataFrame:
+    """OEM-A open PO release lines (DAILY PO sheet, EDI extract).
+
+    Header on Excel row 2; ~501 real lines, then ~4,000 empty formatted
+    ghost rows that inflate the sheet. Dates are MM/DD/YYYY text, and
+    the receipt-date header has leading spaces in the source cell.
+
+    Verified to be the SAME extract as PART_RELEASE_DATA_BULK's Raw
+    sheet: use one or the other as demand, never both.
+    """
+    df = pd.read_excel(OEM_A_DAILY, sheet_name="DAILY PO", header=1)
+    df.columns = df.columns.str.strip()
+    df = df.dropna(subset=["PO Number"])
+
+    for col in ("Ship Date", "Receipt Date"):
+        df[col] = pd.to_datetime(df[col], format="%m/%d/%Y")
+
+    df["transit_days"] = (df["Receipt Date"] - df["Ship Date"]).dt.days
     return df
