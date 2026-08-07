@@ -548,3 +548,93 @@ def load_performance() -> pd.DataFrame:
 
     df = pd.DataFrame(records).drop_duplicates(["granularity", "period"])
     return df.reset_index(drop=True)
+def load_boxes() -> pd.DataFrame:
+    """Box-count calculation sheet (Boxes, 'CAJAS').
+
+    Two side-by-side tables (two shipments being sized) share the
+    header row; both are read and stacked with a 'panel' tag. The
+    packaging column's source header is junk ('asd', renamed Package),
+    and pandas suffixes the right panel's duplicate names with .1,
+    stripped after the read.
+    """
+    frames = []
+    for panel, cols in (("left", "B:M"), ("right", "Q:AB")):
+        d = pd.read_excel(OEM_B_WEEKLY, sheet_name="Boxes",
+                          header=1, usecols=cols)
+        d.columns = [str(c).split(".")[0] for c in d.columns]
+        d = d.rename(columns={"asd": "Package"})
+        d = d.dropna(subset=["Customer PN"])
+        d["panel"] = panel
+        frames.append(d)
+
+    df = pd.concat(frames, ignore_index=True)
+    for c in ("EDI", "CAJAS", "STRUT", "SHOCK", "UNITIZED"):
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df
+def load_urgent() -> pd.DataFrame:
+    """Urgent shortage snapshots (Urgent sheet).
+
+    Stacked dated blocks: a snapshot date above a small header and a
+    handful of part rows. Dead formula text from a broken cross-sheet
+    link bleeds into far columns and is never read. Negative EDI
+    values are uncovered backorder shortfalls - the expedite-trigger
+    events for the optimiser's premium-freight arm.
+    """
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="Urgent", header=None)
+
+    records = []
+    for r in range(raw.shape[0] - 1):
+        v = raw.iloc[r, 3]
+        if isinstance(v, datetime.datetime) and \
+                str(raw.iloc[r + 1, 3]).strip() == "CISCO":
+            rr = r + 2
+            while rr < raw.shape[0] and pd.notna(raw.iloc[rr, 3]) and \
+                    not isinstance(raw.iloc[rr, 3], datetime.datetime) and \
+                    str(raw.iloc[rr, 3]).strip() != "CISCO":
+                records.append({
+                    "snapshot": pd.Timestamp(v),
+                    "cisco": raw.iloc[rr, 3],
+                    "ship_to": raw.iloc[rr, 4],
+                    "ship_to_name": raw.iloc[rr, 5],
+                    "customer_pn": str(raw.iloc[rr, 6]),
+                    "tier1_pn": raw.iloc[rr, 7],
+                    "edi": pd.to_numeric(raw.iloc[rr, 8], errors="coerce"),
+                })
+                rr += 1
+    return pd.DataFrame(records)
+def load_so_lines() -> pd.DataFrame:
+    """Sales-order creation sheet (SO) - a patchwork of small blocks.
+
+    Each block is a dock/site label above a five-column header
+    (CustomerPo# .. Quantity); blocks stack in two panel columns and
+    are found by scanning for 'CustomerPo#' anchor cells. Scratch
+    part-numbers floating in far columns are never read. Rows lacking
+    a Part Number (three partial template rows) are skipped; five
+    genuine data rows all carry a quantity; rows lacking a Part Number
+    (partial template rows) are skipped.
+    """
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="SO", header=None)
+
+    records = []
+    for r in range(1, raw.shape[0]):
+        for c in range(raw.shape[1]):
+            if str(raw.iloc[r, c]).strip() != "CustomerPo#":
+                continue
+            label = str(raw.iloc[r - 1, c]).strip()
+            rr = r + 1
+            while rr < raw.shape[0] and pd.notna(raw.iloc[rr, c]) and \
+                    str(raw.iloc[rr, c]).strip() != "CustomerPo#":
+                if pd.notna(raw.iloc[rr, c + 1]):
+                    records.append({
+                        "block": label,
+                        "customer_po": str(raw.iloc[rr, c]).strip(),
+                        "part_number": str(raw.iloc[rr, c + 1]).strip(),
+                        "dock_code": raw.iloc[rr, c + 2],
+                        "ship_date": pd.to_datetime(str(raw.iloc[rr, c + 3]),
+                                                    errors="coerce"),
+                        "quantity": pd.to_numeric(raw.iloc[rr, c + 4],
+                                                  errors="coerce"),
+                    })
+                rr += 1
+
+    return pd.DataFrame(records)

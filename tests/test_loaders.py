@@ -24,8 +24,11 @@ from src.data.loaders import (
     load_oem_b_inventory,
     load_oem_b_shipping_mng,
     load_oem_b_coverage,
+    load_so_lines,
     load_unitized_parts,
     load_performance,
+    load_boxes,
+    load_urgent,
 )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
@@ -237,3 +240,27 @@ def test_performance():
     # tracked week shipped complete and on time.
     assert weekly["ratio"].min() == pytest.approx(0.76)
     assert int((weekly["ratio"] == 1).sum()) == 15
+def test_boxes():
+    box = load_boxes()
+    assert box["panel"].value_counts().to_dict() == {"left": 9, "right": 7}
+    assert int(box["EDI"].sum()) == 999
+    assert int(box["CAJAS"].sum()) == 75
+def test_urgent():
+    urg = load_urgent()
+    assert len(urg) == 11
+    assert urg["snapshot"].nunique() == 2
+    neg = urg[urg["edi"] < 0]
+    assert len(neg) == 3
+    assert int(neg["edi"].sum()) == -180
+    assert int(urg["edi"].min()) == -120
+def test_so_lines():
+    so = load_so_lines()
+    assert len(so) == 26
+    assert so["block"].nunique() == 6
+    assert so["customer_po"].nunique() == 3
+    # Every genuine line carries a quantity - the earlier 'missing
+    # quantities' claim was an artefact of a truncated probe printout.
+    assert int(so["quantity"].isna().sum()) == 0
+    assert int(so["quantity"].sum()) == 1366
+    current = so[so["ship_date"].dt.normalize() == pd.Timestamp("2026-02-26")]
+    assert len(current) == 9
