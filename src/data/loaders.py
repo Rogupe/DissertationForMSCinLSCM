@@ -516,3 +516,35 @@ def load_oem_b_coverage() -> pd.DataFrame:
             df[c] = pd.to_numeric(df[c], errors="coerce")
 
     return df
+def load_unitized_parts() -> list[str]:
+    """The 30 customer PNs that must ship in unitized packaging
+    (Unitized sheet) - a hard packaging constraint for the optimiser."""
+    df = pd.read_excel(OEM_B_WEEKLY, sheet_name="Unitized", header=1)
+    return df["Part #"].dropna().astype(str).str.strip().tolist()
+def load_performance() -> pd.DataFrame:
+    """Realised delivery performance (Performance sheet) - the only
+    actual service-level outcomes anywhere in the dataset.
+
+    Not a table: four 3-row blocks (Remark / periods / Performance) in
+    two side-by-side panels, parsed by scanning for 'Performance'
+    anchor cells. Weekly blocks carry week-commencing dates, monthly
+    blocks a month name. Two weeks appear in both panels with equal
+    ratios and are deduplicated: 16 unique weekly + 3 monthly ratios,
+    2025-06-16 to 2026-02-16, all 1.0 except w/c 2025-08-04 (0.76).
+    """
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="Performance", header=None)
+
+    records = []
+    for r in range(raw.shape[0]):
+        for a in (0, 9):
+            if str(raw.iloc[r, a]).strip() == "Performance":
+                gran = str(raw.iloc[r - 2, a + 1]).strip().lower()
+                for c in range(a + 1, min(a + 9, raw.shape[1])):
+                    period, ratio = raw.iloc[r - 1, c], raw.iloc[r, c]
+                    if pd.notna(period) and pd.notna(ratio):
+                        records.append({"granularity": gran,
+                                        "period": period,
+                                        "ratio": float(ratio)})
+
+    df = pd.DataFrame(records).drop_duplicates(["granularity", "period"])
+    return df.reset_index(drop=True)

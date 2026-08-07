@@ -4,7 +4,6 @@ Every expected value was independently derived during data profiling
 (August 2026) and verified when each loader was written. A failure
 means a loader's behaviour changed - or the underlying file did.
 """
-
 import pytest
 import pandas as pd
 from src.data.loaders import (
@@ -25,6 +24,8 @@ from src.data.loaders import (
     load_oem_b_inventory,
     load_oem_b_shipping_mng,
     load_oem_b_coverage,
+    load_unitized_parts,
+    load_performance,
 )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
@@ -220,3 +221,19 @@ def test_oem_b_boards_agree_on_demand(oem_b_mng, oem_b_coverage):
     mng_edi = [c for c in oem_b_mng.columns if c.startswith("edi_wk")]
     cov_edi = [c for c in oem_b_coverage.columns if c.startswith("edi_wk")]
     assert int(oem_b_mng[mng_edi].sum().sum()) == int(oem_b_coverage[cov_edi].sum().sum()) == 2188
+def test_unitized_parts():
+    parts = load_unitized_parts()
+    assert len(parts) == 30
+    assert len(set(parts)) == 30
+def test_performance():
+    perf = load_performance()
+    weekly = perf[perf["granularity"] == "weekly"]
+    monthly = perf[perf["granularity"] == "monthly"]
+    assert len(weekly) == 16
+    assert len(monthly) == 3
+    assert weekly["period"].min() == pd.Timestamp("2025-06-16")
+    assert weekly["period"].max() == pd.Timestamp("2026-02-16")
+    # One observed service failure in eight months - every other
+    # tracked week shipped complete and on time.
+    assert weekly["ratio"].min() == pytest.approx(0.76)
+    assert int((weekly["ratio"] == 1).sum()) == 15
