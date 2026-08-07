@@ -638,3 +638,47 @@ def load_so_lines() -> pd.DataFrame:
                 rr += 1
 
     return pd.DataFrame(records)
+PALLET_POOL = DATA_DIR / "PALLET_POOL_FORECAST_FROM_WK19_2026_ANON.xlsx"
+BULK_RELEASE = DATA_DIR / "PART_RELEASE_DATA_BULK_20260227_ANON.xlsx"
+def load_pallet_release() -> pd.DataFrame:
+    """Two-lane pallet-pool release detail (Scheduled Trucks, cols A-M).
+
+    The April 2026 release for the CA/TX lanes: 2,632 lines whose
+    quantities are all exact Std Pack multiples. Transit is constant
+    per lane (TX 4 days, CA 8) - planned, not actual. Dates are
+    MM/DD/YYYY text; the receipt-date header has leading spaces.
+    """
+    df = pd.read_excel(PALLET_POOL, sheet_name="Scheduled Trucks",
+                       usecols="A:M")
+    df.columns = df.columns.str.strip()
+    df = df.dropna(subset=["Part Number"])
+    for c in ("Ship Date", "Receipt Date", "Release Date"):
+        df[c] = pd.to_datetime(df[c], format="%m/%d/%Y")
+    return df
+def load_pallet_weekly_plan() -> pd.DataFrame:
+    """The incumbent weekly truck plan (Scheduled Trucks, cols N-U).
+
+    The company's own heuristic solution - weekly pallet demand versus
+    210-pallet truck capacity - and therefore the baseline every
+    NSGA-II result is benchmarked against: 35 weeks, 114 scheduled
+    trucks, 3,647 spare pallet-slots.
+    """
+    df = pd.read_excel(PALLET_POOL, sheet_name="Scheduled Trucks",
+                       usecols="N:U")
+    df.columns = [str(c).strip() for c in df.columns]
+    df = df.dropna(subset=["WEEK"])
+    return df.drop(columns=[c for c in df.columns if c.startswith("Unnamed")])
+def load_bulk_release() -> pd.DataFrame:
+    """Canonical OEM-A part release (BULK file, Raw sheet).
+
+    The same extract as the OEM-A workbook's DAILY PO sheet (verified
+    identical) - load one or the other as demand, never both. The
+    Matrix sheets here and in PALLET_POOL are pivoted views verified
+    1:1 against the row sheets and are deliberately not loaded.
+    """
+    df = pd.read_excel(BULK_RELEASE, sheet_name="Raw")
+    df.columns = df.columns.str.strip()
+    df = df.dropna(subset=["Part Number"])
+    for c in ("Ship Date", "Receipt Date"):
+        df[c] = pd.to_datetime(df[c], format="%m/%d/%Y")
+    return df

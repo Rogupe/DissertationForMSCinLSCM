@@ -9,6 +9,7 @@ import pandas as pd
 from src.data.loaders import (
     DATA_DIR,
     OEM_B_WEEKLY,
+    load_bulk_release,
     load_daily_order,
     load_forecast,
     load_inventory,
@@ -16,6 +17,8 @@ from src.data.loaders import (
     load_oem_a_daily_po,
     load_oem_a_xref,
     load_oem_b_production_plan,
+    load_pallet_release,
+    load_pallet_weekly_plan,
     load_production_plan,
     load_shipping_management,
     load_shipping_plan,
@@ -264,3 +267,31 @@ def test_so_lines():
     assert int(so["quantity"].sum()) == 1366
     current = so[so["ship_date"].dt.normalize() == pd.Timestamp("2026-02-26")]
     assert len(current) == 9
+def test_pallet_release():
+    pal = load_pallet_release()
+    assert len(pal) == 2632
+    assert int(pal["Open Quantity"].sum()) == 1196018
+    assert int(pal["# Pallets"].sum()) == 20293
+    # Every line is an exact pallet multiple - pack-integrality is a
+    # fact of the data, not a modelling assumption.
+    assert int((pal["Open Quantity"] % pal["Std Pack"] == 0).sum()) == 2632
+    assert pal["Ship To Location"].nunique() == 2
+    transit = (pal["Receipt Date"] - pal["Ship Date"]).dt.days
+    assert set(transit.unique()) == {4, 8}
+def test_pallet_weekly_plan_is_incumbent_baseline():
+    wk = load_pallet_weekly_plan()
+    assert len(wk) == 35
+    # Equals the detail sheet's pallet total - the two blocks agree.
+    assert int(wk["Pallets EDI"].sum()) == 20293
+    assert int(wk["SCHEDULED TRUCKS"].sum()) == 114
+    # DIFF+ is exactly the incumbent plan's slack capacity.
+    assert 114 * 210 - 20293 == 3647
+    assert int(wk["DIFF +"].sum()) == 3647
+def test_bulk_release_identical_to_daily_po():
+    blk = load_bulk_release()
+    po = load_oem_a_daily_po()
+    # Same extract distributed in two files: use ONE as demand, never
+    # both, or OEM-A demand double-counts.
+    assert len(blk) == len(po) == 501
+    assert int(blk["Open Quantity"].sum()) == int(po["Open Quantity"].sum()) == 27491
+    assert set(blk["Part Number"].str.strip()) == set(po["Part Number"].str.strip())
