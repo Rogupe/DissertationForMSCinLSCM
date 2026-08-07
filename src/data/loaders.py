@@ -465,3 +465,54 @@ def load_oem_b_shipping_mng() -> pd.DataFrame:
             df[c] = pd.to_numeric(df[c], errors="coerce")
 
     return df
+def load_oem_b_coverage() -> pd.DataFrame:
+    """OEM-B inventory-coverage board (Coverage sheet).
+
+    The SHIPPING MNG template extended with stock buckets (07DK, 07IC,
+    FR, RK, TOTAL), a packaging column whose source header is the junk
+    string 'asd' (renamed Package: Bulk/Unitized) and a product-family
+    TYPE column. Same worn band rows, so week dates come from the
+    'Week n' labels (week 1 = 2026-02-23). Requiring a ship-to name
+    removes nine '0' placeholders and one footnote row. Note: this
+    board's Shortage nets inventory and therefore disagrees with
+    SHIPPING MNG's (-10,391 vs -8,206) - both are kept, neither is
+    'corrected'.
+    """
+    raw = pd.read_excel(OEM_B_WEEKLY, sheet_name="Coverage", header=None)
+    band, header = raw.iloc[8], raw.iloc[9]
+    anchor = pd.Timestamp("2026-02-23")
+
+    cols, cur_day, cur_week = [], None, None
+    for i in range(raw.shape[1]):
+        h = str(header[i]).strip() if pd.notna(header[i]) else None
+        b = str(band[i]).strip() if pd.notna(band[i]) else None
+        if b == "D-DAY":
+            cur_day = 0
+        elif b and b.startswith("D+"):
+            cur_day = int(b[2:])
+        elif b and b.startswith("Week "):
+            cur_week = anchor + pd.Timedelta(days=7 * (int(b.split()[1]) - 1))
+        if h in ("Day", "Night"):
+            cols.append(f"ship_d{cur_day}_{h.lower()}")
+        elif h == "EDI":
+            cols.append(f"edi_wk{cur_week.date()}")
+        elif h and h.lower() == "shortage":
+            cols.append(f"short_wk{cur_week.date()}")
+        elif h == "asd":
+            cols.append("Package")
+        elif h:
+            cols.append(h)
+        else:
+            cols.append(f"col{i}")
+
+    df = raw.iloc[10:].copy()
+    df.columns = cols
+    df = df[df["Customer PN"].notna() & df["Ship to name"].notna()]
+
+    text_cols = ("CISCO", "Ship to", "Ship to name", "Customer PN",
+                 "Tier1 PN", "Package", "TYPE")
+    for c in df.columns:
+        if c not in text_cols and not c.startswith("col"):
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+
+    return df

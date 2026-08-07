@@ -23,7 +23,8 @@ from src.data.loaders import (
     load_oem_b_xref,
     load_oem_b_weekly_po,
     load_oem_b_inventory,
-    load_oem_b_shipping_mng
+    load_oem_b_shipping_mng,
+    load_oem_b_coverage,
 )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
@@ -176,6 +177,12 @@ def test_oem_b_production_plan():
     assert int(mismatch.sum()) == 1
     assert pp["W/C"].nunique() == 54
     assert pp["Item No."].nunique() == 386
+@pytest.fixture(scope="module")
+def oem_b_mng():
+    return load_oem_b_shipping_mng()
+@pytest.fixture(scope="module")
+def oem_b_coverage():
+    return load_oem_b_coverage()
 def test_oem_b_shipping_mng():
     board = load_oem_b_shipping_mng()
     edi = [c for c in board.columns if c.startswith("edi_wk")]
@@ -192,3 +199,24 @@ def test_oem_b_shipping_mng():
     zeros = board[ship].sum().sum() + board["Shipped QTY"].sum() + board["B/ORDER"].sum()
     assert int(zeros) == 0
     assert int(board[["FR", "RK"]].sum().sum()) == 325
+def test_oem_b_coverage(oem_b_coverage):
+    cov = oem_b_coverage
+    edi = [c for c in cov.columns if c.startswith("edi_wk")]
+    short = [c for c in cov.columns if c.startswith("short_wk")]
+    buckets = ["07DK", "07IC", "FR", "RK"]
+    assert len(cov) == 91
+    assert int(cov[buckets].sum().sum()) == 758
+    per_row = (cov[buckets].sum(axis=1) - cov["TOTAL"]).abs()
+    assert int((per_row > 0.5).sum()) == 0
+    assert int(cov[edi].sum().sum()) == 2188
+    assert int(cov[short].sum().sum()) == -10391
+    assert int((cov[short] < 0).sum().sum()) == 179
+    assert cov["Package"].value_counts().to_dict() == {"Bulk": 83, "Unitized": 8}
+    assert cov["TYPE"].value_counts().to_dict() == {"STRUT": 48, "SHOCK": 33,
+                                                    "UNI": 8, "RUBBER": 2}
+def test_oem_b_boards_agree_on_demand(oem_b_mng, oem_b_coverage):
+    """Both boards carry the same 7-week EDI band - but their Shortage
+    columns net differently and legitimately disagree."""
+    mng_edi = [c for c in oem_b_mng.columns if c.startswith("edi_wk")]
+    cov_edi = [c for c in oem_b_coverage.columns if c.startswith("edi_wk")]
+    assert int(oem_b_mng[mng_edi].sum().sum()) == int(oem_b_coverage[cov_edi].sum().sum()) == 2188
