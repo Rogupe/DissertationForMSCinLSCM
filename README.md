@@ -7,7 +7,7 @@ Multi-objective transport optimisation for the SCOR "Deliver" function of an aut
 The pipeline combines two complementary components with a deliberate division of labour — the optimiser makes decisions, while the neural network improves the data those decisions consume:
 
 - **NSGA-II** (via [pymoo](https://pymoo.org/)) — multi-objective evolutionary optimisation searching trade-offs between cost, time and service level in outbound transport decisions.
-- **GRU corrector** — a recurrent neural network that learns the gap between deterministic model assumptions and real operational data (e.g. transit-time deviations), improving the inputs supplied to the optimiser.
+- **GRU corrector** — a recurrent neural network that learns the gap between deterministic model assumptions and real operational data (departure-timing and customs lead-time deviations), improving the inputs supplied to the optimiser.
 
 The work is framed within the SCOR model and grounded in the digital twin and human-in-the-loop governance literature.
 
@@ -17,7 +17,7 @@ Experiments use an anonymised June 2026 export dataset from an automotive Tier 1
 
 ## Status
 
-The pipeline is under active development. Full experiments, results analysis and the dissertation write-up are forthcoming (completion: December 2026).
+The data foundation is complete: bespoke loaders cover all 22 sheets of the five source workbooks, verified by a 25-test reconciliation suite (totals, cross-file identities, pack integrality, documented data-quality defects). The optimisation and learning components are under active development. Full experiments, results analysis and the dissertation write-up are forthcoming (completion: December 2026).
 
 ## Context
 

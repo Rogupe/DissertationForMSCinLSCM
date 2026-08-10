@@ -65,8 +65,14 @@ data/raw | data/processed  # gitignored
 ## 6. Build phases
 
 1. **Environment** — venv, requirements (pandas, openpyxl, pymoo; DL framework TBD).
+   *Complete (August 2026).*
 2. **Loaders + reconciliation tests** — the hardest data engineering; fail loudly.
+   *Complete (August 2026): all 22 sheets of the five workbooks load via
+   `src/data/loaders.py`, verified by 25 reconciliation tests. Incumbent baseline
+   established: 114 trucks over 35 weeks with 3,647 spare pallet-slots (~15%
+   empty capacity).*
 3. **Dimensions and facts** — including the manual lane dictionary (documented).
+   *In progress.*
 4. **NSGA-II core** — two-lane scope, three objectives, incumbent benchmark.
 5. **GRU corrector** — training set, naïve baseline, deviation forecasts.
 6. **Integration** — corrected parameters → re-optimise → compare Pareto fronts.
