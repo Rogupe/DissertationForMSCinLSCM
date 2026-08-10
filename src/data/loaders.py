@@ -679,6 +679,6 @@ def load_bulk_release() -> pd.DataFrame:
     df = pd.read_excel(BULK_RELEASE, sheet_name="Raw")
     df.columns = df.columns.str.strip()
     df = df.dropna(subset=["Part Number"])
-    for c in ("Ship Date", "Receipt Date"):
+    for c in ("Ship Date", "Receipt Date", "Release Date"):
         df[c] = pd.to_datetime(df[c], format="%m/%d/%Y")
     return df

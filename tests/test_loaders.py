@@ -41,6 +41,12 @@ from src.data.dimensions import (
     resolve_lanes, 
     unresolved
     )
+from src.data.build import (
+    fact_inventory, 
+    fact_release, 
+    fact_shipments, 
+    write_processed
+    )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
     reason="raw data files are not distributed with the repository",
@@ -349,3 +355,23 @@ def test_dim_part():
     # Eight customer PNs carry multiple internal revisions - the reason
     # this table's grain is the (customer_pn, tier1_pn) pair.
     assert int((parts.groupby("customer_pn").size() > 1).sum()) == 8
+def test_fact_tables_and_parquet_roundtrip(tmp_path):
+    rel = fact_release()
+    assert len(rel) == 3133                       # 501 bulk + 2632 pallet
+    assert rel["lane_id"].notna().all()
+    assert int(rel["qty"].sum()) == 1223509       # 27,491 + 1,196,018
+
+    shp = fact_shipments()
+    assert len(shp) == 502
+    assert shp["lane_id"].notna().all()
+
+    inv = fact_inventory()
+    assert len(inv) == 3913                       # 1,836 + 2,077
+    assert int(inv["qty"].sum()) == 311416        # 131,887 + 179,529
+    assert int(inv["lane_id"].isna().sum()) == 93  # unallocated lots
+
+    written = write_processed(tmp_path)
+    assert written == {"dim_lane": 47, "dim_part": 670, "fact_release": 3133,
+                       "fact_shipments": 502, "fact_inventory": 3913}
+    back = pd.read_parquet(tmp_path / "fact_release.parquet")
+    assert len(back) == 3133
