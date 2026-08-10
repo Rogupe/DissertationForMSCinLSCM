@@ -72,7 +72,10 @@ data/raw | data/processed  # gitignored
    established: 114 trucks over 35 weeks with 3,647 spare pallet-slots (~15%
    empty capacity).*
 3. **Dimensions and facts** — including the manual lane dictionary (documented).
-   *In progress.*
+   *Complete (August 2026): dim_lane (47 canonical lanes covering all 80 raw
+   location spellings, two merges documented as open questions), dim_part
+   (670 revision pairs merged from three part masters), and three
+   lane-resolved fact tables persisted to data/processed as parquet.*
 4. **NSGA-II core** — two-lane scope, three objectives, incumbent benchmark.
 5. **GRU corrector** — training set, naïve baseline, deviation forecasts.
 6. **Integration** — corrected parameters → re-optimise → compare Pareto fronts.
