@@ -33,6 +33,12 @@ from src.data.loaders import (
     load_boxes,
     load_urgent,
 )
+from src.data.dimensions import (
+    LANE_MAP, 
+    build_dim_lane, 
+    resolve_lanes, 
+    unresolved
+    )
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
     reason="raw data files are not distributed with the repository",
@@ -295,3 +301,28 @@ def test_bulk_release_identical_to_daily_po():
     assert len(blk) == len(po) == 501
     assert int(blk["Open Quantity"].sum()) == int(po["Open Quantity"].sum()) == 27491
     assert set(blk["Part Number"].str.strip()) == set(po["Part Number"].str.strip())
+def test_dim_lane_structure():
+    lanes = build_dim_lane()
+    assert lanes["lane_id"].is_unique
+    assert set(lanes[lanes["scope"] == "core"]["lane_id"]) == {"oem_a_ca_n", "oem_a_tx"}
+    # Every mapping target exists in the lane table.
+    assert set(LANE_MAP.values()) <= set(lanes["lane_id"])
+def test_every_location_resolves():
+    """The lane dictionary covers every location string in the dataset;
+    only the seven unverified S9 site codes stay deliberately open."""
+    full_coverage = [
+        load_bulk_release()["Ship To Location"],
+        load_pallet_release()["Ship To Location"],
+        load_june_export()["Ship To"],
+        load_daily_order()["Ship to name"],
+        load_shipping_management()["DC group"],
+        load_oem_b_shipping_mng()["Ship to name"],
+        load_so_lines()["block"],
+        load_oem_b_weekly_po()["Ship To Location"],
+        load_inventory()["Ship To Name"],
+        load_oem_b_inventory()["Ship To Name"],
+    ]
+    for series in full_coverage:
+        assert unresolved(series) == set()
+    open_s9 = unresolved(load_oem_b_xref()["Ship to"])
+    assert len(open_s9) == 7
