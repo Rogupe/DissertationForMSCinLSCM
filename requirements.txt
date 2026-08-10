@@ -3,3 +3,4 @@ openpyxl>=3.1
 pymoo>=0.6
 pytest>=8
 pyarrow>=17
+matplotlib>=3.9

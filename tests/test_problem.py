@@ -13,6 +13,9 @@ from src.optimization.problem import (
     evaluate_plan,
     load_problem_data,
 )
+from src.optimization.run_nsga2 import (
+    run
+)
 pytestmark = pytest.mark.skipif(
     not DATA_DIR.exists(),
     reason="raw data files are not distributed with the repository",
@@ -40,3 +43,10 @@ def test_nsga2_smoke_beats_incumbent_on_trucks():
     assert (X.sum(axis=1) == problem.total).all()
     assert res.F[:, 0].min() >= 97          # never below the floor
     assert res.F[:, 0].min() < 114          # already beats the incumbent
+def test_runner_writes_outputs(tmp_path):
+    summary = run(pop_size=30, n_gen=20, seed=1, out_dir=tmp_path)
+    assert (tmp_path / "pareto_front.parquet").exists()
+    assert (tmp_path / "pareto_plans.parquet").exists()
+    assert (tmp_path / "pareto.png").exists()
+    assert summary["incumbent_trucks"] == 114
+    assert 97 <= summary["trucks_min"] < 114
