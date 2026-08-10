@@ -10,6 +10,9 @@ company.
 """
 
 import pandas as pd
+import numpy as np
+
+from src.data import loaders
 
 
 def _lane(lane_id, kind, customer=None, country=None, mode=None,
@@ -180,3 +183,62 @@ def unresolved(series: pd.Series) -> set:
     """Distinct non-null values that do not resolve to a lane."""
     values = series.dropna().map(_norm)
     return set(values[~values.isin(LANE_MAP)])
+
+def build_dim_part() -> pd.DataFrame:
+    """One row per (customer_pn, tier1_pn) pair, merged from the three
+    part masters: OEM-A X-REF, OEM-B Cross Reference and the June
+    register's material pairs. The grain is the PAIR, not the part -
+    eight customer PNs carry multiple internal revisions, and one
+    OEM-A part ships in June under a different revision than X-REF
+    records. Attributes: X-REF price and pallet quantity (OEM-A only),
+    PALLET Std Pack (28 parts), and the unitized-packaging flag.
+    """
+    xa = loaders.load_oem_a_xref()
+    pn = next(c for c in xa.columns if c.startswith("PART_NO"))
+    item = next(c for c in xa.columns if c.startswith("ITEM_NO"))
+    qpp = next(c for c in xa.columns if c.startswith("QUANTITY_PER_PALLE"))
+    a = xa[[pn, item, "PRICE", qpp]].dropna(subset=[pn, item]).copy()
+    a.columns = ["customer_pn", "tier1_pn", "price", "qty_per_pallet"]
+    for c in ("customer_pn", "tier1_pn"):
+        a[c] = a[c].astype(str).str.strip()
+    a = a.drop_duplicates(["customer_pn", "tier1_pn"])
+    a["in_oem_a_xref"] = True
+
+    xb = loaders.load_oem_b_xref()
+    b = xb[["Customer PN", "Tier1 PN"]].dropna().copy()
+    b.columns = ["customer_pn", "tier1_pn"]
+    for c in b.columns:
+        b[c] = b[c].astype(str).str.strip()
+    b = b.drop_duplicates()
+    b["in_oem_b_xref"] = True
+
+    june = loaders.load_june_export()
+    j = june[["Cust. Material", "Material", "Customer Desc."]].dropna(
+        subset=["Cust. Material", "Material"]).copy()
+    j.columns = ["customer_pn", "tier1_pn", "june_customer"]
+    for c in ("customer_pn", "tier1_pn"):
+        j[c] = j[c].astype(str).str.strip()
+    j["june_customer"] = j["june_customer"].astype(str).str.split().str[0]
+    j = (j.groupby(["customer_pn", "tier1_pn"], as_index=False)
+          .agg(june_customer=("june_customer", lambda s: s.mode().iat[0])))
+    j["in_june"] = True
+
+    parts = (a.merge(b, on=["customer_pn", "tier1_pn"], how="outer")
+              .merge(j, on=["customer_pn", "tier1_pn"], how="outer"))
+    for c in ("in_oem_a_xref", "in_oem_b_xref", "in_june"):
+        parts[c] = parts[c].fillna(False).astype(bool)
+
+    parts["customer"] = np.select(
+        [parts["in_oem_a_xref"], parts["in_oem_b_xref"]],
+        ["OEM-A", "OEM-B"],
+        default=parts["june_customer"],
+    )
+    parts = parts.drop(columns=["june_customer"])
+
+    pal = loaders.load_pallet_release()
+    std_pack = pal.groupby(pal["Part Number"].str.strip())["Std Pack"].first()
+    parts["std_pack"] = parts["customer_pn"].map(std_pack)
+    parts["unitized"] = parts["customer_pn"].isin(
+        set(loaders.load_unitized_parts()))
+
+    return parts.sort_values(["customer", "customer_pn"]).reset_index(drop=True)

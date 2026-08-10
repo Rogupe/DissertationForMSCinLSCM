@@ -35,7 +35,9 @@ from src.data.loaders import (
 )
 from src.data.dimensions import (
     LANE_MAP, 
-    build_dim_lane, 
+    build_dim_lane,
+    build_dim_part,
+    build_dim_part, 
     resolve_lanes, 
     unresolved
     )
@@ -326,3 +328,24 @@ def test_every_location_resolves():
         assert unresolved(series) == set()
     open_s9 = unresolved(load_oem_b_xref()["Ship to"])
     assert len(open_s9) == 7
+def test_dim_part():
+    parts = build_dim_part()
+    assert len(parts) == 670
+    assert parts["customer_pn"].nunique() == 662
+    assert not parts.duplicated(["customer_pn", "tier1_pn"]).any()
+    assert (int(parts["in_oem_a_xref"].sum()),
+            int(parts["in_oem_b_xref"].sum()),
+            int(parts["in_june"].sum())) == (106, 470, 118)
+    # The two customer masters never overlap. June corroborates 24
+    # pairs (15 OEM-A + 9 OEM-B): one shared OEM-A part ships in June
+    # under a DIFFERENT internal revision than X-REF - revision drift.
+    assert int((parts["in_oem_a_xref"] & parts["in_oem_b_xref"]).sum()) == 0
+    assert int((parts["in_oem_a_xref"] & parts["in_june"]).sum()) == 15
+    assert int((parts["in_oem_b_xref"] & parts["in_june"]).sum()) == 9
+    assert parts["customer"].value_counts().to_dict()["OEM-B"] == 474
+    assert int(parts["price"].notna().sum()) == 89
+    assert int(parts["std_pack"].notna().sum()) == 28
+    assert int(parts["unitized"].sum()) == 28
+    # Eight customer PNs carry multiple internal revisions - the reason
+    # this table's grain is the (customer_pn, tier1_pn) pair.
+    assert int((parts.groupby("customer_pn").size() > 1).sum()) == 8
