@@ -77,6 +77,11 @@ data/raw | data/processed  # gitignored
    (670 revision pairs merged from three part masters), and three
    lane-resolved fact tables persisted to data/processed as parquet.*
 4. **NSGA-II core** — two-lane scope, three objectives, incumbent benchmark.
+   *Complete (August 2026), pooled-weekly formulation matching the incumbent's
+   granularity (per-lane refinement remains an extension study). The incumbent
+   is provably the weekly-ceiling heuristic and scores (114 trucks, 0, 0);
+   the optimised front reaches 100 trucks at zero backlog (−12.3% dispatches
+   at unchanged service) against a theoretical floor of 97.*
 5. **GRU corrector** — training set, naïve baseline, deviation forecasts.
 6. **Integration** — corrected parameters → re-optimise → compare Pareto fronts.
 7. **Experiments and write-up assets.**
