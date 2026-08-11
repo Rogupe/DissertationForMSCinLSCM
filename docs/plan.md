@@ -84,6 +84,11 @@ data/raw | data/processed  # gitignored
    at unchanged service) against a theoretical floor of 97.*
 5. **GRU corrector** — training set, naïve baseline, deviation forecasts.
 6. **Integration** — corrected parameters → re-optimise → compare Pareto fronts.
+   *Complete (August 2026). Day-resolution scoring with the corrector's
+   demand-weighted departure deviation (−0.79 days/pallet): the incumbent,
+   perfect under deterministic assumptions, reveals ~16,000 early pallet-days
+   under corrected parameters; all zero-backlog optimised plans remain
+   zero-late (robust); corrected re-optimisation persisted alongside.*
 7. **Experiments and write-up assets.**
 
 ## 7. Open items for the company
