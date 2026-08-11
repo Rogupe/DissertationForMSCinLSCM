@@ -90,6 +90,11 @@ data/raw | data/processed  # gitignored
    under corrected parameters; all zero-backlog optimised plans remain
    zero-late (robust); corrected re-optimisation persisted alongside.*
 7. **Experiments and write-up assets.**
+   *Experiments complete (August 2026): seed robustness (zero-backlog optimum
+   100-101 trucks across ten seeds), capacity sensitivity (savings of 9-18
+   trucks across 180-240 pallets/truck) and deviation sensitivity (exposure
+   linear and symmetric in the bias; ~16,000 pallet-days at the corrector's
+   estimate). Write-up assets and dissertation drafting remain.*
 
 ## 7. Open items for the company
 
