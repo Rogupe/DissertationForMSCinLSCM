@@ -27,7 +27,7 @@ def test_day_metrics_invariant_at_zero_deviation():
         assert days["early_days"] == 7 * weekly["early"]
         assert days["late_days"] == 7 * weekly["late"]
 
-
+        
 def test_incumbent_under_corrected_parameters():
     data = load_problem_data()
     corrected = day_metrics(data["demand"], data["demand"],
