@@ -1,0 +1,213 @@
+# Mathematical Formulation of the SCOR Corrector Suite
+
+This document states the explicit equations behind every component of the
+pipeline. The corrector is not treated as a black box: the shared recurrent
+architecture is four closed-form equations, the synthetic scenarios have known
+data-generating equations, and the optimiser is a fully stated integer
+programme. Section 8 makes precise which mechanism each baseline can recover
+and what the network adds beyond them.
+
+Notation is consistent throughout. However, each SCOR section introduces its
+own symbols where the function demands them.
+
+## 1. The corrector pattern
+
+Every SCOR function $f$ carries a promise. Let $p_f(t)$ denote the promised
+quantity at time $t$, and $a_f(t)$ the realised value. The promise error is
+
+$$e_f(t) = a_f(t) - p_f(t).$$
+
+A corrector produces an estimate $\hat{e}_f(t+1)$ of the next error from a
+window of recent history, and the decision layer consumes the corrected
+promise
+
+$$\tilde{p}_f(t+1) = p_f(t+1) + \hat{e}_f(t+1).$$
+
+The neural network never makes a decision. It supplies $\tilde{p}$; the
+optimisation model of Section 4 decides.
+
+## 2. The shared architecture
+
+Each corrector is the same gated recurrent unit (GRU) with hidden size
+$n = 16$ over an input window of $W$ steps, followed by a linear head. For
+input $x_t \in \mathbb{R}^5$ and hidden state $h_{t-1} \in \mathbb{R}^{16}$:
+
+$$z_t = \sigma(W_z x_t + U_z h_{t-1} + b_z)$$
+
+$$r_t = \sigma(W_r x_t + U_r h_{t-1} + b_r)$$
+
+$$\tilde{h}_t = \tanh\!\left(W_h x_t + U_h (r_t \odot h_{t-1}) + b_h\right)$$
+
+$$h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t$$
+
+$$\hat{e} = w^\top h_W + b$$
+
+In control terms the state update is a first-order discrete filter whose
+coefficient is not fixed: $h_{t-1}$ enters through a unit delay $z^{-1}$, the
+update gate $z_t$ acts as an adaptive pole position on the interval $(0, 1)$,
+the reset gate $r_t$ modulates the feedback path, and $\tanh$ is the
+saturation. The choice of GRU over LSTM for short windows follows from Chung
+et al. (2014): equal accuracy at a lower parameter count. The parameter count
+here is $3(5n + n^2 + n) + n + 1 = 1{,}073$.
+
+Training is identical everywhere: features standardised with training-set
+statistics, Adam with learning rate $10^{-2}$, mean absolute error loss
+$\mathcal{L} = \lvert e - \hat{e} \rvert$, fixed seeds, and a time-ordered
+70/30 split. The feature vector follows one grammar in all functions:
+
+$$x_t = \left[\, v_t,\; s,\; e_t,\; \sin(2\pi \tau_t / P),\; \cos(2\pi \tau_t / P) \,\right],$$
+
+that is, a volume term, a scale term, the current error, and the calendar
+phase with period $P$ of the function.
+
+## 3. Deliver: empirical corrector
+
+For shipment $i$ the departure deviation is
+
+$$e^{\mathrm{dep}}_i = t^{\mathrm{GI}}_i - t^{\mathrm{ETD}}_i,$$
+
+the goods-issue date minus the planned departure. The corrector operates on
+lane-day aggregates $\bar{e}_\ell(d)$ over a window $W = 7$ and predicts
+$\bar{e}_\ell(d+1)$. On the June 2026 register the empirical distribution is
+$\{0: 363,\ -1: 126,\ -7: 1\}$, a systematic ship-early bias.
+
+The release error, quantified in the prior analysis phase, is defined per week
+$w$ as $e^{\mathrm{rel}}(w) = a(w) - r(w)$ against the 30 April release
+snapshot. The observed ratio was $\sum_w a(w) / \sum_w r(w) = 1.525$, with the
+week of 15 June at $33{,}242 / 9{,}706 = 3.4$. Training this corrector
+requires archived weekly release snapshots, which is the standing data
+request.
+
+The correction enters the optimiser at day resolution. For pallet $k$ with
+ship week $s_k$ and due week $d_k$,
+
+$$l_k = 7\,(s_k - d_k) + \hat{d}, \qquad \hat{d} = \sum_\ell \omega_\ell\, \hat{e}_\ell,$$
+
+where $\omega_\ell$ are demand weights over the pallet lanes. The current
+estimate is $\hat{d} = -0.79$ days per pallet.
+
+## 4. Plan: the optimisation model
+
+The weekly dispatch problem over the 35-week pallet horizon is stated on the
+decision vector $x \in \mathbb{Z}^{35}_{\ge 0}$ of pallets shipped per week,
+with released demand $d_w$ and total $D = \sum_w d_w = 20{,}293$. A repair
+operator projects every candidate onto the completeness constraint
+$\sum_w x_w = D$. With truck capacity $C = 210$ and cumulative sums
+$X_w = \sum_{u \le w} x_u$ and $D_w = \sum_{u \le w} d_u$, the three
+objectives, all minimised, are
+
+$$f_1(x) = \sum_{w} \left\lceil x_w / C \right\rceil, \qquad
+  f_2(x) = \sum_{w} \max(0,\, X_w - D_w), \qquad
+  f_3(x) = \sum_{w} \max(0,\, D_w - X_w).$$
+
+The incumbent plan satisfies the identity
+
+$$T^{\mathrm{inc}} = \sum_w \left\lceil d_w / C \right\rceil = 114,$$
+
+verified in all 35 weeks, and scores $(114, 0, 0)$. The dispatch floor is
+$\lceil D / C \rceil = 97$. NSGA-II explores the front between these bounds;
+the human selects the operating point.
+
+## 5. Source: synthetic system with known equations
+
+Supplier $s$ quotes a fixed lead time $q_s$. The realised lead time is
+generated by
+
+$$a_s(t) = q_s \exp\!\left(\beta_s + \delta_s \tfrac{t}{T} + \gamma \sin\!\tfrac{2\pi t}{52} + \varepsilon_{s,t}\right),
+  \qquad \varepsilon_{s,t} \sim \mathcal{N}(0, \sigma_s^2),$$
+
+with horizon $T = 104$ weeks, seasonal amplitude $\gamma = 0.06$, and drift
+$\delta_s = 0.15$ for the critical supplier S05 and zero otherwise. The error
+is $e_s(t) = a_s(t) - q_s$ and the corrected lead time is
+$\tilde{q}_s = q_s + \hat{e}_s$. Criticality is
+
+$$c_s = \omega_s \cdot \mathrm{sd}(e_s),$$
+
+spend share times lead-time risk, which ranks S05 first. Parameters
+($q_s$ in days):
+
+| $s$ | $q_s$ | $\omega_s$ | $\beta_s$ | $\sigma_s$ |
+|---|---|---|---|---|
+| S01 | 7 | 0.06 | 0.00 | 0.05 |
+| S02 | 10 | 0.08 | 0.05 | 0.10 |
+| S03 | 14 | 0.10 | -0.04 | 0.09 |
+| S04 | 5 | 0.04 | 0.00 | 0.06 |
+| S05 | 21 | 0.24 | 0.16 | 0.22 |
+| S06 | 12 | 0.09 | 0.08 | 0.12 |
+| S07 | 9 | 0.07 | 0.00 | 0.05 |
+| S08 | 30 | 0.12 | 0.06 | 0.14 |
+| S09 | 6 | 0.05 | -0.02 | 0.06 |
+| S10 | 16 | 0.15 | 0.04 | 0.11 |
+
+## 6. Make: synthetic system with known equations
+
+Product family $g$ runs a nominal route of $R = 90$ minutes. The daily mean
+overrun is generated by
+
+$$o_g(t) = \mu_g + \kappa(t) + \lambda(t) + \varepsilon_{g,t},
+  \qquad \varepsilon_{g,t} \sim \mathcal{N}(0, \sigma_g^2),$$
+
+where the machine congestion state is the AR(1) process
+
+$$\kappa(t) = \phi\, \kappa(t-1) + \eta_t, \qquad \phi = 0.85, \quad \eta_t \sim \mathcal{N}(0, 1.4^2),$$
+
+and the weekday load is $\lambda(t) = 2.5$ minutes on Mondays and Fridays and
+zero otherwise. Family biases are $\mu = (4.0, 0.0, 8.0)$ minutes with
+$\sigma = (2.0, 1.2, 3.5)$. The corrected route time is
+$\tilde{R}_g = R + \hat{o}_g$.
+
+## 7. Return: synthetic system and fleet equation
+
+The rack cycle for customer $u$ decomposes as
+
+$$c_u(t) = \tau^{\mathrm{out}}(t) + \tau^{\mathrm{ret}}(t) + \delta_u(t),$$
+
+with combined transit $\tau \sim \mathcal{N}(4.0, 1.2^2)$ days and dwell
+
+$$\delta_u(t) = \max\!\left(0.5,\; \mu_u + \kappa(t)\,\mathbb{1}[u = \mathrm{CUST\text{-}D}] + m(t) + \varepsilon_{u,t}\right),$$
+
+where $\kappa$ is AR(1) with $\phi = 0.9$ and $\sigma_\eta = 0.7$, the
+month-end hold is $m(t) = 1.8$ days when the day of month is 25 or later, and
+$\mu = (5.0, 7.5, 4.2, 9.0, 6.0)$ with
+$\sigma = (1.2, 2.2, 0.9, 3.2, 1.6)$. The contractual promise is
+$c^* = 10$ days and the error is $e_u = c_u - c^*$.
+
+The dwell share of variance,
+
+$$\frac{\mathrm{Var}(\delta)}{\mathrm{Var}(\delta) + \mathrm{Var}(\tau)} = 0.849,$$
+
+is calibrated to the prior-phase finding of 84 per cent. Fleet sizing follows
+Little's law, $N = \lambda_r \cdot \mathbb{E}[c]$, with $\lambda_r = 12$
+shipments per day. Sizing at the mean cycle gives $N = 127$ racks; sizing at
+the 95th percentile gives $N = 196$. The cost of variability is therefore
+$\lambda_r (c_{p95} - \bar{c}) = 69$ racks.
+
+## 8. What the network adds beyond each baseline
+
+The generating equations above make the comparison exact rather than
+rhetorical. Each baseline recovers one mechanism and is blind to the rest.
+
+| Mechanism in the data | Baseline that captures it | Where it fails |
+|---|---|---|
+| Entity bias $\beta_s$, $\mu_g$, $\mu_u$ | per-entity mean | blind to time variation |
+| Short-range state $\kappa(t)$ | persistence $\hat{e}(t+1) = e(t)$ | blind to bias and calendar; noisy |
+| Seasonality and calendar $\gamma$, $\lambda$, $m$ | neither | systematic residual |
+| Drift $\delta_s\, t/T$ | neither | grows without bound |
+
+The GRU composes all four mechanisms from the window: the gates implement an
+adaptive filter that tracks $\kappa$, the head absorbs $\beta$, and the phase
+features expose the calendar terms. This is supported by the validation
+scorecards: on Deliver, one month of near-static data offers little beyond
+bias and persistence, and the network accordingly does not win; on the two-year
+scenarios with drift and autoregressive state, it does. The claim is not that
+the network is intelligent. The claim is that it is the minimal recurrent
+estimator that captures all the mechanisms present at once, and the scorecards
+measure exactly when that capacity pays.
+
+## References
+
+Chung, J., Gulcehre, C., Cho, K. and Bengio, Y. (2014) Empirical evaluation of
+gated recurrent neural networks on sequence modeling. arXiv:1412.3555.
+
+Little, J.D.C. (1961) A proof for the queuing formula $L = \lambda W$.
+Operations Research, 9(3), pp. 383-387.
