@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gemelo-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8788", "--directory", "C:\\Users\\Rodri\\AppData\\Local\\Temp\\claude\\C--Users-Rodri-Downloads-dissertation-code\\4cf4ce10-5f32-4909-8e73-14341dd99207\\scratchpad"],
+      "port": 8788
+    }
+  ]
+}
