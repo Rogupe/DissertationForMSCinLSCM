@@ -1,0 +1,51 @@
+{
+  "id": "R0621",
+  "doi": "10.1016/j.ifacol.2022.10.134",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S2405896322021474/pdf (resolved from https://doi.org/10.1016/j.ifacol.2022.10.134; PDF served as main.pdf from pdf.sciencedirectassets.com, open access CC BY-NC-ND, 6 pages, IFAC-PapersOnLine 55-10 (2022) 2743-2748; text extracted with pdf.js in the screener's Chrome and saved to /root/work/fulltext/R0621.txt)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Food/cold chain (non-profit food bank, fresh fruit)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Other",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "When forecast donations exceed outbound demand or refrigerated storage is unavailable, operators reschedule immediate deliveries to charities; for anomalous events they run what-if scenarios on key influencers to design and evaluate action plans.",
+  "key_finding": "A time-series forecasting model in SAP Analytics Cloud (Smart Predict) on the food bank's historical donation and distribution data is framed as a continuously updated digital twin that predicts inbound donations and charity demand, letting operators reschedule deliveries and run what-if scenarios to cut fruit waste; no accuracy metrics reported.",
+  "citation_locator": "Key finding: Section 3 Proposed approach (PDF page 3 / p. 2745: SAP Analytics Cloud, 'forecast algorithm', 75%/25% estimate-validation split, best model selected by validation error, 'Smart Predict'); Section 4 Case study (PDF page 4 / p. 2746: 'The model was created and trained in the SAP Analytics Cloud using historical data from the food bank', Figures 6-8 forecasts; PDF page 5 / p. 2747: Figure 9 what-if simulation of key influencers, Figure 10 storyboard); Section 5 Conclusions (PDF page 5 / p. 2747). HITL evidence: Section 4 (PDF page 3 / p. 2745: 'make it easier for food bank operators to reschedule incoming and outgoing logistics'; PDF page 4 / p. 2746: 'Based on the forecast, the food bank can reschedule and perform quick modifications to the inventory', 'enable the food bank to take a proactive approach'; PDF pages 4-5 / pp. 2746-2747: rescheduling 'according to the predictive forecast', what-if scenarios to 'design action plans ... and evaluate those plans').",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "As described in Figure 2, the approach uses operational data to develop a digital twin-based decision support system for fresh food inventory.",
+      "section": "3. Proposed approach (PDF page 3 / p. 2745)"
+    },
+    {
+      "text": "A case study of Banco Alimentare Campania Onlus (one of the Italian food banks) is used to evaluate the proposed approach.",
+      "section": "4. Case study (PDF page 3 / p. 2745)"
+    },
+    {
+      "text": "The time series can be automated using SAP Analytics Cloud (SAP, 2022) and the model can be trained using a forecast algorithm.",
+      "section": "3. Proposed approach (PDF page 3 / p. 2745)"
+    },
+    {
+      "text": "The model was created and trained in the SAP Analytics Cloud using historical data from the food bank.",
+      "section": "4. Case study (PDF page 4 / p. 2746)"
+    },
+    {
+      "text": "The use of a digital twin, on the other hand, will make it easier for food bank operators to reschedule incoming and outgoing logistics.",
+      "section": "4. Case study (PDF page 3 / p. 2745)"
+    },
+    {
+      "text": "If the incoming donation exceeds the outbound logistics, the food bank will reschedule the immediate delivery of fruits to a charity organization according to the predictive forecast.",
+      "section": "4. Case study (PDF pages 4-5 / pp. 2746-2747)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo = pronóstico de series temporales en SAP Analytics Cloud (Smart Predict, partición 75/25, selección automática de modelo; algoritmo no nombrado) con datos históricos reales del banco de alimentos; los operadores deciden reprogramaciones según pronóstico y escenarios what-if. Dudas: ai_technique 'Other' vs 'Classical ML'; hitl_role 'Maintained' vs 'Elevated'; sin métricas de precisión; ¿gemelo o tablero predictivo?"
+}

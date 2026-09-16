@@ -1,0 +1,51 @@
+{
+  "id": "R0146",
+  "doi": "10.1051/epjconf/202534101055",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://www.epj-conferences.org/articles/epjconf/pdf/2025/26/epjconf_icatcict2025_01055.pdf (open access PDF, EPJ Web of Conferences 341, 01055, ICATCICT 2025; landing page https://www.epj-conferences.org/articles/epjconf/abs/2025/26/epjconf_icatcict2025_01055/epjconf_icatcict2025_01055.html offers abstract + PDF only; text extracted with pdf.js, Figures 1-2 inspected from rendered pages)",
+  "exclusion_reason": "Other (note reason)",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "CQRAS samples risk-weighted schedules through quantum annealing and feeds its output into a Quantum-Integrated Digital Twin Optimizer (QIDTO) that stress-tests plans against detailed virtual replicas of trucks, warehouses, and fuel markets",
+      "section": "Abstract (p. 1) - the only description of what the twin replicates; 'CQRAS' is never expanded anywhere in the paper"
+    },
+    {
+      "text": "Digital twin integration requires limited variational principle sets. The simulator forecasts flow f(x, t) using mass conservation",
+      "section": "3. Proposed Model Design Analysis (p. 2, before eq. 5; math symbols normalised from the rendered page) - the whole specification of the twin: one generic mass-conservation equation plus the boxes 'Quantum Integrated Digital Twin -> Transport Flow Simulator -> Quantum Bayesian Tuner -> Operational Plan P_t' in Figure 1 (p. 3); no data, components or validation"
+    },
+    {
+      "text": "The reinforcement layer optimizes a variational policy π to reduce long-term cost, driven by the global quantum state Ψt",
+      "section": "3. Proposed Model Design Analysis (p. 2, before eq. 2; symbols normalised) - AI method: quantum reinforcement learning with variational circuits, parameter-shift gradients (eq. 3) and a hybrid quantum-classical GNN embedding (eq. 1)"
+    },
+    {
+      "text": "The experimental setup simulated a continental supply network, not a lab analysis. The contextual visualizations were produced from three years of container movements, real-time weather reports, and metals and grain price increases in process.",
+      "section": "4. Comparative Result Analysis (p. 4) - the entire description of data and setting; no source, simulator, code or parameters are given"
+    },
+    {
+      "text": "To approach near-term hardware restrictions, 64-qubit noisy simulated backends ran qubits. Baseline methods supplanted deep reinforcement and hybrid stochastic optimizers [3, 8, and 15].",
+      "section": "4. Comparative Result Analysis (p. 4) - inconsistent with the reference list, where [3] is a dynamic-pricing paper, [8] a meta-heuristic network-design paper and [15] an ML supplier-selection paper, yet Tables 1-6 benchmark them on delivery delay, fuel per 1,000 km, schedule stability and training epochs"
+    },
+    {
+      "text": "Fuel use appears to decrease with tighter scheduling and quantum Informed rerouting sets. The digital twin's Bayesian tuner likely smoothed stop – start patterns traditional optimizers missed for the process.",
+      "section": "4. Comparative Result Analysis (p. 4, after Table 2) - the authors speculate ('likely') about their own system; the 'Bayesian tuner' is never defined in the text (only a box in Figure 1). No human, operator or approval step appears anywhere; the loop is described as 'self-correcting' (p. 6)"
+    }
+  ],
+  "ft_note": "OA. Gemelo (QIDTO) y RL cuántico sólo afirmados: el gemelo es un bloque de Fig. 1 más una ecuación de conservación; experimentos sin datos, simulador ni código; baselines [3,8,15] son pricing, diseño de red y selección de proveedores, no optimizadores de rutas; anuncia ocho ecuaciones, da siete. Bucle cerrado sin humano. Alternativa: incluir como conceptual (nivel 5, sin HITL)."
+}

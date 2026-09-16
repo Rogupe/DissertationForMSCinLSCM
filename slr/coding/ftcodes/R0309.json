@@ -1,0 +1,51 @@
+{
+  "id": "R0309",
+  "doi": "10.1016/j.ijpe.2023.108938",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-sciencedirect-com.hull.idm.oclc.org/science/article/pii/S0925527323001706",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Other",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Elevated",
+  "hitl_function": "Set objectives/constraints; Handle exceptions; Approve/override",
+  "hitl_conditions": "Delegation to AI depends on task standardisation and the human's metaknowledge: AI takes standardised tasks where it outperforms humans; humans keep non-standardised situations (experience, creativity); full automation rejected; barriers: algorithm aversion, over-weighting real-time alerts.",
+  "key_finding": "Proposes the iDT: an SC digital twin extended with an AI part (agents' training/learning environment, self-learning, rule discovery from data). Humans define practices and rules, decide (step 4) with iDT support and keep non-standardised situations; AI takes standardised tasks, recommends and extends human metaknowledge; mutual delegation, no full automation.",
+  "citation_locator": "Key finding: Abstract; 2.2 Cognitive digital twins and human-AI collaboration (Table 1); 4.1 General intelligent digital twin framework (Figs. 4-5); 4.2 General guidelines (Fig. 7, steps 1-5, step 4 = decision making). HITL: 2.2 (human-in-the-loop AI, mutual delegation), 4.1 (no full automation, standardised vs non-standardised tasks, metaknowledge), 4.2 (pre-/during/post-disruption support), 5 Conclusions (limitations: algorithm aversion, alert over-weighting). No page numbers visible (article 108938).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "an iDT – a human–AI system which visualizes physical SCs in digital form, collects and processes data for modelling using analytics methods, mimics human decision-making rules, and creates new knowledge and decision-making algorithms through human–AI collaboration",
+      "section": "2.2 Cognitive digital twins and human–artificial intelligence collaboration (also Abstract, 1 Introduction, 5 Conclusions)"
+    },
+    {
+      "text": "An iDT describes an SC (e.g. facility locations, demand points, warehouses, suppliers, production and logistics processes). Humans define decision-making and operational practices (e.g. multiple sourcing) as well as decision-making rules and algorithms (e.g. stock replenishment rules).",
+      "section": "4.1 General intelligent digital twin framework"
+    },
+    {
+      "text": "AI in the iDT can perform traditional expert system tasks (i.e. replicating decision rules coded by humans) and discover their own decision-making rules using training data. AI improves itself and extends the human's metaknowledge.",
+      "section": "4.1 General intelligent digital twin framework"
+    },
+    {
+      "text": "The iDT concept builds upon traditional digital twins and CDTs explicitly stating that both humans and AI can be knowledge-creating and decision-making units in that they can collaborate, mutually learn from each other, and delegate decision-making tasks to each other.",
+      "section": "4.1 General intelligent digital twin framework"
+    },
+    {
+      "text": "We stress that iDTs do not aim at fully automated decision making but rather strive for a combination of human and AI from the ‘human in the loop’ perspective, where the ‘human [remains] an integral part of AI decision making’",
+      "section": "4.1 General intelligent digital twin framework"
+    },
+    {
+      "text": "AI algorithms usually outperform humans in standardized tasks. However, humans have experience and creativity, which create complementary knowledge to AI algorithms for non-standardized situations. Second, human abilities on delegating tasks to others, including AI, depend on their metaknowledge",
+      "section": "4.1 General intelligent digital twin framework"
+    }
+  ],
+  "ft_note": "Incluido: artículo teórico cuyo objeto es el propio concepto de gemelo (iDT) con IA constitutiva (entorno de entrenamiento de agentes, autoaprendizaje, descubrimiento de reglas) y colaboración humano-IA explícita. Dudas: no ejecuta ni nombra un algoritmo concreto; ejemplos (anyLogistix, JD.com) tomados de la literatura; sin datos propios. Alternativa hitl_role: Maintained."
+}

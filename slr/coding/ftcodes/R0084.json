@@ -1,0 +1,51 @@
+{
+  "id": "R0084",
+  "doi": "10.1080/00207543.2026.2630277",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.tandfonline.com/doi/full/10.1080/00207543.2026.2630277",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector (illustrations: Automotive - Ford deep-tier network; Cloud/IT - Microsoft cloud supply chain)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "LLM/agent",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Elevated",
+  "hitl_function": "Set objectives/constraints; Approve/override; Interpret outputs; Handle exceptions",
+  "hitl_conditions": "Humans lead in non-standardised situations, define objectives, scenarios and agent rules, and validate/verify outputs; standardised, routine decisions (e.g. order placement, schedule changes) can be delegated to agents; alerts reach managers directly or after MAS pre-processing (stress test TTR>TTS).",
+  "key_finding": "Theorises the A-SCDT (agentic AI + digital twin + model-based optimisation/simulation) via the ICARUS framework: an architecture of data-concierge, co-pilot, LLM role, risk and operational agents around a central human planner; humans lead and validate, AI informs and automates flows, humans monitor anomalies.",
+  "citation_locator": "Key finding: Abstract; Sec. 1 Introduction (A-SCDT definition); Sec. 3 ICARUS framework; Sec. 4.2 Agentic supply chain digital twin (Fig. 4 architecture, Microsoft and Ford cases, generalised deployment scenario); Sec. 6.1-6.2. HITL evidence: Sec. 3 (Adaptation: 'keeping a human in the loop'; Synchronisation: decision competence delegated to algorithms); Sec. 4.1 Role of the A-SCDT (Fig. 3, human-AI complementarity); Sec. 4.2 (user as central entity, co-pilot agents, risk-agent alert options, operational agents execute); Sec. 4.3 (where humans lead / AI informs / AI automates / humans monitor); Sec. 5.1 Challenges (third to fifth: deskilling, model misuse, validation independent from AI); Sec. 5.2 (fourth: AI as primary interface); Sec. 6.2 Managerial implications (over-reliance warning). HTML version, no page numbers.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The A-SCDT is a composition of agentic AI, digital twins, and model-based optimization and simulation.",
+      "section": "Sec. 1 Introduction"
+    },
+    {
+      "text": "Essentially, the A-SCDT is a living model of the supply chain. It connects, orchestrates, and synchronises suppliers, plants, warehouses, production lines, logistics routes, demand signals, disruption alerts, capacities, and constraints into a dynamic environment with real-time and adequately updated data.",
+      "section": "Sec. 6.2 Managerial implications"
+    },
+    {
+      "text": "A manager communicates with models using the Generative AI Interface, supported by LLM Role Agents (e.g. developed in the Google Agent Development Kit) specialising in network, production, sourcing, and logistics tasks.",
+      "section": "Sec. 4.2 Agentic supply chain digital twin"
+    },
+    {
+      "text": "Essentially, the user is the central entity in Figure 4, and everything is centred around it.",
+      "section": "Sec. 4.2 Agentic supply chain digital twin"
+    },
+    {
+      "text": "Data technologies are essential to understand the A-SCDT design: e.g. where do humans lead, where does AI inform, where does AI automate the flow, and where do humans monitor anomalies.",
+      "section": "Sec. 4.3 Data technologies for agentic AI in digital twins"
+    },
+    {
+      "text": "Through orchestration of agents with adaptable logic of individual models, the competence of making decisions (e.g. placing orders in an inventory control system) can be delegated to algorithms.",
+      "section": "Sec. 3 The ICARUS framework (Synchronisation)"
+    }
+  ],
+  "ft_note": "Incluido como conceptual: el objeto es el concepto de gemelo agéntico (A-SCDT) con arquitectura (Fig. 4) y casos Microsoft/Ford tomados de la literatura; sin experimento ni datos propios. Integración mixta: apoyo consultivo centrado en el planificador (4) pero prevé agentes operativos que ejecutan decisiones rutinarias (5). Técnica LLM/agente; ML/RL sólo complementarios (¿Hybrid?). Return no cubierto."
+}

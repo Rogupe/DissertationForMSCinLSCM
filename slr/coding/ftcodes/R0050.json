@@ -1,0 +1,51 @@
+{
+  "id": "R0050",
+  "doi": "10.52209/2706-977x_2026_2_25",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://mmet.kstu.kz/download/articles/01072026094921_digest.pdf",
+  "exclusion_reason": "No AI/ML component",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "This paper presents the development of a digital model of the production process at a mechanical engineering enterprise, aimed at improving management efficiency using Big Data technologies and multi-criteria optimization methods.",
+      "section": "Abstract (printed p. 25; digest PDF p. 26)"
+    },
+    {
+      "text": "This model creates the prerequisites for the creation of digital twins of production routes and supports the implementation of adaptive methods for planning and optimizing material flows in real time.",
+      "section": "1.3 Workshop, text after Table 4 (printed p. 27; digest PDF p. 28)"
+    },
+    {
+      "text": "The structure of a machine shop was formalized, identifying the main functional elements of the production system, including production areas, buffers, product flow routes, and intra-shop logistics.",
+      "section": "Abstract (printed p. 25; digest PDF p. 26)"
+    },
+    {
+      "text": "Machine learning methods were used to analyze the processing quality and operational efficiency of the production system, and the results were visualized using 3D models and equipment utilization heat maps.",
+      "section": "1. Research methology [sic] (printed p. 26; digest PDF p. 27)"
+    },
+    {
+      "text": "Prediction code: import matplotlib.pyplot as plt import seaborn as sns # Add model predictions to a DataFrame X_test_copy = X_test.copy() X_test_copy['quality_predicted'] = model.predict(X_test)",
+      "section": "1. Research methology, code listing before 2. Results and discussion (printed p. 28; digest PDF p. 29)"
+    },
+    {
+      "text": "The proposed approach simultaneously accounts for time, production, and economic indicators, utilizes real production data and machine learning methods, and is capable of adapting to changing production system operating conditions and updating as new data accumulates.",
+      "section": "2. Results and discussion (printed p. 33; digest PDF p. 34)"
+    }
+  ],
+  "ft_note": "Excluido: el 'modelo digital' es un modelo paramétrico (fórmulas 1-6, grafo) calculado para una brida de ejemplo; el gemelo es trabajo futuro. El ML nunca se nombra ni especifica: solo 'model.predict' en código de graficado, sin algoritmo, datos ni métricas; el mapa de carga usa datos de ejemplo. Duda: cabría 'No digital twin'. Texto: PDF del número, pp. 25-34."
+}

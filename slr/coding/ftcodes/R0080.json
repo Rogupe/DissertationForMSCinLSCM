@@ -1,0 +1,51 @@
+{
+  "id": "R0080",
+  "doi": "10.1016/j.ijpe.2025.109841",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S0925527325003263?via%3Dihub (open access, Creative Commons; International Journal of Production Economics, January 2026, article 109841)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Machine tool manufacturing (CNC laser-cutting and tube-processing machines, Adige Spa / BLM Group, Italy; more than half of components outsourced)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Optimisation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Elevated",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Expert votes every 10 generations; HITL policy rerun periodically (1-2 weeks) or after major disruptions; feasible given long lead times, harder with hourly rescheduling; interpretability is the precondition for meaningful feedback, since black-box outputs were rejected by planners.",
+  "key_finding": "Action research at Adige Spa: an AnyLogic supply-chain twin drives evolutionary-RL learning of interpretable decision-tree scheduling policies, explained by four LLMs; expert votes steer the search, speeding convergence up to 21% and lowering makespan in 3/5 datasets, while interpretability proved decisive for stakeholder acceptance.",
+  "citation_locator": "Key finding: Sect. 7 Results (Figs. 7-8, up to 21% faster convergence, lower makespan in 3 of 5 datasets, Wilcoxon significant on 2 of 5), Sect. 9 Conclusions. Twin and supply chain framing: Sect. 3.1 Research setting (supply chain DT project, supplier sharing), Sect. 4 Problem description (segment of the supply chain, external components c1/c2, trucks to logistics centers), Sect. 5.1, 6.2 (AnyLogic DT models the supply chain segment, SAP MII data), 7 (side note), 8.1, 8.7. AI method: Sect. 5 (first iteration: GA, ACO, Optuna, PPO rejected as opaque), 5.1-5.1.1 (Grammatical Evolution + Q-learning decision trees), 5.2 and 6.4 (gpt-4o, Llama 3.1 405B, Mistral Large, Phi-3 explanations). HITL evidence: Sect. 3.2 (Operations Director requested HITL), Sect. 5 (planners' quotes rejecting black boxes), Sect. 5.3 Human-driven refinement (Figs. 4-5, vote adjusts selection pressure), Sect. 6.2 (feedback every 10 generations), Sect. 8.1 (planners make informed prioritisation decisions), 8.2 (HITL rerun periodically or after disruptions), 8.5 (five production experts' quotes on LLM explanations), 8.6-8.7, Sect. 9 Limitations (richer interaction, multi-user feedback as future work). No page numbers visible in the HTML version.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The DT, developed using AnyLogic, captures the complexities of the target supply chain, including the uncertainties and stochastic behaviors inherent in industrial operations.",
+      "section": "9. Conclusions and future research directions"
+    },
+    {
+      "text": "Consequently, a broader project was launched to develop a supply chain DT. Leveraging data collected through SAP, the company initiated the development of a DT of the production process, also including the supply chain",
+      "section": "3.1 Research setting"
+    },
+    {
+      "text": "Production also depends on two semifinished components, c1 and c2, supplied externally. Completed machines are transported by trucks to logistics centers, with transportation time being a significant factor.",
+      "section": "4. Problem description and analysis"
+    },
+    {
+      "text": "For the optimization component, this work builds upon the method proposed in Custode and Iacca (2023), which employs a two-level optimization scheme, implemented in Python, combining evolutionary computation and RL to train interpretable policies represented as decision trees.",
+      "section": "5.1 Evolutionary learning of interpretable decision trees"
+    },
+    {
+      "text": "Through the interface, the domain expert can cast a vote for the decision tree that best aligns with their preferences. This vote directly influences the next generation by adjusting the selection pressure during the parent selection process",
+      "section": "5.3 Human-driven refinement"
+    },
+    {
+      "text": "However, by incorporating human feedback into the optimization process, ieldt demonstrates faster convergence, achieving an up to 21% improvement (in terms of number of evaluations needed to achieve the same makespan, on average across 10 runs)",
+      "section": "7. Results"
+    }
+  ],
+  "ft_note": "Incluir. Bandera resuelta: el artículo enmarca el gemelo como DT de cadena de suministro (componentes externos c1/c2, camiones a centros logísticos, intercambio con proveedores), aunque la optimización es programación HFS por makespan. IA: evolución gramatical + Q-learning (árboles de decisión) y LLM explicativos. HITL: voto del experto guía la optimización. Dudas: Source/Deliver solo como fechas de llegada/transporte; hitl_role quizá 'Maintained'."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0291",
+  "doi": "10.1016/j.iot.2023.100753",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-sciencedirect-com.hull.idm.oclc.org/science/article/pii/S2542660523000768",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Warehousing",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Other deep learning",
+  "ai_role": "Other",
+  "integration_extent": "1 Descriptive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Operators trigger detection by tapping or automatic recognition and read the MR dashboard; their inputs enrich the image database; management is alerted only when a (designed, not implemented) risk index exceeds a threshold.",
+  "key_finding": "Lab prototype (HoloLens MR + Azure cloud + MySQL) framed as a warehouse digital twin: YOLOv5-s detects packages and pulls item records (location, order number) onto an MR dashboard for operators (125 FPS, 67.3% mAP). Forecast/risk functions only described; humans keep all logistics decisions.",
+  "citation_locator": "Key finding: Sect. 4.3 'Integration of object recognition application, MR and DT'; Sect. 5.2 'AI models comparison' (Table 2); Sect. 6 'Conclusions'. HITL: Sect. 1 'Introduction' (contribution iii, 'relieve their decision load'); Sect. 3.1 'Problem scenario' (operators' input enriches image database); Sect. 3.3 'Warehouse AI and MR digital twin model' (tap or automatic recognition); Sect. 3.4 'Information system integration for business workflow' (management alert at risk threshold). HTML view: no page numbers; subsection numbers inferred from order (Sections 3-6 numbered by the authors in the Introduction roadmap).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "To achieve the digital twinning of the warehouse, the physical layout and equipment are cloned in the digital space.",
+      "section": "Sect. 3.1 Problem scenario (Architecture of digital twinning with MR and AI)"
+    },
+    {
+      "text": "In this research, an integrated deep learning object recognition application in a DT scenario using an MR device was developed as a prototype for a warehouse.",
+      "section": "Sect. 6 Conclusions"
+    },
+    {
+      "text": "In the DT framework, we propose to adopt the YOLOv5-s [52] model for object detection in order to achieve a higher detection rate with fewer parameters for edge computing.",
+      "section": "Sect. 4.1 Design of object recognition model"
+    },
+    {
+      "text": "The AI model returns the object's position with a bounding box and the confidence of detection in percentage if any of the targeted objects, such as a helmet, head, person, or package, is detected.",
+      "section": "Sect. 4.3 Integration of object recognition application, MR and DT"
+    },
+    {
+      "text": "The AI algorithm can then forecast system conditions such as high loading risk, logistic delay projections, inventory placement conflict prediction, and so on, and integrate them into the dashboard for further processing.",
+      "section": "Sect. 3.4 Information system integration for business workflow"
+    },
+    {
+      "text": "Through AI-powered data processing and MR-assisted interaction with items, the proposed integrated system can enable operators to recognize items and relieve their decision load.",
+      "section": "Sect. 1 Introduction"
+    }
+  ],
+  "ft_note": "Incluir con reservas: arquitectura DT de almacén con capas y flujos (Figs. 2, 3, 6) y YOLOv5-s implementado; la IA sólo reconoce objetos y recupera información para el operario (nivel descriptivo). Las funciones predictivas (riesgo, retrasos) se describen sin implementar. Almacén es escenario simulado, no real. Dudas: evidence_type (Simulation vs Empirical data) y ai_role (Other vs Decision support)."
+}

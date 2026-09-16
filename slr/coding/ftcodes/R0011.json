@@ -1,0 +1,51 @@
+{
+  "id": "R0011",
+  "doi": "10.1016/j.cor.2026.107563",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S0305054826001814?via%3Dihub",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "LLM/agent",
+  "ai_role": "Decision support",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "Humans keep rule/policy definition, validation and verification of AI outputs (hallucination, reliability), and creative or non-standardized adaptation; agentic AI takes routine reasoning and orchestration. Industry 7.0 scenarios range from zero human intervention (cybernetic technocracy) to balanced human-in-the-loop.",
+  "key_finding": "Conceptualises Industry 6.0 as a digital-twin-driven, agentic-AI ecosystem and proposes a 7-layer OR-AI symbiosis architecture for agentic digital twins (infrastructure to resilience intelligence) in which OR models become continuous orchestration engines, agents autonomously synchronise cross-firm MPS/MRP, and managers define decision rules while validating AI outputs.",
+  "citation_locator": "Key finding: Sec. 4.2 'OR-AI symbiosis' (Fig. 6 7-layer architecture; MPS/MRP orchestration paragraph). HITL: Sec. 1 (managers define rules/policies, decisions emerge); Sec. 4.1.2 'Artificial intelligence' (human-in-the-loop AI); Sec. 4.1.3 (agentic AI independent of continuous human oversight); Sec. 4.4 'Practical examples' (planner queries fulfillment plan, risk agents alert planners); Sec. 5.1 (validation/verification; HITL vs cybernetic technocracy scenarios); Sec. 5.2 (HITL research directions). No page numbers visible (article 107563).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Industry 6.0 is a cyber-physical, digital twin-driven value-creation ecosystem that is based on human-AI collaboration-centric and viable manufacturing and supply chains.",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "The operational analytics level is the core of OR's contribution to agentic digital twins. Simulation and optimization, in combination with agent-based modeling and learning-based AI, frame the predictive and prescriptive analytics capabilities",
+      "section": "4.2. OR-AI symbiosis (7-layer architecture, Fig. 6)"
+    },
+    {
+      "text": "The interaction level is based on generative AI that empowers managers to define LLM agents reflecting decision-making rules in a user-friendly, no-code format",
+      "section": "4.2. OR-AI symbiosis (7-layer architecture, Fig. 6)"
+    },
+    {
+      "text": "Performance improvements can be observed not only in traditional key performance indicators (e.g., service level, inventory, costs) but also in reduced managerial complexity, as coordination shifts from frequent manual interventions to automated, system-driven alignment.",
+      "section": "4.2. OR-AI symbiosis (MPS/MRP orchestration example)"
+    },
+    {
+      "text": "Crucially, modern technological advancements enable forms of human-AI collaboration characterized by reciprocal delegation of tasks and decision rights, conceptualized as “human-in-the-loop AI.”",
+      "section": "4.1.2. Artificial intelligence (AI)"
+    },
+    {
+      "text": "However, the necessity for result validation and verification will persist and must be supplemented with human expertise that remains independent of AI.",
+      "section": "5.1. Toward Industry 7.0"
+    }
+  ],
+  "ft_note": "Incluido: viewpoint conceptual cuyo objeto es el gemelo digital agéntico con IA constitutiva (arquitectura OR-IA de 7 capas; agentes LLM; IA generativa para detectar disrupciones). Dudas: integration_extent 5 por orquestación autónoma MPS/MRP, aunque los ejemplos Microsoft/Ford son nivel 4; hitl_role Reduced (Tabla 1: la IA reemplaza el trabajo supervisorio) frente a Elevated; ai_technique podría ser Hybrid (OR+IA)."
+}

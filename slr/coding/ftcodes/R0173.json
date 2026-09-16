@@ -1,0 +1,51 @@
+{
+  "id": "R0173",
+  "doi": "10.1109/ciees66347.2025.11300246",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.researchgate.net/profile/Subhajit-Paul-19/publication/399077906_Integration_of_Digital_Twin_and_AI-enabled_ERP_Systems_A_Conceptual_Framework_for_Intelligent_Electronics_Manufacturing_Services/links/69ab8e94940e2d5e03ce0e7f/Integration-of-Digital-Twin-and-AI-enabled-ERP-Systems-A-Conceptual-Framework-for-Intelligent-Electronics-Manufacturing-Services.pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Electronics manufacturing services (EMS)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Decision support",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Humans stay only at the interface: operators and planners read DT/ERP visualisations via AR/VR for training and decision support; trust requires clear ERP suggestions; no approval gate is specified before automatic work or purchase orders.",
+  "key_finding": "Conceptual five-layer architecture (physical, digital twin, MES, ERP, AI-orchestration) in which the twin mirrors SMT/PCBA lines and feeds an AI layer that forecasts demand, reschedules production, optimises inventory and triggers work and purchase orders automatically; supplier, OEM and 3PL links run through ERP B2B messages.",
+  "citation_locator": "III. Research Methodology: Fig. 1 description and A.1-A.5 Multi-Layer Architecture (pp. 4-5, incl. A.4 ERP Layer 'logistics, procurement, order fulfillment'); B.2 AI-Enabled ERP and B.3 Closed-loop Feedback (p. 5); C.1-C.5 Key Functional Modules (p. 5); Fig. 2 sequence description (p. 5, 'triggering automatic purchase order'); D.2 Human-AI Collaborative interface (p. 5); E.4 Trust in AI (p. 6); V. Conclusion (p. 6, 'operate autonomously for predictive tasks')",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "The Digital Twin Platform functions as a virtual duplicate which creates a real-time simulation of manufacturing assets, production lines, operational workflows, and supply chain operations that exactly match physical factory operations.",
+      "section": "III. Research Methodology, A.2 Digital Twin Layer (p. 4)"
+    },
+    {
+      "text": "(6) original equipment manufacturer (OEM) and (7) Third Party Logistics' warehouse management systems (WMS) are also connected with (4) ERP systems through B2B messages.",
+      "section": "III. Research Methodology, description of Fig. 1 (p. 4)"
+    },
+    {
+      "text": "The AI-Orchestration Layer runs demand forecasting, predictive maintenance, inventory optimization, quality inspection, and dynamic scheduling operations through AI technology like machine learning (ML), predictive analytics, computer vision, natural language processing (NLP), and Generative AI.",
+      "section": "III. Research Methodology, A.5 ERP-AI-Orchestration Layer (p. 5)"
+    },
+    {
+      "text": "AI agents are embedded into ERP modules for supply chain optimization, supplier risk prediction, and real-time production cost modeling. This will use DT simulations for \"what-if\" analysis before ERP commits decisions.",
+      "section": "III. Research Methodology, B.2 AI-Enabled ERP (p. 5)"
+    },
+    {
+      "text": "The DT health models of Predictive Maintenance automatically produce ERP work orders and use ERP procurement to purchase any replacement part.",
+      "section": "III. Research Methodology, C.3 Predictive Maintenance (p. 5)"
+    },
+    {
+      "text": "Human-AI Collaborative interface: Operators and planners can access ERP user interface and DT visualizations through Augmented Reality / Virtual Reality technology for their training needs and decision support.",
+      "section": "III. Research Methodology, D.2 Novel Contributions (p. 5)"
+    }
+  ],
+  "ft_note": "Marco conceptual DT+ERP-IA para EMS: arquitectura de cinco capas con flujos de datos; encaje Make y tambien Plan/Source/Deliver (compras, 3PL, OEM). Dudas para Rodrigo: la IA solo se nombra por familias (ML, vision, NLP, GenAI, agentes), sin algoritmo ni validacion; el gemelo es de planta, el alcance extremo a extremo es del ERP; humano solo como interfaz AR/VR."
+}

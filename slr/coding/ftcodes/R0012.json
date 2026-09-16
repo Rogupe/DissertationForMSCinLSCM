@@ -1,0 +1,51 @@
+{
+  "id": "R0012",
+  "doi": "10.1007/978-3-032-21157-6_23",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-3-032-21157-6_23",
+  "exclusion_reason": "No AI/ML component",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "This research presents the design and development of a decision support framework that applies life cycle thinking to guide the adaptation of digital twining for sustainable supply chain management.",
+      "section": "Abstract"
+    },
+    {
+      "text": "This is made possible as a digital twin facilitates continuous data acquisition, visualization, and performs analytics including simulation modelling, machine learning, optimization and dynamic Life Cycle Assessment.",
+      "section": "Abstract (only mention of machine learning in the whole chapter)"
+    },
+    {
+      "text": "As shown in Fig. 1, the proposed framework mainly consists of four layers: physical layer, virtual layer, analytical layer and visualization layer.",
+      "section": "3 Proposed Framework"
+    },
+    {
+      "text": "Additionally, analytics related to environmental hotspot mitigation and resource optimization are carried out in this layer.",
+      "section": "3 Proposed Framework, Analytical layer (no method named)"
+    },
+    {
+      "text": "If some data analytics related to optimizing kiln loading are added under resource optimization, considering prevailing condition of the kiln and the material to be loaded, the analytical layer can generate a few optimum kiln loading patterns.",
+      "section": "4 Application of Framework in the Industrial Context (only concrete analytics example; hypothetical, method unspecified)"
+    },
+    {
+      "text": "When scenarios tested through this process produce acceptable LCIA results, they can be implemented in the physical layer via actuators or by decision makers depending on the type of decision.",
+      "section": "3 Proposed Framework, scenario analysis / decision flow chart (Fig. 2)"
+    }
+  ],
+  "ft_note": "Texto completo OA (proxy Hull). Marco conceptual de gemelo de cuatro capas (ISO 23247) para LCA dinámico de la cadena; 'machine learning' aparece solo en el resumen como capacidad genérica del gemelo; el cuerpo no especifica ningún método de IA (analítica = LCI/LCIA, simulación, 'optimización de recursos' sin método). Sin implementación (validación = trabajo futuro). Excluir: sin componente IA/ML."
+}

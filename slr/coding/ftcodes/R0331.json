@@ -1,0 +1,51 @@
+{
+  "id": "R0331",
+  "doi": "10.1007/978-3-030-85874-2_23",
+  "status": "FT_INCLUDE",
+  "url_read": "https://inria.hal.science/hal-04030352/document",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Discrete manufacturing (generic OEM with upstream supplier and downstream customer; no named case)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation; Decision support",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Set objectives/constraints; Interpret outputs",
+  "hitl_conditions": "Manual rescheduling by a supervisor/operator stays viable only for simple plans with loose timing; complex, tightly coupled schedules require system recalculation; rare exogenous risks (strikes, severe weather) enter as a manager-set input parameter.",
+  "key_finding": "Conceptual three-module framework: ML supplier-risk prediction (RF/SVM/kNN/ANN) feeds a shop-floor digital twin whose sense-and-respond ML model recommends rescheduling; the twin simulates and validates the schedule before it is pushed to MES for execution; a transit module cascades delays to customer delivery dates. No implementation or results.",
+  "citation_locator": "Text read = HAL author manuscript hal-04030352 (CC BY 4.0); Springer version of record via Hull proxy showed 'This is a preview of subscription content'. HAL PDF page n = paper page n-2 (published pp. 218-227). Key finding: Abstract (PDF p.3); Sec. 3 Machine Learning-Enabled Digital Twin Framework, Fig. 2 three modules (PDF pp.6-7, paper pp.4-5); Sec. 4.2 Digital Twin Learning Engine (PDF pp.8-10, paper pp.6-8); Sec. 5 Conclusions (PDF p.11, paper p.9). Twin: Sec. 2.2 (PDF p.5); Sec. 4.2 DT mirrors shop floor with ERP/APS/MES data, Fig. 3 physical factory / digital factory / mapping (PDF p.9); shared database, automated services, DT simulation validates the recommended schedule, then manufacturing management systems updated for execution (PDF p.10). AI: Sec. 4.1 Supplier Risk Prediction Module, RF/SVM/kNN/ANN/logistic regression, classification (days-late) or regression (arrival date) (PDF pp.7-8); Sec. 4.2 Sense-and-Respond ML Model trained with SVM/AdaBoost/RF/ANN (PDF p.10); Sec. 4.3 Customer Transit Module, ensemble of classifiers per transport mode, 'machine learning or optimization' (PDF p.10). HITL: Sec. 1 ML within the twin replaces offline adjustments / expert knowledge (PDF p.4); Sec. 4.1 environmental-risk input parameter 'as determined by the supply chain manager' (PDF p.8); Sec. 4.2 manual rescheduling by supervisor/operator described as current policy, feasible only if the plan is not too complex and timing not too tight, quality depends on the supervisor's prediction (PDF pp.8-9); model outputs shown on dashboards 'for human consumption' (PDF p.10); Sec. 4.3 baseline transit time 'established by the shipment planner' (PDF p.10). No human approval step is described in the recommend-validate-execute loop.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The Digital Twin Learning Engine is comprised of two parts, the Digital Twin and the Sense-and-Respond Machine Learning Model. The Digital Twin mirrors real-world operations on the shop floor",
+      "section": "4.2 Digital Twin Learning Engine (HAL PDF p.9, paper p.7)"
+    },
+    {
+      "text": "In this way, disruptions along the supply chain from supplier to manufacturing through delivery to the end customer are cascaded and incorporated into projected delivery date.",
+      "section": "4.3 Customer Transit Module (HAL PDF p.10, paper p.8)"
+    },
+    {
+      "text": "A number of machine learning methods will be explored including random forest, support vector machines, k-nearest neighbors and ANNs, or logistic regression for binary target outputs.",
+      "section": "4.1 Supplier Risk Prediction Model (HAL PDF p.8, paper p.6)"
+    },
+    {
+      "text": "By implementing machine learning within a digital twin framework, it is possible to continuously update the model with real-time data instead of relying on offline adjustments to the production schedule or expert knowledge.",
+      "section": "1 Introduction (HAL PDF p.4, paper p.2)"
+    },
+    {
+      "text": "Once validated, this information is then updated in the manufacturing management systems for execution of the revised schedule on the factory floor.",
+      "section": "4.2 Digital Twin Learning Engine (HAL PDF p.10, paper p.8)"
+    },
+    {
+      "text": "Model outputs are consumed by another auxiliary service/software application that will store the result(s) in the shared database and can also transform the outputs into visualizations for human consumption and display on pre-programmed dashboards.",
+      "section": "4.2 Digital Twin Learning Engine (HAL PDF p.10, paper p.8)"
+    }
+  ],
+  "ft_note": "Incluido: marco conceptual sin resultados: gemelo de planta ligado a MES/APS/ERP, módulos ML de riesgo de proveedor y tránsito; métodos ML solo enumerados. Solapa con R0328 (misma arquitectura; R0328 añade RA/HITL). Dudas: nivel 5 vs 4 (ejecuta tras validación por simulación, sin aprobación humana explícita); HITL solo implícito (dashboards, parámetro del gestor); E2E vía módulos ML, gemelo cubre solo planta."
+}

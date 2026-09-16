@@ -1,0 +1,51 @@
+{
+  "id": "R0118",
+  "doi": "10.1007/s43069-025-00522-0",
+  "status": "FT_INCLUDE",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/article/10.1007/s43069-025-00522-0",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Automotive",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Anomaly detection",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Reduced",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed",
+  "key_finding": "Layered IoT-digital twin-generative AI architecture with a hybrid BN-SE-PO model (Bayesian network, stacked encoder, Puma optimizer) for anomaly detection and decision suggestions; a claimed digital-twin simulation of a CNC machining cell reports OEE 65->82%, cycle time -25%, defects -50%, but the twin, data and validation are undocumented.",
+  "citation_locator": "Twin: Sect. 3.1 (paragraph after Fig. 11/Table 5, before the Table 4 discussion), Sect. 2.5/Fig. 6 (digital twin modeling layer), Sect. 2.2/Fig. 3 (lathe mirrored in a digital twin environment feeding an AI decision support system); results: Sect. 3.1 Table 4, Fig. 10; AI method: Sects. 2.4.1-2.4.2, Sect. 3 Table 5, Figs. 11-13; HITL: Sect. 2.5 (action layer/HMI: 'operators or autonomous systems'), Sect. 1.3 ('AI automates activities'), Sect. 2.3 ('reducing human efforts'); data doubt: Data Availability statement. HTML version, no page numbers visible.",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "To evaluate the productivity improvements associated with Industrial IoT (IIoT) adoption, a simulated smart manufacturing environment was developed using a digital twin model of a CNC machining cell.",
+      "section": "3.1 Prediction After the Use of BN-SE-PO (Results and Discussions)"
+    },
+    {
+      "text": "In this layer, real-time data updates virtual replicas of digital twins of machines, processes, or entire production lines that allow exact simulation and analysis of production scenarios.",
+      "section": "2.5 Role of Generative AI in Productivity Enhancement (Fig. 6 architecture, digital twin modeling layer)"
+    },
+    {
+      "text": "Integrating IoT with supply chain management, proposed approach leverages advanced techniques such as the stacked encoder optimized using the Puma optimization algorithm.",
+      "section": "2.4 Proposed Methodology Formulation for IoT and Supply Chain Integration"
+    },
+    {
+      "text": "Next, the BN-SE-PO Intelligence Layer integration of Bayesian networks, stacked encoders, and the Puma Optimizer expands the intelligence within the system via the provision for anomaly detection, risk analysis, and providing decision-making suggestions as an auto-controlled process.",
+      "section": "2.5 Role of Generative AI in Productivity Enhancement (Fig. 6 architecture, BN-SE-PO Intelligence Layer)"
+    },
+    {
+      "text": "These interfaces enable operators or autonomous systems to make informed, adaptive decisions regarding quality control, maintenance planning, or adjustments in operations, closing the smart manufacturing loop.",
+      "section": "2.5 Role of Generative AI in Productivity Enhancement (action layer / human-machine interface)"
+    },
+    {
+      "text": "Data sharing not applicable to this article as no datasets were generated or analyzed during the current study.",
+      "section": "Data Availability statement"
+    }
+  ],
+  "ft_note": "Inclusión dudosa. Gemelo solo afirmado: 'digital twin model of a CNC machining cell' para simular antes/después de IoT (3.1) y 'digital twin modeling layer' en arquitectura (Fig. 6), sin descripción, datos ni validación ('no datasets were generated'). Resultados atribuidos a IoT/redes neuronales; HITL ambiguo ('operators or autonomous systems'). Si se exige gemelo documentado, excluir: No digital twin / digital model."
+}

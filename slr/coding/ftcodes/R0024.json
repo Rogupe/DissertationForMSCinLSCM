@@ -1,0 +1,51 @@
+{
+  "id": "R0024",
+  "doi": "10.1007/s13437-026-00428-6",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/article/10.1007/s13437-026-00428-6",
+  "exclusion_reason": "Other (note reason)",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "Drawing on recent theoretical developments and empirical case studies, the study traces the conceptual evolution of digital twin architecture in maritime logistics from perception and transmission layers to AI-driven intelligence and application interfaces.",
+      "section": "Abstract (self-description of the paper: literature-based synthesis; no methods section anywhere in the text)"
+    },
+    {
+      "text": "For instance, a study at Shahid Rajaee Port successfully implemented a combination of Long Short-Term Memory (LSTM), Random Forest (RF), and Reinforcement Learning (RL) algorithms (Samaei and Ghafari 2025).",
+      "section": "3 Artificial intelligence architectures: the predictive engine of the twin (the LSTM/RF/RL results and all Table 3 metrics are reported from cited studies, not executed by the authors)"
+    },
+    {
+      "text": "Figure 1 attempts to show the integration of the data sources that feed the Digital Twin architecture. That architecture is enhanced by the use of AI algorithms that directly lead to changes in operational decisions […]",
+      "section": "10 Future horizons, research directions, and concluding synthesis (Fig. 1 'Integrated conceptual framework' is the only own contribution: a conceptual diagram, no implemented, simulated or component-level designed twin)"
+    },
+    {
+      "text": "What this paper has shown is that the technology is no longer speculative; it is already reducing emissions, cutting costs, and saving lives at ports around the world.",
+      "section": "10 Future horizons, research directions, and concluding synthesis (conclusion drawn from documented cases at Pusan, Rotterdam, Singapore, Tanjung Priok, all cited from other sources)"
+    },
+    {
+      "text": "This is followed by the “Execution” phase, where autonomous equipment, such as unmanned trucks and automated cranes, translates digital decisions into physical actions, thereby minimizing human error (Lau 2025).",
+      "section": "3 Artificial intelligence architectures (HITL-relevant statement, second-hand: 'Perception–Decision–Execution–Safeguarding' loop taken from Lau 2025)"
+    },
+    {
+      "text": "By synergizing “human wisdom with machine intelligence,” DTs under the Industry 5.0 paradigm achieve a more balanced operational model than the hyper-optimized but potentially brittle systems of Industry 4.0 (Sustainability Directory 2025).",
+      "section": "2 Conceptual foundations of digital twins in maritime logistics (HITL-relevant statement, second-hand; see also Table 7 'Workforce Strategy: Labor Replacement to Augmentation')"
+    }
+  ],
+  "ft_note": "Texto completo vía proxy Hull (10 secciones y 7 tablas). Revisión narrativa/síntesis conceptual sin método propio: no implementa ni diseña un gemelo (Fig. 1 es solo esquema conceptual) y los métodos IA (LSTM, RF, RL) se reportan de Samaei y Ghafari 2025. Excluir: Other = review. Contiene ideas HITL de segunda mano (Industria 5.0, bucle Percepción–Decisión–Ejecución, 'augmentation')."
+}

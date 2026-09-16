@@ -1,0 +1,51 @@
+{
+  "id": "R0150",
+  "doi": "10.56578/jemse040305",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://www.acadlore.com/article/JEMSE/2025_4_3/jemse040305",
+  "exclusion_reason": "No digital twin / digital model",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "This review paper proposes a new way to use RCM and AI/IoT data to update inventory levels in a dynamic model.",
+      "section": "1. Introduction (journal header labels the paper 'Review article')"
+    },
+    {
+      "text": "By using real-time data and digital twin simulations, the model helps predict spare parts usage more successfully, leading to better and less costly inventory control.",
+      "section": "1. Introduction (only assertion of the twin in the proposed model; no twin appears in the implementation section 1.3)"
+    },
+    {
+      "text": "Predicting the RUL of components in time-series sensor signals is possible with LSTM neural networks. 2. Using Random Forest, we could find out which categories of fault and how severe they were by reading the labeled upkeep records.",
+      "section": "1.3.2 Analytical tools and predictive modeling"
+    },
+    {
+      "text": "Using the predicted chances of failure and the time needed for new parts, the amount of spare parts in stock was constantly tuned to prevent both excess and short stocks.",
+      "section": "1.3.4 Case study: application in a commercial airline (pilot at a 100-aircraft regional airline; sensors + ML pipeline, no twin)"
+    },
+    {
+      "text": "These virtual replicas of physical assets allow for simulations of complex operations that can prelude the failure and assess the impact of maintenance strategies on the operations.",
+      "section": "8.1 Emerging Technologies Impacting Inventory Management (generic review statement on digital twins)"
+    },
+    {
+      "text": "...platforms that combine automated scheduling with human supervision for smooth task execution. ... while the routine tasks are handled by the automation, the skilled technician is going to take up the complex decision-making challenges.",
+      "section": "10.2 Evolving Standards and Practices Within the Industry (only HITL statement; generic, not tied to the proposed framework)"
+    }
+  ],
+  "ft_note": "Excluir: el gemelo digital solo se afirma (resumen, introducción); la implementación (§1.3) describe sensores IoT + LSTM/RF sin gemelo ni arquitectura; §8–10 lo tratan genéricamente. Además es 'Review article' autodeclarado, con cifras inconsistentes (18/20%, 15/25%) y tablas copiadas de [22]. Rol humano solo genérico: supervisión humana, técnico decide casos complejos (§10.2)."
+}

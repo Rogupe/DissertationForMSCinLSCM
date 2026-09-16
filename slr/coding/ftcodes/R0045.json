@@ -1,0 +1,52 @@
+{
+ "id": "R0045",
+ "doi": "10.1007/978-3-032-16889-4_39",
+ "status": "FT_INCLUDE",
+ "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-3-032-16889-4_39 (Hull proxy; open access chapter CC BY 4.0, full HTML text; Lecture Notes in Mechanical Engineering, CARV 2025 proceedings, published 26 May 2026)",
+ "exclusion_reason": null,
+ "evidence_type": "Conceptual",
+ "sector": "Generic/cross-sector (reconfigurable supply chain, no industry specified)",
+ "scor_plan": "Y",
+ "scor_source": "Y",
+ "scor_make": "Y",
+ "scor_deliver": "Y",
+ "scor_return": "N",
+ "end_to_end": "Y",
+ "ai_technique": "Hybrid",
+ "ai_role": "Optimisation; Forecasting/estimation",
+ "integration_extent": "4 Prescriptive-advisory",
+ "hitl_role": "Maintained",
+ "hitl_function": "Interpret outputs",
+ "hitl_conditions": "Not discussed",
+ "key_finding": "Conceptual framework only: a dynamic knowledge graph feeds a supply chain digital twin; an AI/metaheuristic optimisation engine suggests reconfigurations that are simulated and validated in the twin before deployment, with actors assessing scenarios; no implementation, named algorithm, or evaluation is provided.",
+ "citation_locator": "Key finding: Sect. 3 'Framework for Intelligent Reconfigurable Supply Chain' (overview paragraphs, Fig. 1, stages 'Data collection', 'Knowledge Graph Construction', 'Optimization and Configuration Selection', 'Implementation and validation'); Sect. 2.3 last paragraph ('we propose a conceptual framework'); Sect. 4 Conclusion. HITL evidence: Sect. 3 second paragraph ('allows actors to explore potential outcomes and assess the impact of disruptions before implementing adjustments'; 'suggest optimal configurations'); Sect. 4 ('AI-driven decision support'); Sect. 1 (human centricity named as a Supply Chain 5.0 goal, not developed). No page numbers visible in the HTML version.",
+ "use_in_typology": "Y",
+ "quotes": [
+  {
+   "text": "The DT modeling provides a virtual representation of the RSC, which can be used to simulate and analyze different reconfiguration scenarios in real time.",
+   "section": "3 Framework for Intelligent Reconfigurable Supply Chain (overview, 2nd paragraph)"
+  },
+  {
+   "text": "This data includes information such as material flows, inventory levels, production capacity and transportation schedules. Once collected, this data will be used to build a DT model that virtually represents the RSC.",
+   "section": "3 Framework for Intelligent Reconfigurable Supply Chain, stage 'Data collection'"
+  },
+  {
+   "text": "AI plays a key role in this stage by enriching the KG with missing data through knowledge completion, enrichment or prediction of future events such as demand fluctuations.",
+   "section": "3 Framework for Intelligent Reconfigurable Supply Chain, stage 'Knowledge Graph Construction'"
+  },
+  {
+   "text": "Advanced AI techniques, including metaheuristics and prediction can be used to address these complex challenges. These techniques allow different configurations to be compared against predefined criteria",
+   "section": "3 Framework for Intelligent Reconfigurable Supply Chain, stage 'Optimization and Configuration Selection'"
+  },
+  {
+   "text": "This step allows actors to explore potential outcomes and assess the impact of disruptions before implementing adjustments in the physical system. The AI-driven optimization engine is employed to evaluate and suggest optimal configurations.",
+   "section": "3 Framework for Intelligent Reconfigurable Supply Chain (overview, 2nd paragraph) - HITL evidence"
+  },
+  {
+   "text": "To address these gaps, we propose a conceptual framework that integrates KG, AI, optimization and DT to enable an intelligent approach to RSC.",
+   "section": "2.3 AI and Optimization in the Supply Chain Reconfiguration (last paragraph)"
+  }
+ ],
+ "ft_note": "Incluido como Conceptual: el objeto es el marco (Sección 2 es 'Background' narrativo, sin método de revisión). DT e IA solo diseñados conceptualmente: IA por familias (metaheurísticas, predicción/completado del KG), sin algoritmo nombrado ni implementación. HITL implícito (actores evalúan escenarios; IA 'sugiere'). SCOR inferido del alcance de red. Duda: si se exige método nombrado, excluir por 'No AI/ML component'.",
+ "ai_detail": "ai_technique detail: Hybrid (metaheuristics for configuration optimisation + unspecified predictive/knowledge-completion ML on the knowledge graph; no named algorithm) | ai_role detail: Optimisation (primary: AI-driven optimisation engine evaluates and suggests configurations; secondary Forecasting/estimation: KG completion and prediction of events such as demand fluctuations)"
+}

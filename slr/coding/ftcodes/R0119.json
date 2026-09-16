@@ -1,0 +1,51 @@
+{
+  "id": "R0119",
+  "doi": "10.1016/j.jfoodeng.2025.112577",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S0260877425001128?via%3Dihub",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical data",
+  "sector": "Food/cold chain",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "RNN/LSTM/GRU",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Not discussed",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed",
+  "key_finding": "A BiLSTM-attention model inside a five-dimensional cold-chain digital twin, using one pallet-level sensor, predicts in-box fruit temperature within ±0.3 °C (about 60% error reduction vs ambient-only), giving shelf-life errors under ±1.2 days and simulated food-loss reductions of 8.6-15.5%; box-level twins are the most precise unit.",
+  "citation_locator": "Key finding: Abstract; 3.3 Dynamic quality losses and their uncertainty analysis under box-level twins; 4. Discussion; 5. Conclusion. Twin architecture and HITL evidence: 2.1 Architecture of digital twin enabled cold supply chains (application services statement). AI method: 2.2.1 Prediction process; 2.2.2 Deep learning neural network. No page numbers visible (HTML version).",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "The VFC is a digital mirror of the PFC, comprising geometric, physical, behavioral, and rule-based models to simulate real-world conditions and predict food quality under various scenarios",
+      "section": "2.1 Architecture of digital twin enabled cold supply chains"
+    },
+    {
+      "text": "The experiment replicated a typical fresh-produce cold chain, comprising pre-cooling, cold storage, refrigerated transport, and loading/unloading (temperature breaks).",
+      "section": "2.3 Experimental design for data collection"
+    },
+    {
+      "text": "In the first stage, multi-source data—including experimental temperature measurements, food attributes, and equipment/environmental parameters—were used to train a Bidirectional LSTM (BiLSTM) model with an attention mechanism to minimize temperature prediction error.",
+      "section": "2.2.1 Prediction process"
+    },
+    {
+      "text": "The AS provides functional and business tools for real-time decision-making, enabling users to monitor, manage, and optimize supply chain activities.",
+      "section": "2.1 Architecture of digital twin enabled cold supply chains"
+    },
+    {
+      "text": "Ultimately, this model reduces food loss by approximately 8.6 %–15.5 % among the fruit types tested, outperforming both static shelf-life assumptions and simpler ambient-based methods.",
+      "section": "5. Conclusion"
+    },
+    {
+      "text": "Future efforts can refine this approach by incorporating additional management systems (e.g., anomaly detection and logistics optimization)",
+      "section": "5. Conclusion"
+    }
+  ],
+  "ft_note": "Incluir: gemelo digital de cadena de frío (modelo de cinco dimensiones; gemelos a nivel caja/palé/contenedor) implementado con BiLSTM+atención en PyTorch sobre datos experimentales reales; cadena de fruta (procesado, almacenamiento, carga/descarga, transporte). Dudas: reducción de pérdidas es simulada (¿Empirical data o Simulation?); 'processing' podría contarse como Make; HITL solo implícito (usuarios monitorizan y deciden vía servicios de aplicación)."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0223",
+  "doi": "10.1016/j.ijpe.2025.109743",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-sciencedirect-com.hull.idm.oclc.org/science/article/pii/S0925527325002282",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Packaging manufacturing / FMCG distribution (glass and plastic bottles)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "SC managers/stakeholders scrutinize the twin during design, monitoring and evaluation; the planning unit receives forecasts and alternative designs to select strategies; manually entered legacy data is auto-validated and down-weighted (Tier 3-4); some responses (contingency plans, ERP policy updates) run automatically.",
+  "key_finding": "A three-layer distribution-system twin (physical world, reported data, digital world) with an Elastic Net demand-forecasting core feeding a simulation-optimisation DSS integrated with ERP; in a glass/plastic bottle manufacturer it reports R2 0.86-0.87, MAE 9.2% of mean demand, 85-89% service levels and 22% better forecast accuracy.",
+  "citation_locator": "Key finding: Sect. 3 'Digital twin development' (Fig. 2 architecture; mixed-methods statement), Sect. 3.1 'Data-driven framework' (Elastic Net, training protocol, performance), Sect. 4.2 'Digital model and results' (Tables 3-6, Figs. 7-8), Sect. 5 'Conclusion'. HITL: Sect. 3.1 Step 6 (output reported to planning unit), Sect. 4.2 first paragraph (stakeholders/SC managers participate in design, monitoring, evaluation), Sect. 4.3 (human data-entry errors; manual legacy updates down-weighted), Sect. 5 limitations (3 of 12 facilities needed manual data integration). HTML version, no page numbers visible.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Fig. 2 illustrates the three-layer architecture of the proposed digital twin framework for demand prediction. The Physical World layer (bottom) depicts real-world entities like customers and distribution centers, with data collected through IoT sensors and ERP systems.",
+      "section": "3. Digital twin development"
+    },
+    {
+      "text": "A real industrial case a company is presented in this section, that manufactures glass and plastic products, established 50 years ago in collaboration with a bank, is examined.",
+      "section": "4. Digital twin conceptualization in a case problem"
+    },
+    {
+      "text": "the predictive core of the proposed digital twin employs scikit-learn's (v1.1.2) ElasticNet regression (α = 0.5, l1_ratio = 0.7) as the primary algorithm, trained on 18 months of historical data from the case study company",
+      "section": "3.1. Data-driven framework"
+    },
+    {
+      "text": "Hence, the system automatically triggers increasing production at F2 (shown in Table 3's state change), rerouting shipments from F1 (evident in reduced outflows), and adjusting safety stock parameters (Table 2).",
+      "section": "4.2. Digital model and results"
+    },
+    {
+      "text": "The proposed approach includes fundamental steps such as design, implementation, monitoring, and evaluation of the DT model, in which all main stakeholders, such as supply chain managers, actively participate.",
+      "section": "4.2. Digital model and results"
+    },
+    {
+      "text": "In this final step, the output data is reported to the planning unit, and the results are integrated with existing systems (such as logistics and warehousing units), which are typically managed using ERP systems.",
+      "section": "3.1. Data-driven framework (Step 6)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo del sistema de distribución (3 capas, ERP/IoT) con regresión Elastic Net como núcleo predictivo y DSS simulación-optimización, caso real (envases vidrio/plástico). Dudas: nivel 4 vs 5 (pasajes con disparos automáticos y políticas actualizadas cada 6 h); HITL poco discutido; inconsistencias (XGBoost vs Elastic Net, 22 vs 52 variables); Make/Source por producción y compras; end_to_end N (proveedores no modelados)."
+}

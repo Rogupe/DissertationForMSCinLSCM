@@ -1,0 +1,51 @@
+{
+  "id": "R0327",
+  "doi": "10.24251/hicss.2022.287",
+  "status": "FT_INCLUDE",
+  "url_read": "https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/edf75d7e-531a-4cdf-8911-c3f70528e2c4/content (open-access PDF 0228.pdf, 9 pages, reached from the ScholarSpace record https://scholarspace.manoa.hawaii.edu/items/5c90f342-a16c-4405-9e34-79ef21ed87c0 via https://doi.org/10.24251/hicss.2022.287; CHROME MODE + PDF MODE, pdf.js extraction; PDF page n = proceedings page 2290+n)",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Healthcare (drug/pharmaceutical distribution chain: manufacturer, custodian, wholesaler-distributor, pharmacies)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Reinforcement learning",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Reduced",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Human keeps final say on recommendations in the online DT phase; caution required before redeploying a retrained agent; in the experiment recommendations are always followed automatically (no human). No explicit triggers for changing the human role.",
+  "key_finding": "A two-phase framework trains a DRL agent (Dueling DDQN, action branching) in a simulated environment that then serves as the supply chain digital twin, recommending replenishment orders for a four-echelon drug chain; the agent approaches and sometimes exceeds base-stock performance, far exceeds a human-like heuristic, but is less stable.",
+  "citation_locator": "Key finding: Section 3 Methods and Figure 1 (PDF p. 3 / p. 2293), Section 4.1 Use-case specifications (PDF pp. 5-6 / pp. 2295-2296), Section 5 Results and Table 1 (PDF p. 7 / p. 2297), Section 6 Conclusion (PDF p. 7 / p. 2297). HITL evidence: Section 3 Methods (PDF p. 3 / p. 2293: agent recommends, decision-maker decides whether to follow), Section 3.2 Step 2 (PDF p. 4 / p. 2294: agent 'replaces the human in charge of evaluating the different possibilities'; caution before pushing a retrained network into production), Section 4.3 (PDF p. 7 / p. 2297: recommendations always followed during evaluation, no human), Section 6 next steps (PDF p. 8 / p. 2298: comparison with 'DTs with human control' left as future work).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "This paper proposes a framework of a supply chain digital twin where decisions are taken by a DRL agent.",
+      "section": "1. Introduction (PDF p. 2 / p. 2292)"
+    },
+    {
+      "text": "The Agent is used to recommend actions based on the digital twin. It is up to the decision-maker to follow the recommendations or not.",
+      "section": "3. Methods (PDF p. 3 / p. 2293)"
+    },
+    {
+      "text": "In this step, the Environment actually becomes an equivalent to the digital twin and the Agent replaces the human in charge of evaluating the different possibilities.",
+      "section": "3.2. Step 2: using the Environment as the digital twin (PDF p. 4 / p. 2294)"
+    },
+    {
+      "text": "(i) Pharmaceutical establishments who manufacture, import and sell drugs, (ii) Custodians who distribute drugs, (iii) Wholesaler-distributors who resell drugs to pharmacies and (iv) Pharmacies or Internal pharmacies who act as retailers, respectively outside and inside hospitals.",
+      "section": "4.1. Use-case specifications (PDF p. 5 / p. 2295)"
+    },
+    {
+      "text": "It uses an architecture called Dueling Double Deep Q-Network (Dueling DDQN), taken from [36]. A Deep Q-Network (DQN) progressively learns the value of taking an action in a given state [37].",
+      "section": "4.1. Use-case specifications (PDF p. 6 / p. 2296)"
+    },
+    {
+      "text": "To evaluate the Agent’s performance, we simulate 100 episodes of 30 periods, where we will always follow its recommended actions. During evaluation, the Agent can no longer learn.",
+      "section": "4.3. Using the Agent’s policy after training (PDF p. 7 / p. 2297)"
+    }
+  ],
+  "ft_note": "Incluido: marco DT+DRL para cadena farmacéutica de cuatro escalones; el agente recomienda pedidos y el decisor decide seguirlos o no (nivel 4). Dudas: en 3.2 el agente 'reemplaza al humano' que evalúa alternativas (hitl_role Reduced, no Maintained); en el experimento las recomendaciones se ejecutan siempre (nivel 5 de facto); DT simulado sin sistema real; Make N (fabricante con capacidad infinita)."
+}

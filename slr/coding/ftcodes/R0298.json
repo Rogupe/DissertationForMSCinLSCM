@@ -1,0 +1,51 @@
+{
+  "id": "R0298",
+  "doi": "10.1080/00207543.2022.2093682",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.tandfonline.com/doi/full/10.1080/00207543.2022.2093682",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "FMCG (consumer goods)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Classical ML",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Human keeps setting inventory/cash policies; the twin's decision tree is chosen as white-box so decision-makers can understand rules; analysts filter rules by service level >=98% and pick the lowest-CCC rule. Not theorised as a change in role.",
+  "key_finding": "Simulation-generated data trained a CART decision tree (83-86% accuracy) whose rules set inventory and cash replenishment policies; centralised planning with these rules cut the manufacturer's cash conversion cycle by 11.1 and 9.5 weeks versus decentralised planning, with and without disruptions; the wholesaler's ordering policy drives manufacturer CCC.",
+  "citation_locator": "Key finding: Sect. 5.2.2 (Fig. 6, hit ratio 83-86%), 5.2.3 (Figs 7-8, attribute relevance), 5.2.4 (Tables 6-7, -11.12 / -9.49 weeks), 6.2 para 3 (85% accuracy). HITL: Sect. 4 (Fig. 1 framework paragraph), 4.1 para 3, 6.2 para 2. HTML version, no page numbers visible.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Therefore, in this study, we develop a SC digital twin framework that integrates simulation and machine learning. Figure 1 shows the developed SC digital twin framework.",
+      "section": "4. SC digital twin"
+    },
+    {
+      "text": "Finally, the inventory and cash replenishment policies are outputted to the physical SC to inform decision making of the firms.",
+      "section": "4. SC digital twin (Figure 1 framework paragraph)"
+    },
+    {
+      "text": "In this study, a single-product serial SC is considered. This is a three-echelon SC with one manufacturer, one wholesaler, and one retailer, see Figure 2. This represents a typical FMCG SC.",
+      "section": "4.2. SC structure and simulation model"
+    },
+    {
+      "text": "To obtain the cash management knowledge from the training dataset and structure it through a decision tree, we employ the CART algorithm in the Scikit-learn library. The 10-fold cross-validation method is used to validate the results.",
+      "section": "5.2.2. Accuracy of the decision-tree algorithm"
+    },
+    {
+      "text": "The research seeks to provide guidelines to assist decision-makers in setting out inventory and cash replenishment policies by generating decision rules. This helps the decision-makers in understanding the decision making process.",
+      "section": "4.1. Machine learning and decision tree algorithms"
+    },
+    {
+      "text": "will allow practitioners not just to have a tool set to explore disruptions [...] but to standardise ways of working for on going planning rather than having to continually manually search for solutions.",
+      "section": "6.2. Managerial implications"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital de cadena FMCG de tres eslabones (DES SimPy + árbol CART scikit-learn) que genera reglas de reposición de inventario y efectivo. Verificado: ML = CART, no RL; humano = decisor que interpreta reglas y fija políticas (nivel 4), sin discusión explícita de HITL. Dudas: gemelo sin conexión a sistema real (caso simulado); Make=Y por capacidad del fabricante."
+}

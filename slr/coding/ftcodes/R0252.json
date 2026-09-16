@@ -1,0 +1,51 @@
+{
+  "id": "R0252",
+  "doi": "10.1016/j.cie.2024.110145",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S0360835224002663",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Semiconductor manufacturing",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Optimisation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Not discussed",
+  "hitl_function": "None",
+  "hitl_conditions": "Not discussed",
+  "key_finding": "A closed-loop DT (moving-average lead-time forecast, simulation, ANN surrogates inside PSO) re-optimising SOUT parameters every 30 days kept fill rate near 99%, cut backlog by 81-92% and improved time-to-recover and time-to-survive versus static parameters under COVID-shaped lead-time disruptions, at ~8.7 s per review; no human step in the loop.",
+  "citation_locator": "Key finding: Section 4 (8.67 s per review), Section 4.2 Table 4 and Fig. 6, Section 5.1, Section 6. HITL/autonomy: Abstract ('self-adjusts'), Section 3.1 ('the CS is triggered by the PS'), Section 3.2 ('optimal triplet ... utilized in the PS'), Fig. 3. HTML version, no page numbers (article 110145).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "the proposed DT consists of the Physical System (PS), which represents the real-world production–distribution processes, and the digital counterpart, denoted as Cyber System (CS), which is the virtual replica of the PS.",
+      "section": "3. Digital twin model"
+    },
+    {
+      "text": "Our focus is on the warehouse, which needs to issue orders to the supplier to satisfy the demand for raw materials from the production plant.",
+      "section": "2. Problem statement"
+    },
+    {
+      "text": "the CS consists of a combination of a simulation model, data analytics with the Moving Average (MA) technique, an Artificial Neural Network (ANN) as an ML model, and Particle Swarm Optimization (PSO) as a metaheuristic algorithm for the optimization procedure.",
+      "section": "3. Digital twin model"
+    },
+    {
+      "text": "Then, the two surrogate models are integrated into a PSO metaheuristic to select the optimal replenishment parameters that minimize the provided objective function.",
+      "section": "3.2. Cyber system"
+    },
+    {
+      "text": "the digital twin learns from the real production–distribution data and periodically self-adjusts the replenishment parameters based on the evolution of the external environment.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The optimal triplet of parameters determined by the PSO is then utilized in the PS.",
+      "section": "3.2. Cyber system"
+    }
+  ],
+  "ft_note": "Incluido: DT explícito (PS/CS, Fig. 3) con ANN surrogate + PSO que reoptimiza parámetros SOUT del almacén de materias primas frente al proveedor. Evaluación solo por simulación (sistema físico emulado; empresa de semiconductores como inspiración). Lazo cerrado sin humano descrito: propongo nivel 5 y HITL 'Not discussed'; dudas: Deliver (entrega interna almacén→planta) y si prefieres 'Replaced'."
+}

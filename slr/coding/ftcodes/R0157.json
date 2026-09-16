@@ -1,0 +1,51 @@
+{
+  "id": "R0157",
+  "doi": "10.3390/app15126939",
+  "status": "FT_INCLUDE",
+  "url_read": "https://doi.org/10.3390/app15126939 -> mdpi.com (Appl. Sci. 2025, 15(12), 6939, open-access HTML, full article read)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Circular manufacturing (food processing; WEEE magnet recycling)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "Y",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Humans intervene when the system raises an anomaly alert or a parameter/footprint change is required; engineers then simulate alternatives and decide. Privileges are role-based (administrators, production engineers, factory users); operators also enter data manually.",
+  "key_finding": "A containerized, data-space-compliant analytics service attached to existing factory digital twins adds ML anomaly detection, forecasting and trained regressors (magnet properties) in a juice plant and a three-actor WEEE magnet-recycling chain; outputs stay advisory: alerts and predictions feed engineers who simulate parameters and decide.",
+  "citation_locator": "Key finding: Sec. 3.2 Conceptual Architecture; Sec. 3.3; Sec. 4.2 Analytic Tools for Each Demonstrator; Sec. 4.3 Validation ('Intelligence' bullet); Sec. 5 Discussion and Conclusions. HITL evidence: Sec. 3.1.3 User-Centric Interface Design and Role-Based Interaction; Sec. 4.1.1 Greek Pilot (anomaly notification -> engineer simulates); Sec. 4.2 (Spanish tools 'do not make decisions'); Figure 6 caption (manual data entry by operators). Article no. 6939; no page numbers visible in HTML.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The proposed analytics architecture, as a specialized extension of the architecture proposed in [6], comprises a digital twin-attached, independent service with potential integrations to external service providers and overseeing authorities (Figure 1).",
+      "section": "3.2 Conceptual Architecture"
+    },
+    {
+      "text": "By integrating in the digital twin of the factory, real-time data from decanter and molasses products become accessible in the data analytics platform, where algorithms continuously monitor and analyze the production process for anomalies.",
+      "section": "4.1.1 Greek Pilot"
+    },
+    {
+      "text": "Together, they cover different steps in a supply chain that requires the exchange of information in order to optimize their production, analyze their costs and be aware of the materials that they will receive.",
+      "section": "4.1.2 Spanish Pilot"
+    },
+    {
+      "text": "For the magnetic properties, a set of ML regressors with different parameters was trained using manufacturing data, together with the magnetic properties after each process was performed.",
+      "section": "4.2 Analytic Tools for Each Demonstrator"
+    },
+    {
+      "text": "While these tools do not make decisions, they help determine the energy required to recycle a batch of EOL magnets and predict their potential final magnetic properties.",
+      "section": "4.2 Analytic Tools for Each Demonstrator"
+    },
+    {
+      "text": "This can trigger a notification to the factory’s production engineers, alerting them to the issue and prompting immediate action. With this information, the production engineer can use the platform’s process simulation and modeling tool to experiment with different production parameters.",
+      "section": "4.1.1 Greek Pilot"
+    }
+  ],
+  "ft_note": "Incluido: servicio analítico contenedorizado acoplado a gemelos digitales existentes, desplegado en dos pilotos (zumo, Grecia; reciclaje de imanes WEEE en cadena de tres actores, España). ML real: regresores entrenados para propiedades magnéticas, más detección de anomalías y forecasting. Dudas: algoritmos no nombrados ni evaluados; piloto griego intra-planta; Plan y Return codificados débilmente (rutas por lote; cadena inversa EOL)."
+}

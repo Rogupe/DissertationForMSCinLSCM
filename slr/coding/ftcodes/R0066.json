@@ -1,0 +1,51 @@
+{
+  "id": "R0066",
+  "doi": "10.70917/ijcisim-2026-2645",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://cspub-ijcisim.org/index.php/ijcisim/article/download/2645/2132?inline=1 (PDF, 14 pp., read with pdf.js in Chrome; landing page https://cspub-ijcisim.org/index.php/ijcisim/article/view/2645, published 2026-07-02, Vol. 18 No. 4s, pp. 1396-1409). Retrieval trail: doi.org -> 'DOI Not Found'; Crossref and Semantic Scholar have no record of this DOI; Crossref prefix 10.70917 belongs to 'Cerebration Science Publishing Co., Limited' (member 51771), which registers ~1,990 IJCISIM works incl. off-scope titles (Chinese traditional dance, digital calligraphy, English literature, sodium-alginate composites, podcasts); journal site (cspub-ijcisim.org, not mirlabs.org): APC 1,500 USD, claims double-anonymous review with >=2 reviewers, indexing page lists only Scimago/INSPEC/Google Scholar without links.",
+  "exclusion_reason": "No digital twin / digital model",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "This study presents an empirically validated, AI-driven framework integrating Graph Neural Networks, Reinforcement Learning, digital twin simulation, and probabilistic forecasting across 14,800 U.S. supplier relationships spanning six industry sectors.",
+      "section": "Abstract (p. 1396) - the claim as asserted; contradicted by Sections 3.2, 3.6, 3.7 and 6 below"
+    },
+    {
+      "text": "In total, 14,800 supply connections were generated across different business sectors. On top of that, thirty-one different business scenario profiles were created to test how bad disruptions could get",
+      "section": "3.2 Data Sources and Synthetic Augmentation Strategy (p. 1400) - the '14,800 supplier relationships' and '31 enterprise deployments' are synthetic"
+    },
+    {
+      "text": "Since there was no live data feed or link to actual physical equipment, the setup was explicitly labeled as a digital-twin-inspired simulator, rather than a live, functioning digital twin.",
+      "section": "3.6 Digital-Twin-Inspired Simulation, Sustainability Analysis, and Reinforcement Learning Optimization (p. 1402)"
+    },
+    {
+      "text": "These setups were clearly marked as synthetic test cases rather than live company operations to make sure the practical validation claims stayed realistic.",
+      "section": "3.7 Scenario Portfolio Evaluation and Computational Environment (p. 1402)"
+    },
+    {
+      "text": "the framework linked forecasting, graph-based vulnerability modeling, digital-twin-inspired disruption simulation, Scope 3 emissions estimation, and reinforcement-learning-based rerouting optimization.",
+      "section": "8. Conclusion (p. 1408) - AI methods: ARIMA/XGBoost/LSTM forecasting, GCN/GraphSAGE/GAT via PyTorch Geometric (3.5, 4.2), tabular Q-learning (3.6)"
+    },
+    {
+      "text": "Consequently, the network structure is shaped more by basic design assumptions than by real-life maps of operational supply chains.",
+      "section": "6. Limitations and Threats to Validity (p. 1407)"
+    }
+  ],
+  "ft_note": "Excluir (criterio 1): autores declaran NO construir gemelo digital; simulador 'inspirado en DT' sobre red sintética (14,800 enlaces y 31 escenarios simulados, no despliegues). Cifras del resumen (87.3%, ROI 3.7x, NLP 18.3 días) ausentes del cuerpo. Alternativa: venue de baja calidad (DOI no registrado; prefijo de Cerebration Science Publishing, no MIR Labs; APC 1,500 USD; ~1,990 artículos fuera de alcance)."
+}

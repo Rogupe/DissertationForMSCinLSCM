@@ -1,0 +1,39 @@
+{
+  "id": "R0089",
+  "doi": "10.1007/978-981-95-8056-9_35",
+  "status": "NOT_RETRIEVED",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-981-95-8056-9_35",
+  "exclusion_reason": null,
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "This is a preview of subscription content, log in via an institution to check access.",
+      "section": "Springer chapter landing page via Hull proxy (after abstract)"
+    },
+    {
+      "text": "By constructing a digital twin framework that integrates multi-source data and high-fidelity models, dynamic perception and bidirectional interaction with the physical system are realized.",
+      "section": "Abstract (only part visible; not coded)"
+    },
+    {
+      "text": "This research proposes a collaborative decision-making mechanism based on agent-based modeling and reinforcement learning, and focuses on exploring its application in key scenarios such as dynamic warehouse reservation and emergency logistics channel guarantee.",
+      "section": "Abstract (only part visible; not coded)"
+    }
+  ],
+  "ft_note": "Paywall Springer (LNEE vol. 1595, paquete 'Springer Nature Proceedings excluding Computer Science'): el proxy de Hull sigue mostrando solo el resumen ('preview of subscription content'). Semantic Scholar no indexa el DOI (sin copia OA). Se requiere PDF manual (Tec/compra) antes de codificar; por resumen parece candidato a inclusión (gemelo + ABM/RL + logística urbana)."
+}

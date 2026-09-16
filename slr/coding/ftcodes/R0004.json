@@ -1,0 +1,39 @@
+{
+  "id": "R0004",
+  "doi": "10.1109/icbdml68582.2026.11544180",
+  "status": "NOT_RETRIEVED",
+  "url_read": "https://ieeexplore.ieee.org/document/11544180",
+  "exclusion_reason": null,
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "The framework creates a spatio-temporal digital twin of e-waste flows, which incorporates graph neural prediction of waste generation, deep reinforcement learning prediction of adaptive collection and routing, and multi-objective evolutionary optimization prediction of processing and material recovery.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "Experimental assessment on the city scale shows that there are very high increments in performances relative to traditional methods that depend on rules to use in collection, logistics systems relying on optimization and, hybrid AI logistics systems.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "Sign in to Continue Reading",
+      "section": "Body, immediately after the first paragraph of I. Introduction (paywall marker shown although header read 'Access provided by: Tec Monterrey (formerly ITESM)')"
+    }
+  ],
+  "ft_note": "NO RECUPERADO: IEEE Xplore muestra 'Access provided by: Tec Monterrey' pero el texto se corta tras el primer párrafo de la Introducción con 'Sign in to Continue Reading' (esperé 8 s + 8 s; secciones II-V nunca cargaron). Proxy Hull no aplica a IEEE. Semantic Scholar: isOpenAccess=false, sin PDF abierto. Requiere descarga manual del PDF (ICBDML 2026, DOI arriba)."
+}

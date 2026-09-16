@@ -1,0 +1,47 @@
+{
+  "id": "R0064",
+  "doi": "10.1117/12.3107986",
+  "status": "NOT_RETRIEVED",
+  "url_read": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/14161/3107986/Research-on-the-application-of-digital-twin-technology-in-collaborative/10.1117/12.3107986.full",
+  "exclusion_reason": null,
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "this study constructs a supply chain collaborative management system driven by digital twins. A joint optimization mechanism of graph neural networks and reinforcement learning is introduced to achieve structural self-awareness and strategic self-evolution within the supply chain.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "Experimental results show that the DGAT-GNN + Risk-aware SAC model performs well in dynamic perturbation scenarios, achieving a 95% convergence rate of 342 ± 21 steps, approximately 40% higher than the control model.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "Multi-dimensional user ratings indicate an overall system satisfaction score of 4.54, with the highest score of 4.55 for intelligent coordination.",
+      "section": "Abstract (only part visible; possible human-evaluation component to verify in the full text)"
+    },
+    {
+      "text": "Access the full article / Access through your institution / Sign in with an organizational or personal account / Purchase with a subscription",
+      "section": "SPIE article page, sign-in gate below the abstract (id sign-in-gate) next to the 'Get Access' button; no PDF link rendered"
+    },
+    {
+      "text": "www.spiedigitallibrary.org Additional security check is required. To ensure the security and integrity of SPIE, we require CAPTCHA on specific webpages.",
+      "section": "CAPTCHA interstitial shown after the Hull proxy redirected to the un-proxied SPIE hostname (not solved)"
+    }
+  ],
+  "ft_note": "NO RECUPERADO: SPIE solo muestra el resumen ('Get Access', 'Access through your institution', 'Purchase with a subscription'). Proxy Hull redirige al host sin proxy (SPIE no configurado) y SPIE devolvió muro CAPTCHA, no resuelto. Semantic Scholar y OpenAlex: cerrado, sin PDF abierto. Descarga manual del PDF (Proc. SPIE 14161, 141611A). Resumen sugiere twin + GNN/RL; verificar rol humano."
+}

@@ -1,0 +1,51 @@
+{
+ "id": "R0184",
+ "doi": "10.1108/ejms-03-2025-0028",
+ "status": "FT_EXCLUDE",
+ "url_read": "https://www.emerald.com/ejms/article/31/2/87/1334433/The-smart-supply-chain-management-Huawei-s",
+ "exclusion_reason": "No AI/ML component",
+ "evidence_type": null,
+ "sector": null,
+ "scor_plan": null,
+ "scor_source": null,
+ "scor_make": null,
+ "scor_deliver": null,
+ "scor_return": null,
+ "end_to_end": null,
+ "ai_technique": null,
+ "ai_role": null,
+ "integration_extent": null,
+ "hitl_role": null,
+ "hitl_function": null,
+ "hitl_conditions": null,
+ "key_finding": null,
+ "citation_locator": null,
+ "use_in_typology": null,
+ "quotes": [
+  {
+   "text": "Digital twins enable the replication of physical supply chain operations in a digital environment, creating a closed loop between digital simulations and real-world processes.",
+   "section": "4.7 The Lingfeng intelligent logistics centre (only definitional description of the twin; cited to Lening, 2022)"
+  },
+  {
+   "text": "performs automated risk assessments and generates recommendations for process adjustments with minimal human intervention. Updates are automatically relayed to relevant managers, improving responsiveness and supporting the development of supply chain digital twins",
+   "section": "4.7 The Lingfeng intelligent logistics centre (Intelligent Operation Centre; HITL statement for the deployment)"
+  },
+  {
+   "text": "Hybrid algorithms are used to solve these large-scale problems efficiently. Linear Programming (LP) addresses linear relationships and constraints, while Mixed-Integer Programming (MIP) models discrete decisions, such as shipment quantities and facility operations.",
+   "section": "4.6 Algorithmic modelling for the intelligent supply chain (MOCO model, Figure 4; the only specified method)"
+  },
+  {
+   "text": "The ISC + project incorporates self-learning algorithms to enhance decision-making within logistics operations, enabling real-time adjustments based on simulated or observed data.",
+   "section": "5. Discussion (self-learning/ML named only here and in the Conclusion, never specified; absent from 4. Results)"
+  },
+  {
+   "text": "From this circular flowchart, a right-pointing arrow arises and points to a box labeled “Automatic execution of substitution-splitting-adjustment”.",
+   "section": "Figure 5 alt-text, 4.7 ('After' workflow; the 'Before' row lists manual steps such as “Determine supply-demand matching using experience”)"
+  },
+  {
+   "text": "However, these benefits can only be realised when AI outputs are validated through human judgment, ensuring accountability and accuracy in decision-making.",
+   "section": "5.4 Advanced risk management (normative HITL statement, not observed in the case)"
+  }
+ ],
+ "ft_note": "Propongo excluir (límite): caso único con datos secundarios corporativos; el gemelo y los 'self-learning algorithms' solo se afirman, sin arquitectura/método; lo único especificado es optimización MOCO/LP/MIP (IO clásica). Rol humano: flujo manual 'using experience' sustituido por recomendación y ejecución automáticas 'with minimal human intervention'; validación humana solo normativa. Si se acepta LP/MIP como IA: incluir, nivel 4-5, HITL reducido."
+}

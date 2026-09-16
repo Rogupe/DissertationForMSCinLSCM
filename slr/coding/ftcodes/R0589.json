@@ -1,0 +1,93 @@
+{
+  "id": "R0589",
+  "doi": "10.1109/access.2025.3606168",
+  "status": "FT_INCLUDE",
+  "url_read": "https://ieeexplore.ieee.org/document/11151263",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Warehousing/logistics (nationwide distribution network, China)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs; Set objectives/constraints",
+  "hitl_conditions": "Role and data resolution depend on organisational level: managers/planners receive coarse statistical indicators for strategic/planning decisions; schedulers/operators receive fine operational data for task assignment and onsite dispatch; authorised users access other levels remotely; during COVID-19 local operators decided decentrally.",
+  "hitl_decision_levels": [
+    {
+      "level": "1 Managers",
+      "who": "manager & vice manager who operate the entire logistics processes",
+      "systems": "ERP, EGSS, 3PIP",
+      "data_resolution": "coarsest, abstract statistical indicators (3D-detailed DT visualization is 'data overload' for them)",
+      "decision_type": "strategic decisions",
+      "source": "Sec. III-A; III-B; III-D1"
+    },
+    {
+      "level": "2 Planners",
+      "who": "planning department at headquarters coordinating local divisions nationwide",
+      "systems": "ERP, WMS, TMS, EGSS (intensive)",
+      "data_resolution": "statistical indicator data to coordinate planning, execution and scheduling (simulation and optimization)",
+      "decision_type": "systematically optimized planning decisions; 'face the most complicated situations'",
+      "source": "Sec. III-B; III-D1"
+    },
+    {
+      "level": "3 Schedulers",
+      "who": "regional scheduling divisions, geographically distributed",
+      "systems": "local WMS, TMS",
+      "data_resolution": "finer operational data (statistical, coarse-grained data is 'underload' for onsite scheduling)",
+      "decision_type": "assign operational tasks within their own divisions",
+      "source": "Sec. III-B; III-D1"
+    },
+    {
+      "level": "4 Operators",
+      "who": "frontline operation departments at manufacturers and warehouses, subordinate to schedulers",
+      "systems": "WMS, PAS, IVSS",
+      "data_resolution": "finest: operational detailed data (3D visualization, simulation); black-box detail 'more valuable for the onsite operators than the schedulers'",
+      "decision_type": "execute schedulers' instructions; onsite dispatch now tracked online via the DT; during COVID-19 given 'the ability to make decentralized decisions'",
+      "source": "Sec. III-B; III-D1; V-A; VI"
+    },
+    {
+      "level": "Cross-level rules",
+      "who": "all users",
+      "systems": "DigiPyramid DSI interface plus each level's operational systems",
+      "data_resolution": "18 AHP-weighted decision-support indicators from a questionnaire answered by users at the four levels (Table 1), adjusted dynamically per scenario",
+      "decision_type": "with authorization a user can access other levels' interfaces for remote operations; AI (BN/CV) only completes ambiguous data, decisions stay with humans",
+      "source": "Sec. III-A; III-D1; IV-B; V-B; V-C"
+    }
+  ],
+  "key_finding": "Implemented multiresolution logistics twin (DigiPyramid) for a Chinese nationwide logistics firm: RPA aggregates ERP/WMS/TMS data, Bayesian networks and computer vision fill 'breakpoints', 'gray boxes' and 'black boxes', and AHP-derived indicators serve four human decision levels (managers, planners, schedulers, operators); humans keep all decisions, AI only improves twin fidelity.",
+  "citation_locator": "Key finding: Abstract; Sec. I (RQ1-RQ3); Sec. III-A (Fig. 1 pyramid); Sec. IV-A (RPA), IV-B (AHP, Table 1: 18 DSIs); Sec. V-A/V-B/V-C (ambiguity types, BN, CV); Sec. VI (COVID-19 case); Sec. VII-A/VII-B. HITL: Sec. I, paragraph before RQ3 ('most decisions still rely on personal experience of human operators'); Sec. III-B (data overload/underload by level); Sec. III-D1 (four levels, their systems and decision types); Sec. III-D3/Fig. 6 (level-specific interfaces); Sec. VI (operators' timely and decentralized decisions); Sec. VII-C (GenAI 'may extend human-AI collaboration' as future work). IEEE Access vol. 13, pp. 159796-159811 (page numbers not visible in the HTML).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The DigiPyramid proposed in this article was a low-cost and flexible DT framework for Company Z, a Chinese nationwide logistics enterprise.",
+      "section": "III. Conceptualization of DigiPyramid (opening paragraph)"
+    },
+    {
+      "text": "The DigiPyramid employed BN-based algorithms to eliminate the ambiguity of “breakpoints” and “gray boxes.” For example, according to the malfunction of a device, the possibility can be inferred by the probability a priori by training the previous datasets.",
+      "section": "V-B. BN-Based Data Estimation"
+    },
+    {
+      "text": "DigiPyramid employed CV algorithms to analyze the monitoring video data on platform operation, opening the “black box” to some extent.",
+      "section": "V-C. CV-Based Recognization"
+    },
+    {
+      "text": "Nowadays, AI and optimization approaches replace humans in automatically making operational decisions. However, most decisions still rely on personal experience of human operators [5], [9]. On the other side, different-level operators require different resolutions and data granularity for their decision-making.",
+      "section": "I. Introduction (paragraph preceding RQ3)"
+    },
+    {
+      "text": "The hierarchical structure of decision chains in the distributed logistics process management formed a pyramid-like organization structure, containing four levels from top to bottom, namely, managers, planners, schedulers, and operators (as shown in Fig. 1).",
+      "section": "III-A. Framework Overview"
+    },
+    {
+      "text": "In addition, the DT platform also provided the local operators with the ability to make decentralized decisions.",
+      "section": "VI. DT-Assisted Reliable Logistics Management"
+    }
+  ],
+  "ft_note": "Incluido: gemelo multirresolución implementado (RPA, AHP) en logística nacional china; IA nombrada y empleada: redes bayesianas (estimación de datos en breakpoints/gray boxes) y visión por computador (black boxes). Humanos deciden en cuatro niveles (estructura en campo extra hitl_decision_levels). Dudas: IA descrita brevemente, sin métricas; RPA/AHP no son IA; end_to_end=N (sin proveedores); hitl_role 'Maintained' vs 'Elevated'."
+}

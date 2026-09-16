@@ -1,0 +1,51 @@
+{
+  "id": "R0025",
+  "doi": "10.1145/3802463.3802479",
+  "status": "FT_INCLUDE",
+  "url_read": "https://dl-acm-org.hull.idm.oclc.org/doi/10.1145/3802463.3802479 (Hull proxy; direct dl.acm.org showed a Cloudflare 'Verify you are human' check that was not solved; article is Open Access CC BY-NC-ND, full HTML read; ICCMB '26 pp. 102-106)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Discrete manufacturing / electronics assembly (laboratory IoT-Factory, HSBI Bielefeld; smart product in ~150 variants, mobile robots for parts supply)",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "LLM/agent",
+  "ai_role": "Other",
+  "integration_extent": "1 Descriptive",
+  "hitl_role": "Elevated",
+  "hitl_function": "Set objectives/constraints; Approve/override; Interpret outputs",
+  "hitl_conditions": "Planner states the structural change in natural language; agents plan via RAG, retrieve OFacT documentation/state model and execute edits; planner reviews responses and a validation step confirms intent alignment; simulation-expert step instructions eliminated; real-planner evaluation pending.",
+  "key_finding": "Agentic LLM system (five Smolagents code agents, ReAct, RAG over OFacT documentation/state model; Qwen3-32B) lets non-experts structurally adapt an event-log-generated material-flow twin of a lab assembly factory via natural language; lean multi-agent, RAG planning and non-reasoning LLMs performed best (up to 100% success), removing expert-authored step instructions.",
+  "citation_locator": "Key finding: Section 3 LLM-based Design Assistant (architecture, Figure 1), 4.1 Evaluation Scenarios and Design Variants, 4.2 Results (Table 1), 4.3 Comparison with Former Framework (Figure 2), 5 Summary and Outlook (HTML without page numbers; proceedings pp. 102-106). HITL evidence: Abstract (natural-language interaction with non-expert users); 1 Introduction paras 2-3 (step instructions only authorable by simulation experts, eliminated); 2.3 last para (workflow enabling production experts); 4.1 (user interaction time = composing prompts and reviewing responses); 4.3 (additional validation step to ensure alignment with the user's intent); 5 Summary (supply chain and production planners directly adapt SBDTs; limitation ii: evaluation with real production planners pending).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Simulation-based digital twins are a core foundation for the efficient and holistic optimization of material-flow systems across the lifecycle – from design and planning to control. However, constructing digital representations of supply chains and production/logistics systems is labor-intensive and largely manual.",
+      "section": "Abstract"
+    },
+    {
+      "text": "...with in-line quality tests after each station as well as mobile robots for parts supply. It supports automated assembly and disassembly without human intervention. The SBDT was auto-generated from factory event logs using OFacT.",
+      "section": "4.1 Evaluation Scenarios and Design Variants"
+    },
+    {
+      "text": "...an LLM-based design assistant, which performs modeling through natural-language interaction with non-expert users. The assistant employs an agentic, retrieval-augmented generation (RAG) workflow and relies exclusively on publicly available information from the open-source digital-twin platform OpenFactoryTwin (OFacT) to execute adaptations.",
+      "section": "Abstract"
+    },
+    {
+      "text": "We measured total modification time (end-to-end adaptation duration) and user interaction time (time spent composing prompts and reviewing responses) and success rates. All tests used the Qwen3-32B model.",
+      "section": "4.1 Evaluation Scenarios and Design Variants"
+    },
+    {
+      "text": "...where the new framework required more user time, likely due to an additional validation step to ensure alignment with the user's intent (Figure 2).",
+      "section": "4.3 Results from Comparison with Former Framework"
+    },
+    {
+      "text": "To enable supply chain and production planners to directly adapt SBDTs during (re)design, we propose shifting from a single-agent LLM to an agentic AI, thereby increasing flexibility and minimizing DT-specific engineering (e.g., step instructions).",
+      "section": "5 Summary and Outlook"
+    }
+  ],
+  "ft_note": "Incluido: SBDT de flujo de materiales (OFacT, autogenerado de event logs; IoT-Factory de laboratorio) adaptado por IA agéntica (5 agentes Smolagents, ReAct, RAG, Qwen3-32B) vía lenguaje natural del planificador no experto, que redacta prompts y valida resultados. Dudas: caso de producción con encuadre SC/logístico del paper; evidence_type (¿Simulation/synthetic?); nivel 1 (IA en capa de modelado) vs 4; Elevated vs Reduced."
+}

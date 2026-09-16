@@ -1,0 +1,51 @@
+{
+  "id": "R0097",
+  "doi": "10.1016/j.dajour.2025.100646",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S277266222500102X?via%3Dihub",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Manufacturing (generic, hypothetical job shop)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Simulation surrogate",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Explicitly a 'human-in-the-loop DT system', not autonomous: humans evaluate and execute ML-suggested mitigation sets; role unchanged by real-time updates. Authors note workforce training, data infrastructure and weekly/event-triggered updates as implementation conditions (Sect. 3, 5).",
+  "key_finding": "Simulated DT (Simio DES: five-station plant, five suppliers, (Q,r) inventory, condition-based maintenance) with six ML regressors as surrogates predicting profit of 5,880 mitigation combinations; static recommendations recover 72%/50% of lost profit (32/48-day delays), and real-time state updates at supply arrival change the optimal mix (forklift, reorder quantity, overtime).",
+  "citation_locator": "Key finding: Sect. 4.2.1-4.2.2 (Tables 6-10) and Sect. 5 Managerial implications; HITL: Sect. 3 Methods (paragraph after Fig. 1) and Sect. 5; twin and caveat: Sect. 1 Introduction, Sect. 3 Methods (Figs. 1-2); SC framing: Sect. 3.2.2 Inventory, 3.3.1 Supply disruption, 6 Conclusion. No page numbers visible (article no. 100646).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The research in this article does not interface with data from a real manufacturing facility; however, the architecture and operation of the proposed model conform to the fundamental principles of a DT.",
+      "section": "3. Methods"
+    },
+    {
+      "text": "This necessitates the acquisition of five distinct materials from five suppliers. As shown in Table 2, the lead time in days for each supplier follows a gamma distribution.",
+      "section": "3.2.2. Inventory"
+    },
+    {
+      "text": "This article presents a framework for using DT simulations integrated with predictive machine learning models to manage supply chain disruptions in manufacturing settings.",
+      "section": "6. Conclusion"
+    },
+    {
+      "text": "Linear regression was chosen for its simplicity and interpretability, functioning as a linear benchmark. To model nonlinear interactions and enhance predictive performance, we tested K-Nearest Neighbors (KNN), Decision Tree, Random Forest, and Gradient Boosting regression models.",
+      "section": "3.4. Machine learning model"
+    },
+    {
+      "text": "As described in Fig. 1, this DT functions as a real-time decision support tool, not as a closed-loop control system. The simulation-prediction framework offers suggestions for mitigating disruptions, which are presumed to be evaluated and executed by human decision makers.",
+      "section": "3. Methods"
+    },
+    {
+      "text": "The model simulates real-time system behavior but does not perform physical control actions directly. This design conceives of a human-in-the-loop DT system, as opposed to entirely autonomous cyber–physical systems.",
+      "section": "3. Methods"
+    }
+  ],
+  "ft_note": "Incluir: DES en Simio que los autores llaman DT (marco Figs. 1-2), con cinco proveedores, lead times, política (Q,r), disrupción de suministro y montacargas; seis regresores ML entrenados con la simulación eligen la mitigación; HITL explícito (asesor, no control). Dudas: sistema hipotético sin datos reales y actualización en tiempo real emulada; OptQuest (metaheurística) solo fija umbrales de mantenimiento."
+}

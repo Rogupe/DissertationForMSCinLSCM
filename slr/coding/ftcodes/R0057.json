@@ -1,0 +1,51 @@
+{
+  "id": "R0057",
+  "doi": "10.1109/ojcoms.2026.3714979",
+  "status": "FT_INCLUDE",
+  "url_read": "https://ieeexplore.ieee.org/document/11614525 (reached via https://doi.org/10.1109/ojcoms.2026.3714979; IEEE Xplore HTML full text, open access CC BY, sections I-VII loaded; text saved to /root/work/fulltext/R0057.txt)",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector (multi-echelon network of warehouses, distribution centres and retailers; no industry specified)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Optimisation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Not discussed",
+  "hitl_function": "Not discussed",
+  "hitl_conditions": "Not discussed (no human appears anywhere in the closed loop; only designer-set cost weights alpha, beta, gamma and tuned hyperparameters are mentioned, without saying who sets them)",
+  "key_finding": "Hybrid GA (global inventory allocation, routing, supplier selection) plus Q-learning MARL agents (reorder, reroute, risk mitigation) in a closed loop with edge digital twins of warehouses, distribution centres and retailers; Python simulations on synthetic plus public data beat GA, MARL, ACO, PSO (fill rate 96.5%, turnover 5.78, stockouts 4.3%).",
+  "citation_locator": "Key finding: Abstract; Section III Proposed GA-MARL Framework (Fig. 1, Eqs. 1-11, Algorithms 1-3, III.A Implementation Workflow); Section IV Experimental Setup (datasets, Python simulation, Table 2); Section V Results and Discussion (Figs. 2-10, Table 3); Section VI Conclusion. HITL evidence: none explicit; closest statements in Section II Literature Review (first sentence, shift from manual decision-making to AI systems), Section III (closed-loop decentralized decision-making, MARL agents execute reorder/reroute/risk-mitigation actions, no human step) and Section VII Limitation and Future Scope (validation in real-world industrial settings left as future work). Journal pages 8609-8619; page numbers not visible in the HTML version.",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "The EEDT serves as a virtual replica of decentralized components of the supply chain in the form of inventory systems, transportation networks, and demand nodes, and receives real-time IoT information at the edge to minimize latency.",
+      "section": "III. Proposed GA-MARL Framework"
+    },
+    {
+      "text": "Warehouses (capacity-constrained storage model), distribution centers (intermediate routing node model), and retailers (end-demand point model) are modeled as simulation environment.",
+      "section": "IV. Experimental Setup"
+    },
+    {
+      "text": "Transactional SCM data (e.g. UCI and industry inventory datasets) provided publicly are mixed with benchmark synthetic data to model a dynamic demand, lead times and distribution variability.",
+      "section": "IV. Experimental Setup"
+    },
+    {
+      "text": "GA does global optimization of strategic actions such as selecting suppliers and allocating inventory, whereas MARL allows real-time and adaptive control of distributed agents (e.g., warehouses and retailers).",
+      "section": "III. Proposed GA-MARL Framework"
+    },
+    {
+      "text": "Both of the modules provide a two-way connection to the digital twin that creates a closed-loop feedback process that constantly modifies decisions based on performance metrics.",
+      "section": "III. Proposed GA-MARL Framework"
+    },
+    {
+      "text": "The concept of supply chain management (SCM) has been shifting toward manual decision-making to intelligent systems employing artificial intelligence.",
+      "section": "II. Literature Review (only human-related statement in the paper)"
+    }
+  ],
+  "ft_note": "Incluido: EEDT (réplica virtual de almacenes, centros de distribución y minoristas con datos IoT en el borde) acoplado a GA + MARL Q-learning en lazo cerrado, simulado en Python con datos sintéticos y públicos (UCI). Dudas: el gemelo equivale al entorno de simulación; sin despliegue real; ningún humano mencionado; Source solo por 'supplier selection' y reorder; nivel 5 vs 4."
+}

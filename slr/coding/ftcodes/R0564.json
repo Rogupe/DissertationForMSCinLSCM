@@ -1,0 +1,51 @@
+{
+  "id": "R0564",
+  "doi": "10.1109/wsc68292.2025.11339094",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.informs-sim.org/wsc25papers/con221.pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Maritime/port (solid bulk / iron ore export terminal, Brazil)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Metaheuristic/evolutionary",
+  "ai_role": "Optimisation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "Not discussed as a change; the user configures routes, demand, capacities and ACS/objective weights through the tool interface, tests schedules virtually before applying them to the real terminal and reads the simulation analysis report to identify improvements.",
+  "key_finding": "AnyLogic agent-based simulation coupled with an Ant Colony System scheduler, validated against real terminal KPIs (deviations under 5%), cut total ship stay time from 199.6 h to 194.3 h in the base scenario (84.8 h with simultaneous yard-to-ship routes), with estimated demurrage savings of USD 130,750-788,969 within about five minutes.",
+  "citation_locator": "Key finding: Abstract (p. 3046); Sect. 3.3 Optimization (pp. 3050-3051); Sect. 3.4 Simulation Model and Sect. 3.5 Digital Twin Integration (pp. 3052-3053, Fig. 3); Sect. 4.1 Simulation Verification, Table 3 (pp. 3053-3055); Sect. 4.2 Base Scenario, Table 4 (p. 3055); Sect. 5 Conclusions and Future Works (pp. 3055-3056). HITL: Sect. 1 Introduction (p. 3046, 'intended to support decision-making'); Sect. 3.1 Data Sources (p. 3049, routes/demand/capacities configured through the tool's interface); Sect. 3.3 (p. 3051, user-defined alpha and beta); Sect. 3.5 (pp. 3052-3053, virtual testing before application, analysis report for the user); Sect. 4 Results (p. 3053, customizable loading/unloading weighting). Proceedings pages 3046-3057 = PDF pages 1-12.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "a Digital Twin (DT)-based tool for optimizing scheduling in solid bulk export port terminals. The approach integrates agent-based simulation with the Ant Colony System (ACS) metaheuristic to efficiently plan railway unloading, stockyard storage, and maritime shipping.",
+      "section": "Abstract (p. 3046)"
+    },
+    {
+      "text": "we propose a hybrid optimization approach based on a constructive heuristic followed by refinement using the Ant Colony System (ACS) metaheuristic. The core objective is to minimize the total stay time of ships at the terminal",
+      "section": "Sect. 3.3 Optimization (p. 3050)"
+    },
+    {
+      "text": "In the context of ore export terminals, the DT enables testing of scheduling strategies in a virtual environment before they are applied to the real system. This contributes to more informed and robust decision making.",
+      "section": "Sect. 3.5 Digital Twin Integration (p. 3052)"
+    },
+    {
+      "text": "Additionally, the tool generates an analysis report with the main problems encountered during the simulation, allowing the user to identify opportunities for system improvement.",
+      "section": "Sect. 3.5 Digital Twin Integration (pp. 3052-3053)"
+    },
+    {
+      "text": "After applying the improvement procedure, a better solution was obtained, reducing the total stay time to 194.3 hours—equivalent to a reduction of approximately 5.2 days in ship queue time.",
+      "section": "Sect. 4.2 Base Scenario (p. 3055)"
+    },
+    {
+      "text": "Furthermore, the implementation and integration of other techniques, such as Greedy Randomized Adaptive Search Procedures (GRASP) and machine learning, are suggested, aiming for more effective strategies for dynamic and complex scenarios.",
+      "section": "Sect. 5 Conclusions and Future Works (p. 3056)"
+    }
+  ],
+  "ft_note": "Incluida: gemelo implementado (simulación de agentes AnyLogic + optimizador ACS), validado con datos reales de terminal brasileño (KPIs <5%). IA = metaheurística colonia de hormigas con feromonas adaptativas; ML sólo trabajo futuro; agentes son entidades de simulación, no inteligentes. Enlace tiempo real declarado en futuro. HITL implícito: soporte a decisión, usuario fija pesos/parámetros. Dudas: criterio 3, evidence_type."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0663",
+  "doi": "10.1109/wsc68292.2025.11339053",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.informs-sim.org/wsc25papers/ccsp106.pdf (open WSC 2025 proceedings copy on informs-sim.org, Commercial Case Studies track, pp. 462-473; located via https://informs-sim.org/wsc25papers/Program_Track.html; IEEE Xplore copy not used)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Retail (Amazon e-commerce retail supply chain: vendors, purchase orders, fulfilment warehouses, customer outbound)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Classical ML",
+  "ai_role": "Simulation surrogate",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not explicitly discussed; implicitly, ML emulators are accepted only when explainable (monotonic input-output relations matching business intuition) to earn stakeholder trust; users choose models by accuracy/explainability/speed and define interventions, keeping decisions outside the simulator.",
+  "key_finding": "SEmulate replaces the computationally expensive OR order-placing optimisation inside Amazon's digital-twin supply chain simulator with monotonic XGBoost emulators plus ML vendor fill-rate predictors, keeping physics-based inbound/outbound logic; runtime falls ~90% (orders of magnitude) with ~3% accuracy loss, enabling rapid, interpretable counterfactual experimentation for decision-makers.",
+  "citation_locator": "Key finding: Abstract (p. 462); Section 2 Overview of SEmulate (pp. 463-465, Figure 1 causal flow: order placing, procurement, inbound, outbound, supply update); Section 3.1 Order Placing Module (p. 466, Table 1 model choices) and 3.1.1-3.1.2 (p. 467, monotonic XgBoost TIP/OQ models); 3.2 Procurement Model (pp. 467-468, ML fill-rate predictor); 4.5 Amazon's Supply Chain Simulation (p. 472, Table 2: -3% accuracy, -90% runtime, +2 use cases); Section 5 Conclusion (p. 472, optimisation left as future work). Twin/validation evidence: Abstract and Section 1 (pp. 462-463, 'digital-twin based simulator' integrating production systems); 4.5 (p. 472, simulated inbound volume compared against real-world volume). HITL evidence: Section 1 (p. 463, explainability needed to earn stakeholder trust); Section 2 end (p. 466, desktop platform for users to test interventions); Section 3.1 (p. 466, explainability must align with business intuition; users specify model choice); 4.1 (p. 469, business adjusts labour planning and capacity control from estimated impacts).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Traditional digital-twin simulators, which are powered by complex optimization algorithms, are high-fidelity but can be computationally expensive and difficult to experiment with.",
+      "section": "Abstract (p. 462)"
+    },
+    {
+      "text": "we compare the simulated inbound inventory volume against the real world volume for both the baseline simulator and SEmulate, where we do not observe tangible degradation on accuracy.",
+      "section": "4.5 Amazon's Supply Chain Simulation (p. 472)"
+    },
+    {
+      "text": "The novelty of SEmulate lies in that instead of solving the complex optimization, we utilize existing data and leverage ML to learn the relationship between the input features and the optimized decisions.",
+      "section": "3.1 Order Placing Module (p. 466)"
+    },
+    {
+      "text": "For our use case, we balance the three evaluation metrics in Table 1 and choose the monotonic XgBoost model with monotone constraints",
+      "section": "3.1.1 TIP Model (p. 467)"
+    },
+    {
+      "text": "one of the biggest drawback of emulators is that it lacks explainability especially for black-box models, and is hard to earn trust with stakeholders on the reliability of the models.",
+      "section": "1 Introduction (p. 463)"
+    },
+    {
+      "text": "This light-weight hybrid simulator can easily run on desktops, offering a rapid and quick experimentation platform for users to test out different interventions.",
+      "section": "2 Overview of SEmulate on Retail Supply Chain Systems, end (p. 466)"
+    }
+  ],
+  "ft_note": "Incluido: modelo digital operativo de la cadena minorista de Amazon (pedidos→proveedores→inbound→outbound) con emuladores ML (XGBoost monotónico, GP), validado contra volumen real (§4.5; ejemplos §4.1-4.4 sintéticos). Duda: los autores llaman 'digital-twin' al simulador base, no a SEmulate ('simulador híbrido'). HITL implícito: interpretabilidad para stakeholders, usuarios eligen modelos e intervenciones; decisiones externas. Alternativa hitl_role: Elevated."
+}

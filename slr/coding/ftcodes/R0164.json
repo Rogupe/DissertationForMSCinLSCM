@@ -1,0 +1,51 @@
+{
+  "id": "R0164",
+  "doi": "10.1145/3749566.3749610",
+  "status": "FT_INCLUDE",
+  "url_read": "https://dl-acm-org.hull.idm.oclc.org/doi/10.1145/3749566.3749610 (Hull proxy, loaded directly; article marked FREE ACCESS, CC BY 4.0; full HTML read, PDF mode not needed; IoTML '25 pp. 209-215; equations linearised in the saved text)",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Cross-border export logistics (Dongguan electronics/manufacturing cluster; ports, customs, multimodal freight)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Reinforcement learning",
+  "ai_role": "Optimisation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Replaced",
+  "hitl_function": "Interpret outputs; Set objectives/constraints",
+  "hitl_conditions": "Not discussed; the paper only contrasts system response times with manual processes and offers an interpretability module that visualises the agents' game for analysts; no approval, override or escalation conditions are described.",
+  "key_finding": "MARL (Double Dueling DQN agents for manufacturers, logistics providers, ports, customs) trained in a digital-twin simulation of the Dongguan export corridor reportedly cuts cost/TEU 22% vs GA, raises deadline compliance to 94.2% and re-plans disruptions in 43 s; agents coordinate without centralised oversight. Reported figures are internally inconsistent.",
+  "citation_locator": "Key finding: Abstract (43 s re-planning, 270x vs manual, 300 enterprises, deployment claim); 3.1.2 Experimental Validation (Table 1: 2,348 vs 3,015 yuan/TEU, 94.2% deadline compliance); 3.1.3 Operational Insights (22.1% vs GA); 3.1.4 Industrial Impacts (17 companies); 4 Design Validation (22.6% vs ACO); 5 Conclusions (18.7%, 23.4%, limitations). HITL evidence: Abstract (interpretability module; manual processes), Figure 1 caption (parameter adjustments on the Pareto frontier), 3.1.4 (22 min vs 6.3 h manual), 4 Design Validation ('autonomous decision-making intelligent agent', 'autonomous evolution capabilities'), 5 Conclusions ('without the need for centralised oversight'). ACM HTML without page numbers (proceedings pp. 209-215).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "As shown in Figure 1, the architecture builds a symbiotic relationship between a geo-aware MARL decision engine and a digital twin-enabled supply chain simulation platform, thus facilitating the evolutionary optimisation of cross-border logistics paths.",
+      "section": "4 Design Validation"
+    },
+    {
+      "text": "Digital Twin Environment Configuration.Geospatial resolution: 1km² per grid cell (150×150 grid).Dynamic event modeling:Port congestion: Modified Poisson process (λ=0.35 ± 0.12 during typhoon season).",
+      "section": "3.1.2 Experimental Validation (the 'twin' is a synthetic simulation environment: Poisson congestion, ARIMA fuel prices, Weibull customs delays)"
+    },
+    {
+      "text": "we build a three-layer interactive model comprising manufacturers, logistics providers, and customs regulators, thereby overcoming the limitations of traditional static path planning.",
+      "section": "Abstract"
+    },
+    {
+      "text": "Built on Mesa-ABM 1.2.3 and Ray RLlib 2.8.1, the multi-agent simulation environment implements a decentralized decision-making protocol. Each intelligent agent (n=387 in full-scale simulation) employs modified Double Dueling DQN architecture with prioritized experience replay",
+      "section": "3.1.1 Algorithmic Implementation"
+    },
+    {
+      "text": "By linking each participant's rewards to global KPIs, including carbon emissions (down 14.2%), infrastructure utilisation (up 31%), and clearance times (down 27%), the model facilitates the formation of collaborative strategies without the need for centralised oversight.",
+      "section": "5 Conclusions (HITL: no human/central oversight in the loop)"
+    },
+    {
+      "text": "Validation with electronics exporters in the Dongguan region (17 companies in total) confirms its practical feasibility [...] The average response time for emergency reprogramming was 22 minutes (compared to 6.3 hours for manual processes).",
+      "section": "3.1.4 Industrial Impacts (HITL: system replaces manual re-planning; contrast with Abstract: 'real trade data from 300 Dongguan export enterprises' and 'deployed in the Smart Port Brain System of Dongguan')"
+    }
+  ],
+  "ft_note": "Incluido: cumple los tres criterios (gemelo digital de simulación del corredor exportador, MARL Double Dueling DQN, logística de exportación). Dudas serias de calidad: ACM ICPS; cifras contradictorias (300 vs 17 empresas; 22,1%/22,6%/18,7%); datos «de 2025» en congreso de mayo 2025; referencia [9] citada como Syntetos. Considerar «Not peer-reviewed / low-quality venue». HITL implícito; alternativas: nivel 4, Not discussed."
+}

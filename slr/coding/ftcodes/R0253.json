@@ -1,0 +1,47 @@
+{
+  "id": "R0253",
+  "doi": "10.1007/978-3-031-71633-1_26",
+  "status": "NOT_RETRIEVED",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-3-031-71633-1_26",
+  "exclusion_reason": null,
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "This study focuses on the implementation of a DT in a railway train manufacturing plant. Specifically, this study discusses the use of object detection through instance segmentation to track train body parts, particularly underframes.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "Using this method, manufacturers can identify status changes in each production process, enabling them to facilitate work-in-process logistics within factory workstations.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "These technologies allow for the automatic creation and consolidation of key production and logistics information, resulting in improved manufacturing productivity.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "This is a preview of subscription content, log in via an institution to check access.",
+      "section": "Body placeholder, immediately after the Abstract (paywall marker on the Hull-proxied Springer page after waiting 8 s)"
+    },
+    {
+      "text": "Wanted document is access protected until 2027-01-01 !",
+      "section": "HAL file URL https://inria.hal.science/hal-05283247/document (the only open-access copy, embargoed)"
+    }
+  ],
+  "ft_note": "NO RECUPERADO: Springer vía proxy Hull muestra solo el resumen + 'preview of subscription content' (IFIP AICT 731, sin suscripción). Única copia OA (Semantic Scholar/OpenAlex/API HAL): hal-05283247, PDF 560959_1_En_26_Chapter.pdf bajo embargo hasta 2027-01-01 (CC BY). Requiere PDF manual. Resumen: DT + segmentación de instancias para seguimiento WIP/logística intraplanta ferroviaria; antecesor APMS 2023 (10.1007/978-3-031-43670-3_39)."
+}

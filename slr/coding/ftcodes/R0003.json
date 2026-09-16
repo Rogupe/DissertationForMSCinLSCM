@@ -1,0 +1,35 @@
+{
+  "id": "R0003",
+  "doi": "10.1109/iconic67661.2026.11517868",
+  "status": "NOT_RETRIEVED",
+  "url_read": "https://ieeexplore.ieee.org/document/11517868",
+  "exclusion_reason": null,
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "It fundamentally synergizes artificial intelligence (multimodal LSTM, PSO), the Internet of Things, knowledge graphs, and digital twins. The proposed approach is rigorously evaluated through a hybrid simulation framework encompassing system dynamics and discrete event modeling.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "Sign in to Continue Reading",
+      "section": "Body, immediately after the first paragraph of I. Introduction (paywall marker shown although header read 'Access provided by: Tec Monterrey (formerly ITESM)')"
+    }
+  ],
+  "ft_note": "NO RECUPERADO: IEEE Xplore muestra 'Access provided by: Tec Monterrey' pero el texto se corta tras el primer párrafo de la Introducción con 'Sign in to Continue Reading' (esperé 8 s + 6 s; secciones II-V nunca cargaron). Proxy Hull no aplica a IEEE. Semantic Scholar: isOpenAccess=false, sin PDF abierto. Requiere descarga manual del PDF (ICONIC 2026, DOI arriba)."
+}

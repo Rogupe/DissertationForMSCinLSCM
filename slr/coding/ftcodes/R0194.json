@@ -1,0 +1,51 @@
+{
+  "id": "R0194",
+  "doi": "10.1016/j.sca.2024.100091",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S2949863524000347",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Hybrid",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed explicitly: the human always decides; planners set what-if parameters (disruption level, mitigation strategies) and read the flood forecast and recovery epoch; no decision automation is proposed.",
+  "key_finding": "Three-phase conceptual DSCT: an LSTM on Kerala rainfall predicts floods (75% accuracy, 84% AUC-ROC); a FlexSim DES of a real four-echelon network quantifies service-level drops under 65%/35% capacity disruptions; an MLPNN trained on the simulation output yields a recovery indicator (epoch of MSE convergence) as decision support for planners.",
+  "citation_locator": "Key finding: Abstract; Sec. 3.3 (Third phase: prediction of recovery indicator); Sec. 4.1 (Table 9); Sec. 4.3 (Resultant framework, Fig. 17). HITL: Sec. 1 (Introduction), Sec. 3.3, Sec. 4.3, Sec. 5 (Conclusions, managerial insights, and future research). No page numbers visible (HTML version).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "This study presents a three-phase digital supply chain twin framework, leveraging discrete event simulation and neural networks to anticipate floods—a typical natural catastrophe and disruptive event—and predict recovery indicators.",
+      "section": "Abstract"
+    },
+    {
+      "text": "This DT framework integrates ERP systems with cloud-connected servers and trained algorithms to streamline SC management. The built-in DES using FlexSim enables managers to evaluate the potential impact of predicted capacity reductions during scenario planning.",
+      "section": "4.3 Resultant framework for DSCT for disruption and recovery prediction indicator"
+    },
+    {
+      "text": "The SC model has five suppliers (SP1, SP2, SP3, SP4, and SP5) providing parts for the manufacturing and processing plants. The processing plants are divided into manufacturing (M1 and M2) and packaging (PKG1 and PKG2) operations.",
+      "section": "3.2.1 Supply chain structure"
+    },
+    {
+      "text": "LSTM performs slightly better than logistic regression, achieving 73 % recall, 75 % accuracy, and 84 % AUC-ROC score in flood prediction.",
+      "section": "4.1 Analysis of flooding forecasting using logistic regression and long short-term memory"
+    },
+    {
+      "text": "The projection of recovery indicators involves training a multilayer neural perceptron network (MLPNN) using the data generated in FlexSim.",
+      "section": "3.3 Third phase: prediction of recovery indicator"
+    },
+    {
+      "text": "SC planners can determine the most appropriate epoch for the algorithm by simulating data parameters related to disruption percentages. Identifying the recovery indicator allows planners to make more informed decisions, enhancing their ability to mitigate SC disruptions effectively.",
+      "section": "4.3 Resultant framework for DSCT for disruption and recovery prediction indicator"
+    }
+  ],
+  "ft_note": "Incluido: DSCT conceptual con arquitectura implementada (IoT→LSTM inundación, DES FlexSim de red real de 4 escalones, MLPNN indicador de recuperación, ERP+nube). Humano decide; el gemelo solo predice. Dudas: evidence_type podría ser 'Conceptual'; hitl_role podría leerse 'Elevated' (planificador pasa de reactivo a proactivo); scor_source=Y aunque proveedores se asumen con suministro infinito."
+}

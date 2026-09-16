@@ -1,0 +1,51 @@
+{
+  "id": "R0270",
+  "doi": "10.1109/iecon55916.2024.10905474",
+  "status": "FT_INCLUDE",
+  "url_read": "https://acris.aalto.fi/ws/portalfiles/portal/180377935/ENG_Yang_et_al_Towards_human-centric_manufacturing_IECON2024.pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Manufacturing / intra-plant logistics",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "LLM/agent",
+  "ai_role": "Decision support",
+  "integration_extent": "1 Descriptive",
+  "hitl_role": "Elevated",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Operators remain decision-makers in processes needing judgment (in-plant logistics, on-site and remote supervision); the system informs, visualises and alerts but, by the authors' own limitation, does not yet integrate human behaviour into adaptive control.",
+  "key_finding": "A three-layer DT architecture (Data, Knowledge, AI, 3D engines) with an industrial-process ontology was implemented in a lab factory and validated on in-plant AGV/crane transport: an LLM-RAG over a Neo4j knowledge graph answers operator queries in natural language, while knowledge-driven 3D safety zones alert crane operators; latency under 300 ms.",
+  "citation_locator": "Abstract (p. 2); III. Proposed General System Architecture (pp. 3-4); V. System Implementation (p. 5); VI. Case Study: In-plant Logistics, incl. C.1 Collision Detection and C.2 Information Retrieval (pp. 5-7); Table I (p. 7); VII. Discussion and Limitation (pp. 7-8)",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "This work implemented the system framework in the Aalto Industrial Internet Campus (AIIC), which is a factory-scale lab containing autonomous robots, an overhead crane, and network infrastructures.",
+      "section": "V. System Implementation (p. 5)"
+    },
+    {
+      "text": "This paper presents a detailed implementation of the proposed system framework and validates it through a practical in-plant logistics transport use case.",
+      "section": "Abstract (p. 2)"
+    },
+    {
+      "text": "In-plant logistics, distinct from fully automated systems, frequently require human intervention both on-site and for remote supervision. This study selects the in-plant logistics scenario as a testbed to demonstrate the applicability of the proposed framework.",
+      "section": "VI. Case Study: In-plant Logistics (p. 5)"
+    },
+    {
+      "text": "The AI Engine incorporates ChatGPT-4 as its core AI model, with LangChain providing seamless connectivity to data sources within the Knowledge Engine's graph database.",
+      "section": "V. System Implementation (p. 5)"
+    },
+    {
+      "text": "To bridge this gap, we introduce a Retrieval Augmented Generation (RAG) approach, which combines LLMs with external knowledge bases to improve their outputs.",
+      "section": "VI.C.2 Information Retrieval (p. 6)"
+    },
+    {
+      "text": "while the proposed DT architecture emphasizes providing advanced interfaces and real-time insights to end users to facilitate informed decision-making, it falls short of fully integrating human behavior into the system for more adaptive control",
+      "section": "VII. Discussion and Limitation (p. 8)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital implementado en laboratorio fabril de Aalto (grua, AGVs, OPC UA/MQTT, Unity) con caso de logistica intra-planta explicito; IA real (ChatGPT-4 + LangChain, RAG sobre grafo Neo4j). Dudas: la IA solo recupera informacion (extension 1); la deteccion de colisiones es por reglas, no IA; testbed de laboratorio, no planta industrial. SCOR: Make."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0037",
+  "doi": "10.1145/3802463.3802485",
+  "status": "FT_INCLUDE",
+  "url_read": "https://dl-acm-org.hull.idm.oclc.org/doi/10.1145/3802463.3802485",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector (logistics/ports, manufacturing, agri-food; Malaysia)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Hybrid",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Alerts issued when predicted risk exceeds predefined thresholds, at graded severity with escalation pathways tied to organisational roles; decision-makers then evaluate and select twin-simulated mitigation strategies. Automation versus human authority is not explicitly discussed.",
+  "key_finding": "Simulated Malaysian supply chain CDEWS: RNN and graph-based risk forecasting on fused multimodal data plus a supply chain digital twin for what-if mitigation analysis raised disruption lead time from 8–12 h to 64–72 h and cut logistics downtime roughly one-third, stockout risk and recovery duration in three flood/rainfall scenarios.",
+  "citation_locator": "Key finding: Section 4 Results (Table 2, Figures 2–4; article pp. 140–146, page numbers not shown in HTML). Twin: Section 1 Introduction (five-layer architecture, Figure 1) and Section 3 Methodology (digital twin paragraph). AI method: Section 3 Methodology (predictive layer). HITL: Section 1 Introduction (decision support and governance layer), Section 3 Methodology (governance and explainability paragraph), Section 4 Results (decision-makers select recovery strategies).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The digital twin mirrors the evolving state of the physical supply chain and allows “what-if” analysis under alternative intervention policies, such as rerouting shipments, reallocating inventory, or activating backup suppliers.",
+      "section": "3 Methodology"
+    },
+    {
+      "text": "CDEWS-enabled performance was evaluated by activating multimodal data fusion, predictive risk modelling, and digital twin–based simulation as described in Section 3.",
+      "section": "4 Results"
+    },
+    {
+      "text": "The system models supply chains as interconnected networks of nodes and links, where nodes represent ports, warehouses, factories, suppliers, and distribution centres, and links represent transport and information flows.",
+      "section": "3 Methodology"
+    },
+    {
+      "text": "Recurrent neural networks are employed to capture temporal dependencies in climate and operational time series, while graph-based models represent the structural dependencies within supply chain networks [6].",
+      "section": "3 Methodology"
+    },
+    {
+      "text": "Finally, a decision support and governance layer translates predictive outputs into interpretable alerts, recommendations, and escalation pathways aligned with organisational roles and regulatory requirements.",
+      "section": "1 Introduction"
+    },
+    {
+      "text": "Digital twin–based simulation allows decision-makers to evaluate alternative recovery strategies and select those that minimise downtime and resource strain.",
+      "section": "4 Results"
+    }
+  ],
+  "ft_note": "Incluir: gemelo digital de la cadena (puertos, almacenes, fábricas, proveedores) diseñado en cinco capas y evaluado solo por simulación de escenarios; RNN y modelos de grafos pronostican riesgo; humanos seleccionan estrategias (nivel 4; alternativa 3). Dudas: simulación sin detalle ni datos reales (Tabla 2 parece ilustrativa), autor único, venue ACM ICPS; HITL breve; Make marginal."
+}

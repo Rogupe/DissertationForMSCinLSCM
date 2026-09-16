@@ -1,0 +1,51 @@
+{
+  "id": "R0044",
+  "doi": "10.1016/j.future.2025.108004",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-sciencedirect-com.hull.idm.oclc.org/science/article/pii/S0167739X25002997",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Last-mile delivery / pharma cold chain",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Handle exceptions",
+  "hitl_conditions": "Operators intervene only when the package twin raises excursion or status-violation alerts; task allocation and reputation updates execute autonomously via smart contracts; requesters set task reward and time constraints.",
+  "key_finding": "Package digital twins (Arrhenius model) plus Random Forest predictions of UAV energy and delivery success, feeding a blockchain-hosted Gale-Shapley allocation, improve QoS by at least 37%, delivery success by at least 45%, worker reputation by 32% and payoff by 22% versus benchmarks; the RF energy model reaches MAE 1.66.",
+  "citation_locator": "Key finding: Abstract; Sec. 4.2 Table 6 (MAE 1.66); Sec. 4.4.3-4.4.4 Figs. 3-4; Sec. 5 Conclusion. Twin: Sec. 2.3 ('physics based DT model'), Sec. 3.5.1, Sec. 4.3 Fig. 2. HITL/automation: Sec. 1 (automated allocation), Sec. 3.1 phases 2-3, Sec. 4.3, Sec. 4.6. No page numbers visible (HTML version).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "In the post-allocation phase, the framework monitors each package through its twin, which continuously mirrors the package’s physical state and generates data-driven performance feedback.",
+      "section": "3.5.1 Package digital twin"
+    },
+    {
+      "text": "A critical yet often costly phase within this system is the last-mile delivery (LMD), the final step where goods are transported from a distribution center or local hub to the end customer [1].",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "In this work, an RF regressor model is trained to predict energy consumption, as it takes into consideration the features’ importance, scales efficiently, and achieves high accuracy.",
+      "section": "3.2.1 UAVs model: Proposed energy consumption prediction"
+    },
+    {
+      "text": "Pre-trained ML models predict UAV energy requirements and GVs delivery success probabilities. These estimates generate Quality of Service (QoS) and Quality of Request (QoR) rankings for tasks and workers. A Gale–Shapley stable-matching algorithm then pairs tasks with workers.",
+      "section": "3.1 System overview"
+    },
+    {
+      "text": "It is hosted on the Ethereum blockchain to enable a secure and automated allocation and ensure platform data security and participants’ accountability.",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "This real-time simulation capability enables delivery operators to implement immediate corrective actions during temperature excursions and allow a transparent and trusted monitoring for the requesters.",
+      "section": "4.3 Proposed digital-twin evaluation"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital de paquete (modelo Arrhenius) implementado y evaluado en entrega de última milla; Random Forest para energía UAV y éxito de entrega alimenta una asignación Gale-Shapley automatizada en blockchain. Dudas: nivel 5 vs 4 (operadores solo actúan ante alertas del gemelo); hitl_role 'Reduced' vs 'Not discussed' (no explícito); evidencia por simulación con datasets reales."
+}

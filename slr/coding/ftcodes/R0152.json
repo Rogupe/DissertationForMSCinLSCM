@@ -1,0 +1,51 @@
+{
+  "id": "R0152",
+  "doi": "10.1016/j.jgsce.2025.205714",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S2949908925001785",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Energy (LNG / oil & gas)",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Not discussed",
+  "hitl_function": "None",
+  "hitl_conditions": "Not discussed as such; by design, restoration is automated via controllers, and corrective repair (assignment of a qualified maintenance person) remains only when ML misses a failure that HYSYS validation reveals.",
+  "key_finding": "Proof-of-concept twin (Aspen HYSYS model of a cryogenic heat exchanger + decision-tree surrogate + VAR forecaster) predicts the next operating state and autonomously restores it to the nearest safe state; on synthetic scenarios it detects 52-57% of failures early and cuts cumulative downtime about 30% versus corrective maintenance.",
+  "citation_locator": "Key finding: Section 3.2 (Table 9, Tables F.1-F.3) and Section 5 Conclusions. Twin: Sections 2, 2.2, 2.3 (Fig. 1, 3, 4). AI method: Sections 2.3, 2.4, 3.1 (Tables 5-6, Fig. 10). Supply chain framing: Section 1, Section 2, Fig. 2, Section 5. HITL/automation: Section 2.4 (workflow, Fig. 7-8, 'automated corrective actions', 'controllers'), Section 4 Discussion (limitations: skilled personnel not addressed), Appendix C.5 (restored state vector) and C.7 (time-to-repair: assignment of a qualified person). Synthetic data and expert validation: Section 2.2, Section 4. No page numbers visible (HTML version).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "To investigate the behavior of the CHE under potential disturbances, the DT replicates real-time monitoring and predicts disruptions before they occur.",
+      "section": "2.2. Stage 2(a): Digital-twin driven Aspen HYSYS"
+    },
+    {
+      "text": "This paper proposes a systematic and general framework for enhancing the robustness of the LNG supply chain, using the CHE as a specific case study.",
+      "section": "2. Methods"
+    },
+    {
+      "text": "The ripple effect of disruptions can significantly impact continuity and resilience by spreading disturbances throughout the system, ultimately compromising LNG supply chain resilience",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "This hybrid system operates in two stages: (1) the VAR model predicts future state variables, and (2) the selected ML model uses the VAR predictions to generate operational state forecasts (success or failure).",
+      "section": "2.4. Stage 3: Machine learning integration for enhanced predictive maintenance"
+    },
+    {
+      "text": "By identifying potential risks, the system can implement proactive measures in real-time, including dynamic parameter adjustments, real-time control optimizations, and automated corrective actions.",
+      "section": "2.4. Stage 3: Machine learning integration for enhanced predictive maintenance"
+    },
+    {
+      "text": "skilled personnel in DT, ML and prediction techniques, and seamless integration with existing control systems. These considerations were not fully addressed in this study, highlighting the need for further investigation.",
+      "section": "4. Discussion"
+    }
+  ],
+  "ft_note": "Incluir. Gemelo HYSYS+ML del intercambiador criogénico (etapa Make). Marco de cadena de suministro explícito (objetivo, Fig. 2, efecto dominó) pero no modela flujos aguas abajo; KPIs de equipo (detección temprana, downtime): caso límite para criterio 2. Datos sintéticos; VAR es estadístico. Sin humano en el lazo (corrección automática); rol humano no discutido: experto valida datos, reparación solo como respaldo."
+}

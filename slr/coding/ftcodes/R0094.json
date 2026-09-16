@@ -1,0 +1,51 @@
+{
+  "id": "R0094",
+  "doi": "10.1007/978-3-032-04774-8_75",
+  "status": "FT_INCLUDE",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-3-032-04774-8_75 (Hull proxy; page states 'You have full access to this open access chapter', CC BY 4.0; full HTML sections 1-4 read)",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector (multi-tier supply chain networks of public and private organisations; requirements from interviews, mainly manufacturing)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Other deep learning",
+  "ai_role": "Simulation surrogate",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Not discussed",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed explicitly; the ANN surrogate is designed so practitioners can run stress tests without modeling tools, and components are to be developed with continuous stakeholder feedback.",
+  "key_finding": "Conceptual proposal (no implementation or results): a supply-chain digital twin combining a BOM/geospatial graph model, ML disruption prediction, an optimisation decision model and discrete-event simulation with a feedback loop; an ANN metamodel trained on the decision-simulation pair serves as surrogate so practitioners can stress-test without modeling tools.",
+  "citation_locator": "Key finding: Abstract; Sect. 3 Adaptive Supply Chain Stress Testing Framework (architecture text + Fig. 1); Sect. 4 Conclusion and the Future Research (all development described as future work). HITL evidence: Sect. 3 (ANN metamodel 'enables stakeholders to use the stress testing framework without needing decision and simulation modeling tools'); Sect. 2 Industry Perspective (status quo: decisions 'rely on expert opinion'); Sect. 2.1 item (3) 'minimizing the complexity of the analytics methods for practitioners'; Sect. 4 ('continuous feedback from engaged industry stakeholders'). SCOR evidence: Sect. 3 BOM/facility graph with 'material flow between facilities' and mitigation by 'resource allocation' (Source/Make/Deliver); Sect. 2 needs (4) 'dual sourcing, buffer allocation, re-allocating capacities and transportation of entities' (Plan/Source/Make/Deliver); Sect. 4 'manufacturing re-purposing' (Make). end_to_end=Y from Abstract 'multi-tier supply chain networks' and Sect. 2 'end-to-end supply chain resilience' / 'the whole value chain', but the customer side appears only as 'demand fluctuations' scenarios. ML disruption predictor: Abstract only (Sect. 3 says disruption duration/probability 'computed through stakeholder historical records and publicly available data via web scraping', no method named). No page numbers visible in the HTML version.",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "The framework is based on a supply chain digital twin that will be formed with the industrial Internet of Things technology for accessing field data, machine learning models for disruption prediction, simulation methods for disruption scenario analysis",
+      "section": "Abstract"
+    },
+    {
+      "text": "we propose a conceptual framework for diagnosing the vulnerability of suppliers, logistic providers, and commodities for any size of multi-tier supply chain networks for private and public bodies",
+      "section": "Abstract"
+    },
+    {
+      "text": "The framework also exploits a deep learning-based surrogate model of the digital supply chain twin.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The developed combined decision and simulation model mechanism is used for training a metamodel (artificial neural network, ANN) which enables stakeholders to use the stress testing framework without needing decision and simulation modeling tools.",
+      "section": "3 Adaptive Supply Chain Stress Testing Framework"
+    },
+    {
+      "text": "While each node represents a component/subassembly/product/service in BOM and its relevant facility, edges represent the eligible material flow between facilities and between nodes in BOM.",
+      "section": "3 Adaptive Supply Chain Stress Testing Framework"
+    },
+    {
+      "text": "Several supply chain networks from academic literature will be used to generate test instances. Disruption scenarios will be generated based on these instances as well as a decision model to develop mitigation plans",
+      "section": "4 Conclusion and the Future Research"
+    }
+  ],
+  "ft_note": "Incluido con dudas: marco conceptual (nada implementado) de gemelo digital de cadena multi-nivel con predicción ML de disrupciones, modelo de decisión, simulación DES y metamodelo ANN como sustituto. Dudas: ¿arquitectura (Sección 3 + Fig. 1) suficientemente concreta o «puramente conceptual»? Sección 3 no dice «gemelo digital»; método ML de predicción sin nombrar; HITL solo implícito (apoyo a practicantes)."
+}

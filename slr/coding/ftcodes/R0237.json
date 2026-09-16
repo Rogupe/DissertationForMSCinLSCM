@@ -1,0 +1,52 @@
+{
+ "id": "R0237",
+ "doi": "10.46354/i3m.2024.foodops.010",
+ "status": "FT_INCLUDE",
+ "url_read": "https://www.cal-tek.eu/proceedings/i3m/2024/foodops/010/pdf.pdf (open-access PDF, CC BY-NC-ND, linked as 'Download PDF' from the doi.org landing page https://www.cal-tek.eu/proceedings/i3m/2024/foodops/010/; read in Chrome, PDF MODE, 13 pages)",
+ "exclusion_reason": null,
+ "evidence_type": "Conceptual",
+ "sector": "Food/cold chain (food supply chains in general; prototype with local stakeholders only planned, no case yet)",
+ "scor_plan": "Y",
+ "scor_source": "Y",
+ "scor_make": "Y",
+ "scor_deliver": "Y",
+ "scor_return": "N",
+ "end_to_end": "Y",
+ "ai_technique": "Hybrid",
+ "ai_role": "Decision support; Optimisation",
+ "integration_extent": "5 Prescriptive-autonomous",
+ "hitl_role": "Reduced",
+ "hitl_function": "Approve/override; Handle exceptions; Provide data/labels",
+ "hitl_conditions": "Human selects among Pareto-optimal solutions while training the ML engine; once confidence suffices the CDT decides autonomously, abstaining and escalating to the human when uncertain; abstention rate tunes decisional independence; active learning queries the user for labels.",
+ "key_finding": "Design-science proposal (nothing implemented) of a Cognitive Digital Twin for food supply chains: DT domain (IIoT, VSM virtual model, LARG index, multi-objective optimisation) plus CDT domain (OWL ontology, knowledge graphs, ML engine) intended to decide autonomously, with selective classification (abstention) and active learning keeping humans co-piloting.",
+ "citation_locator": "Key finding: Section 3.3 Defining a CDT architecture (pp. 7-8, Figure 3), Section 4.1 Defining a top-level ontology (pp. 8-9), Section 4.2 Outlining a machine-learning aided decision-making system (pp. 9-10), Section 5 Conclusions (pp. 10-11, prototype as future work). HITL evidence: Section 3.3 (p. 7, first VSM model via interviews and human auditors; p. 8, decision maker defines the VSM model, selects the optimal solution and trains the ML engine towards autonomous decision actions), Section 4.2 (p. 10, right to abstain, escalation to a human agent, human-machine co-piloting, abstention-rate trade-off = decisional independence, active learning as human-in-the-loop labelling), Section 3.1 RQ4 (p. 6) and Section 2.3 (p. 4, CDT autonomy 'without human assistance or limiting human intervention').",
+ "use_in_typology": "Y",
+ "quotes": [
+  {
+   "text": "implementing a CDT architecture in food supply chains, able to handle multiple data-sources and conflicting goals under uncertainties, combining a DT framework, a lean, agile, resilient, and green (LARG) index and value stream mapping",
+   "section": "Abstract (p. 1)"
+  },
+  {
+   "text": "The DT domain deals with establishing the connection between the IIoT devices and the multi-objective optimization engine, through a virtual model that relies on the VSM model and on the LARG index.",
+   "section": "3.3 Defining a CDT architecture (p. 8)"
+  },
+  {
+   "text": "the decision maker interacts at DT domain level defining the VSM model and selecting the optimal solution among the ones delivered by the multi-objective optimization engine.",
+   "section": "3.3 Defining a CDT architecture (p. 8)"
+  },
+  {
+   "text": "Doing so he provides a semantic description to the top-level ontology within the CDT domain and trains the machine learning engine towards a sufficient level of confidentiality to perform autonomously decision actions.",
+   "section": "3.3 Defining a CDT architecture (p. 8)"
+  },
+  {
+   "text": "the models could get back to the user when they are not confident enough about their prediction. This should reduce the risk of inappropriate decisions from a CDT and allow human-machine co-piloting of a food supply chain.",
+   "section": "4.2 Outlining a machine-learning aided decision-making system (p. 10)"
+  },
+  {
+   "text": "Applying a Selective Classification implies an obvious trade-off between accuracy and the percentage of abstentions which, in the DSS4LCO initiative, translates into the amount of decisional independence of the CDT framework.",
+   "section": "4.2 Outlining a machine-learning aided decision-making system (p. 10)"
+  }
+ ],
+ "ft_note": "Incluido con dudas: artículo conceptual (DSR pasos 1-3) cuyo objeto es la arquitectura CDT (Fig. 3: dominio DT con IIoT, VSM, LARG y optimización multiobjetivo; dominio CDT con ontología OWL y motor ML). IA solo por paradigmas (clasificación selectiva con abstención, aprendizaje activo), sin algoritmo ni prototipo. Alternativas: excluir 'No AI/ML component'; nivel 4; hitl_role Maintained; SCOR inferido del alcance.",
+ "ai_detail": "ai_technique detail: Hybrid (multi-objective optimisation engine, algorithm unspecified; machine-learning engine specified only as Selective Classification with reject option trained via Active Learning, model class unspecified; OWL top-level ontology built with Methontology/Protege plus knowledge graphs) | ai_role detail: Decision support (primary: the ML engine learns the decision maker's choice among Pareto-optimal solutions and is meant to take decision actions autonomously with a reject option; secondary Optimisation: multi-objective optimisation engine over the LARG index)"
+}

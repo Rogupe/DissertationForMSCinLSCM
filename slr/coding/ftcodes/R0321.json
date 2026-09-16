@@ -1,0 +1,51 @@
+{
+  "id": "R0321",
+  "doi": "10.71086/iajse/v9i4/iajse0928",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://iaiest.com/iaj/index.php/IAJSE/article/download/IAJSE0928/1700",
+  "exclusion_reason": "Not peer-reviewed / low-quality venue",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": "Full text retrieved (4 pp., pp. 5-8). Venue evidence: DOI printed on p. 1 header vs. doi.org / Crossref / OpenAlex / Semantic Scholar lookups (all 404); Crossref journal record ISSN 2454-3896; journal Abstracting/Indexing page; DOAJ. Content evidence: Abstract; Methodology (Predictive Analytics and Optimization; Feedback Loop and Decision Execution); Result and Discussion, p. 7.",
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "DOI: 10.71086/IAJSE/V9I4/IAJSE0928",
+      "section": "Page 1 header (the DOI is printed on the PDF but is unregistered: doi.org returns \"DOI NOT FOUND\", Crossref and OpenAlex return 404)"
+    },
+    {
+      "text": "This work presents a digital twin (DT) technology framework concentrating on dynamic resource allocation in supply chain scheduling.",
+      "section": "Abstract, p. 5"
+    },
+    {
+      "text": "The methodology is tested in a simulated manufacturing supply chain environment and evaluated against static scheduling models using Dijkstra's algorithm.",
+      "section": "Abstract, p. 5 (Dijkstra is a shortest-path algorithm, not a scheduling baseline, and it is never mentioned again in the body)"
+    },
+    {
+      "text": "Demand, equipment failure, and delivery delays are predicted using machine learning algorithms: decision trees, and recurrent neural networks (RNNs).",
+      "section": "Methodology - Predictive Analytics and Optimization, p. 7 (named but never specified: no architecture, data, training, or evaluation)"
+    },
+    {
+      "text": "A simulated supply chain system was created which included a manufacturing plant, two warehouses, and three distribution centers.",
+      "section": "Result and Discussion, p. 7 (the only description of the experiment; no simulation tool, parameters or protocol given)"
+    },
+    {
+      "text": "Recommendations from the DT engine are executed via automated orchestration systems that modify procurement, production, and logistics activities workflows.",
+      "section": "Methodology - Feedback Loop and Decision Execution, p. 7 (only quasi-HITL statement; asserts full automation, no human role discussed)"
+    }
+  ],
+  "ft_note": "Excluido por venue: el DOI impreso en el PDF no esta registrado (doi.org, Crossref, OpenAlex, S2: 404); en Crossref el vol. 9 solo tiene numeros 1-2 y los articulos reales usan el prefijo antiguo 10.9756, asi que el numero esta retrodatado. Sin DOAJ, indexacion vacia. Gemelo y ML solo afirmados, sin implementacion."
+}

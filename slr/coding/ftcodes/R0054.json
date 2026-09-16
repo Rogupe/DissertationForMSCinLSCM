@@ -1,0 +1,51 @@
+{
+  "id": "R0054",
+  "doi": "10.17270/j.log.001371",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.logforum.net/pdf/22_2_2_26.pdf (resolved from https://doi.org/10.17270/j.log.001371 -> landing page https://www.logforum.net/volume22/issue2/abstract-2.html, which offers only the PDF; LogForum open access, no paywall; Chrome PDF mode with pdf.js, 13 PDF pages = printed pp. 199-211)",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Retail/e-commerce last-mile delivery (Saudi Arabia; pooled courier fleets and parcel lockers)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Not discussed",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed explicitly; the pipeline is offline and advisory, so managers keep dispatch/planning decisions. Real-time autonomous control (RL-based dispatching on OpenStreetMap networks) is deferred to future work, which would shift dispatch away from humans.",
+  "key_finding": "Gradient-boosting demand/ETA forecasts (LightGBM, CatBoost, SHAP) feed OR-Tools VRP-TW routing and CP-SAT locker siting; a SimPy 'Level-1' digital twin only stress-tests these policies. Pooled fleets cut routing cost 65% and lift on-time delivery from 37% to 100%; 25 lockers cut CO2 to 0.06 kg/parcel; SLA holds under Ramadan/weather stress.",
+  "citation_locator": "Key finding: Abstract Methods/Results (printed p. 199, PDF p. 1); Methods 'Digital Twin Simulation (SimPy)' (p. 204, PDF p. 6); Results (pp. 205-208, PDF pp. 7-10: Table 3 'SimPy Twin' rows and Table 4 on p. 207, Table 5 and stress-test paragraph on p. 208). Twin claim: keywords and Abstract (p. 199), Introduction contribution 4 (p. 200), Methods heading (p. 204), Conclusion 'A Level-1 digital twin' (p. 209, PDF p. 11); synthetic customer population acknowledged in Results (p. 208) and Discussion (p. 209). HITL evidence: Abstract Conclusions and Literature review ('actionable insights for logistics managers/operators, urban planners, and policymakers', pp. 199 and 201); Conclusion practical implications (pp. 209-210: managers integrating demand forecasting into daily fleet dispatch) and Conclusion future work (p. 209: reinforcement-learning-based dispatching for adaptive, real-time fleet control). No dispatcher or platform-operator role in the loop is described anywhere; 'operators' means fleet-owning logistics firms whose fleets are pooled (Methods p. 203, Discussion p. 209).",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "The interaction between forecasts, routing decisions, and facility siting is validated using a digital twin implemented with SimPy. Orders are generated stochastically based on demand forecasts, while couriers, lockers, and vehicles are modeled as resources subject to capacity constraints.",
+      "section": "Methods – Digital Twin Simulation (SimPy) (printed p. 204; PDF p. 6)"
+    },
+    {
+      "text": "This study proposes a machine learning–driven smart-sharing framework that integrates predictive analytics with operations research to optimize last-mile delivery in the Kingdom of Saudi Arabia.",
+      "section": "Abstract – Background (printed p. 199; PDF p. 1)"
+    },
+    {
+      "text": "Demand forecasting models (SARIMAX, XGBoost, LightGBM) capture temporal and event-driven variations, while ETA prediction models (XGBoost, LightGBM, CatBoost with SHAP explainability) refine delivery time estimates. Routing decisions are solved as a VRP-TW with OR-Tools, extended by locker siting through CP-SAT.",
+      "section": "Methods – Digital Twin Simulation (SimPy), closing summary paragraph (printed p. 204; PDF p. 6)"
+    },
+    {
+      "text": "A Level-1 digital twin was used to validate system resilience under stress scenarios.",
+      "section": "Conclusion (printed p. 209; PDF p. 11)"
+    },
+    {
+      "text": "Future work should incorporate real OpenStreetMap networks and reinforcement-learning-based dispatching to enable adaptive, real-time fleet control.",
+      "section": "Conclusion, future work (printed p. 209; PDF p. 11)"
+    },
+    {
+      "text": "From a practical perspective, logistics managers may benefit from integrating demand forecasting into daily fleet dispatch",
+      "section": "Conclusion, practical implications (printed p. 209; PDF p. 11; the sentence continues on p. 210: 'to support data-driven resource allocation')"
+    }
+  ],
+  "ft_note": "Incluido: el autor llama 'digital twin' (Level-1) a una simulación SimPy que sólo valida/estresa políticas ML+OR, sin datos en tiempo real y con clientes sintéticos: ¿basta la autodenominación? IA = gradient boosting predictivo; lo prescriptivo es OR (nivel 3 en lectura estricta). Humano sólo receptor de 'insights' (cabría 'Maintained'); despacho autónomo por RL es trabajo futuro. Inconsistencias (dataset, Tabla 5)."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0347",
+  "doi": "10.1515/eng-2025-0146",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://www.degruyterbrill.com/document/doi/10.1515/eng-2025-0146/html",
+  "exclusion_reason": "No digital twin / digital model",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "a digital model of the conveyor route was developed, taking into account the bench profile and travel path. This allowed us to identify potential overload zones and key control points (see Figure 2).",
+      "section": "4.2 Experimental plan (Figure 2: 'Three-dimensional digital model of the quarry indicating the conveyor path and control points')"
+    },
+    {
+      "text": "Simulink (MATLAB R2023b) was used for data verification. The simulation model included blocks for airflow dynamics, friction, and energy losses.",
+      "section": "3.6 Section 'methodology of artificial intelligence and modeling' - Simulation modeling"
+    },
+    {
+      "text": "The model was calibrated using experimental data obtained at the Karaganda Technical University field facility. The average deviation of predicted energy consumption values from measured ones was no more than 7.3 %, confirming the model’s validity.",
+      "section": "3.6 - Calibration and Validation"
+    },
+    {
+      "text": "This methodology can be applied to optimize bulk material transportation in quarries and improve the overall efficiency of production logistics in the mining and construction industries.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The architecture included four convolutional layers, two pooling layers, and two fully connected layers with a ReLU activation function. A recurrent neural network (RNN) with LSTM cells was used for congestion forecasting and predictive maintenance tasks.",
+      "section": "3.6 - Neural network architecture"
+    },
+    {
+      "text": "Human-in-the-loop: all recommendations are initially in suggestion mode, then after a 2-week test, switched to automatic mode upon confirmation. Fail-safe: When signal/trust is lost, the model is disabled and the system returns to safe mode.",
+      "section": "3.7 Methodology of artificial intelligence and simulation modeling - K. Explainability, safety and operating recommendations"
+    }
+  ],
+  "ft_note": "Excluir (límite): nunca dice 'twin'; el 'modelo digital' (4.2) es un modelo 3D estático de la ruta; el Simulink/CFD es verificación offline (calibrado ≤7,3 %); el sistema real es monitoreo/control CNN+LSTM sin réplica virtual. Si aceptas simulación validada como modelo digital → INCLUDE (Mining, Make, Hybrid, Control, extent 4→5, HITL Approve/override). Calidad dudosa: restos de respuesta a revisores, tablas duplicadas."
+}

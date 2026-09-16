@@ -1,0 +1,51 @@
+{
+  "id": "R0078",
+  "doi": "10.1080/00207543.2025.2482733",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-tandfonline-com.hull.idm.oclc.org/doi/full/10.1080/00207543.2025.2482733",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical data",
+  "sector": "Construction",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed explicitly; humans act when the Kanban warning is triggered by a real-time or forecasted delay (about five days' alert lead time), e.g. reordering or placing expedited orders.",
+  "key_finding": "A digital supply chain twin with a Kanban and AI layer running an improved HMM (M3HMM) forecasts construction material/machine delivery delays; on seven real projects M3HMM reached ~90% accuracy, beating LR, SVR, GMM, LSTM and HMM, with alerts ~5 days ahead for contractors' decisions.",
+  "citation_locator": "Key finding: Sections 5.1-5.2 (Tables 1-2), 5.3 and 6 (conclusions i-iv). Twin: Section 1 (contributions), Section 3.2.2 (Figure 3), Section 4.1 (Figure 4), Appendix. HITL evidence: Abstract, Sections 4.1, 5.1, 5.3, Appendix. Page numbers not visible in the HTML version.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Secondly, a digital twin is implemented to monitor the delivery delay and identify the construction supply chain risks for resilient system control.",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "A digital Kanban is designed to visualise the supply chain and deliver real-time alerts about incidents. It utilises a dataset that includes both historical and real-time data, which is then processed and transmitted to the AI layer.",
+      "section": "4.1. Problem description (Figure 4, digital supply chain twin framework)"
+    },
+    {
+      "text": "The AI layer provides the decision making support by implementing machine learning after analysing and processing data. Both the real time and forecasted contingency will trigger the warning on the Kanban.",
+      "section": "4.1. Problem description"
+    },
+    {
+      "text": "The physical supply chain is a network that transports construction materials from raw materials suppliers to construction sites through a distribution system.",
+      "section": "4.1. Problem description"
+    },
+    {
+      "text": "However, LSTM and M3HMM clearly outperform the other models, with average accuracies of 86.0% and 89.8%, respectively.",
+      "section": "5.2. Comparative analysis with other models"
+    },
+    {
+      "text": "The industry case study implies that stakeholders can implement decisions based on AALT about five days in advance on average by conducting the proposed M3HMM forecasting model.",
+      "section": "5.3. Managerial implications"
+    }
+  ],
+  "ft_note": "Incluido: gemelo de cadena de suministro digital (Fig. 4: capa física, capa digital con Kanban, capa de IA) que integra el M3HMM para pronosticar retrasos de entrega en construcción (7 proyectos reales, Hong Kong). Duda: el gemelo es un marco descrito brevemente sin validación propia; los datos validan solo el modelo ML. HITL implícito: contratistas deciden ante alertas."
+}

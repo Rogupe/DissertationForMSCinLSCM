@@ -1,0 +1,51 @@
+{
+  "id": "R0008",
+  "doi": "10.1016/j.treng.2026.100426",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S2666691X26000072?via%3Dihub",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Road freight/transport logistics (heavy-duty electric trucks)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "Not explicitly discussed; the human remains the decision-maker because infrastructure analysis is what-if decision support without formal optimisation. Future predictive control, AI-assisted fleet scheduling and operator-in-the-loop capabilities would change this configuration.",
+  "key_finding": "Gradient Boosting on 180+ real winter trips predicts electric-truck depth of discharge (R2=0.58; load, torque and weight dominate), feeding energy-optimal Dijkstra routing; a TruckMaker-calibrated digital twin with virtual interface lets planners test charger/fleet scenarios; co-simulation reproduces speed (R2~0.99). Infrastructure analysis remains what-if decision support, not optimisation.",
+  "citation_locator": "Key finding: Abstract; Sect. 3.3.3 (ML + Dijkstra routing), 3.3.4 (DT model), 3.3.5 (co-simulation); Sect. 4.1 (Figs. 7-8, R2=0.58), 4.2, 4.3 (Fig. 13). HITL: Sect. 3.3.4 (interface users), 3.3.7 Workflow, 4.2 (decision support rather than formal optimization), 5 (operator-in-the-loop as future work). No page numbers visible (article 100426).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "A Gradient Boosting model was trained on over 180 real-world intercity trips of data collected from an electric truck to estimate battery depth of discharge based on key operational factors.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The trained model was then used to assign an estimated DoD/km value to each road segment in a directed road-network graph. Dijkstra’s algorithm was applied to the weighted graph to determine the most energy-efficient route between cities.",
+      "section": "3.3.3 Route planning and energy depth of discharge prediction"
+    },
+    {
+      "text": "A DT of the case truck was implemented with TruckMaker and calibrated using real-world energy-consumption data to capture the effect of speed and road geometry on energy flow.",
+      "section": "3.3.4 Digital twin model"
+    },
+    {
+      "text": "DB Schenker [43] pilots the case truck to evaluate its energy efficiency and feasibility for long-haul applications in Finland.",
+      "section": "3.2 Experimental campaign"
+    },
+    {
+      "text": "For planning purposes, the primary users are fleet route and charging-infrastructure planners. They provide as inputs the origin–destination pair, payload, ambient temperature, fleet size, and available charging infrastructure.",
+      "section": "3.3.7 Workflow"
+    },
+    {
+      "text": "The current infrastructure analysis is scenario-based and intended for decision support rather than formal optimization.",
+      "section": "4.2 Virtual fleet and infrastructure planning"
+    }
+  ],
+  "ft_note": "Incluido: DT del camión eléctrico (TruckMaker, calibrado con datos reales, 3.3.4); entorno logístico (piloto DB Schenker, planificadores de rutas/carga); Gradient Boosting predice DoD y alimenta rutas óptimas. Dudas: DT «no es una réplica exacta»; ML acoplado al marco, no dentro del DT; HITL implícito; nivel 4 por rutas óptimas, infraestructura solo what-if (nivel 3)."
+}

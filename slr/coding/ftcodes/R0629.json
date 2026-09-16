@@ -1,0 +1,51 @@
+{
+  "id": "R0629",
+  "doi": "10.1088/1742-6596/1756/1/012011",
+  "status": "FT_INCLUDE",
+  "url_read": "https://iopscience.iop.org/article/10.1088/1742-6596/1756/1/012011/pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Aerospace",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Other",
+  "ai_role": "Optimisation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "No explicit conditions stated; manual operation is displaced where automatic assembly stations and automatic material distribution are introduced to raise efficiency and quality conformance, while humans keep visual monitoring, upstream process-plan approval and dispatching.",
+  "key_finding": "A three-layer (hardware/software/application) digital-twin assembly platform for aerospace mixed-line production couples a workshop-level twin (plan, logistics and quality optimization via data mining) with a line-level twin (fuzzy-reasoning model matching driving equipment monitoring, path and inventory optimization); optimized information is fed back automatically to the shop floor.",
+  "citation_locator": "Sec. 2.1 items (1)-(3) (PDF p.3 / printed p.2); Sec. 2.2 System architecture, Application layer + Fig. 1 (PDF p.3-4 / printed p.2-3); Sec. 3.1 Visual monitoring mode (PDF p.3-4 / printed p.2-3); Sec. 3.2 Analysis, control and decision-making mode + Figs. 2-3 (PDF p.4-5 / printed p.3-4); Sec. 4 Application verification + Fig. 4 (PDF p.6 / printed p.5); Sec. 5 Conclusion (PDF p.6 / printed p.5)",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "this layer is constructed based on a digital twin model, realizing visual monitoring of the assembly process; management and control of plans, processes, logistics and quality are achieved via the calculation and analysis of the data-driven digital twin model.",
+      "section": "2.2 System architecture, Application layer (PDF p.3 / printed p.2)"
+    },
+    {
+      "text": "a 3D modeling approach is used to establish the digital twin of the automatic material distribution process in the assembly workshop, so as to realize the dynamic planning simulation of logistics tasks in the assembly workshop",
+      "section": "3.1 Visual monitoring mode based on digital twin (PDF p.4 / printed p.3)"
+    },
+    {
+      "text": "A digital twin mode of entities corresponding to the assembly site is constructed and data mining is carried out, so as to form a plan optimization information, logistics information, quality optimization information",
+      "section": "3.2 Analysis, control and decision-making mode, workshop level (PDF p.4 / printed p.3)"
+    },
+    {
+      "text": "based on fuzzy reasoning rules, find the matching static model of the production system in the object database ... so as to realize equipment monitoring, equipment troubleshooting and logistics path optimization, inventory optimization",
+      "section": "3.2 Analysis, control and decision-making mode, production line level, Fig. 3 (PDF p.5 / printed p.4)"
+    },
+    {
+      "text": "Introduce auxiliary assembly equipment such as cabin docking, establish automatic assembly stations in place of manual operation, and improve assembly efficiency and quality conformance",
+      "section": "2.1 Technical approach, item (3) (PDF p.3 / printed p.2)"
+    },
+    {
+      "text": "The ERP system releases production orders. Dispatchers and operators prepare for production according to production tasks. The assembly process integration management and control software system receives the production orders and assembly process planning scheme.",
+      "section": "4 Application verification (PDF p.6 / printed p.5)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital implantado de taller y linea de montaje aeroespacial con logistica interna (distribucion automatica, almacen, rutas, inventario). Duda: la IA es debil y no es de aprendizaje: solo 'data mining' y 'fuzzy reasoning rules' mas bases de conocimiento; la 'optimizacion de dos niveles' no nombra algoritmo ni da resultados. Rol humano nunca discutido. Verificar si basta."
+}

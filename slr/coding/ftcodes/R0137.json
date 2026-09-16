@@ -1,0 +1,51 @@
+{
+  "id": "R0137",
+  "doi": "10.1016/j.ifacol.2025.09.014",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S240589632500775X/pdf (main.pdf served from pdf.sciencedirectassets.com, read with pdf.js in Chrome tab 44724038; open access CC BY-NC-ND; 5 pages, IFAC-PapersOnLine 59-10 (2025) 72-76; saved to /root/work/fulltext/R0137.txt)",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector (supply chain resilience, ripple effect and stress-testing; no industry case)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "LLM/agent",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Elevated",
+  "hitl_function": "Handle exceptions",
+  "hitl_conditions": "AI takes standardized tasks; humans handle non-standardized situations and delegate decision tasks to AI back and forth; experts supply a priori knowledge (ontologies) while generative AI and data automate model building and adaptation.",
+  "key_finding": "Conceptual extension of the intelligent digital twin to a digital supply chain ecosystem: ontologies plus generative AI let the system build and adapt its simulation models and generate disruption scenarios for resilience stress-testing, within a human-AI collaboration where decision tasks are delegated back and forth (human-in-the-loop, not full automation).",
+  "citation_locator": "Key finding: Abstract (p. 72); Section 3 Digital supply chain ecosystems (p. 74, Figs. 2-3: ontologies + generative AI for automatic model generation/adaptation and scenario generation); Section 4 Supply chain resilience modeling in digital ecosystems (pp. 74-75: knowledge base + generative AI for crisis scenarios, process mining, AI-based decision recommendations, alerting); Section 5 Discussion and conclusions (p. 75). HITL evidence: Section 1 Introduction (p. 72, iDT defined as a human-AI collaboration system); Section 2 From digital replicas to intelligent digital twins (pp. 73-74: CDT lacks 'human-AI collaboration with decision-making delegation'; iDT 'human-machine decision-making loop'; delegation back and forth; 'not full automation ... human-in-the-loop'; standardized tasks for AI vs non-standardized situations for humans; AI enhances human metaknowledge); Section 3 (p. 74: expert-built vs system-built models; a priori knowledge from experts and ontologies); Section 5 (p. 75: knowledge transfer through human-machine interfaces, human expertise plus machine-based analysis). SCOR scope: Section 1 (p. 72, suppliers' suppliers, last-mile logistics, end-to-end visibility) and Section 2 (p. 73, network structure, products, customers, production, distribution, sourcing, production-inventory control).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "iDT is a human – AI collaboration system that digitally represents physical SCs, gathers and processes data for modeling using analytical methods, imitates human decision processes, and develops new knowledge and decision-support algorithms.",
+      "section": "Section 1 Introduction (p. 72)"
+    },
+    {
+      "text": "A conventional DT (we refer to it as a DT of the first level) for a SC serves to replicate key components of the network, such as its structure, products, customers, and associated processes like production, distribution, and sourcing",
+      "section": "Section 2 From digital replicas to intelligent digital twins (p. 73)"
+    },
+    {
+      "text": "enabling the system to build its model and, more importantly, adapt this model dynamically based on evolving knowledge (e.g., using a combination of ontologies and generative AI) and constantly updated data.",
+      "section": "Section 3 Digital supply chain ecosystems (p. 74)"
+    },
+    {
+      "text": "a knowledge base of previous disruptions can be used in combination with generative AI to construct future crisis scenarios and perform stress tests [...] AI-based decision recommendations (e.g., for recovery policies after disruption), what-if testing, and alerting about disruptions",
+      "section": "Section 4 Supply chain resilience modeling in digital ecosystems (p. 75; two consecutive paragraphs)"
+    },
+    {
+      "text": "iDTs enable humans and AI to collaborate, learn from each other, and delegate decision-making tasks back and forth [...]. The aim of iDTs is not full automation, but rather a balanced approach with a human-in-the-loop.",
+      "section": "Section 2 From digital replicas to intelligent digital twins (pp. 73-74)"
+    },
+    {
+      "text": "AI algorithms typically excel in standardized tasks, but humans bring experience, creativity, and adaptability, complementing AI's capabilities in non-standardized situations. [...] AI algorithms, through training, can not only improve their performance but also help enhance human metaknowledge.",
+      "section": "Section 2, 'Human – AI collaboration in iDTs' paragraphs (p. 74)"
+    }
+  ],
+  "ft_note": "Incluido como conceptual (línea Ivanov): extiende el iDT a ecosistemas digitales de cadena; IA generativa con ontologías genera y adapta modelos de simulación y escenarios de disrupción, con colaboración humano-IA y delegación bidireccional (HITL explícito, 'no automatización total'). Dudas: sin implementación ni caso; nivel 4 vs 5 por la delegación; hitl_role Elevated vs Maintained; ai_technique LLM/agent vs Hybrid."
+}

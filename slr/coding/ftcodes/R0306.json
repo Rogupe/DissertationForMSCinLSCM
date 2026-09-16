@@ -1,0 +1,51 @@
+{
+  "id": "R0306",
+  "doi": "10.3390/app13179690",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.mdpi.com/2076-3417/13/17/9690 (resolved from https://doi.org/10.3390/app13179690; MDPI open access HTML, full text, no paywall; built-in browser mode)",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Electronics manufacturing (battery management system production line; intra-plant stocker/buffer logistics)",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Reinforcement learning",
+  "ai_role": "Control",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "No explicit conditions. The paper says AI modelling removes dependence on the user's parameter settings and aims at unmanned factories with zero human handling; humans keep only offline design of reward function, observation/action parameters and learning options.",
+  "key_finding": "PPO agent (Stable-Baselines3 in FlexSim) choosing which item type each router pulls from the stocker cut stocker average waiting time from 3348 s (FIFO) to 145 s and mean queue from about 272 to 12 items at similar daily output (7304 vs 7058); converged after 3000-8000 training steps.",
+  "citation_locator": "Key finding: Section 4.1 Simulation Environment (FlexSim 2022, PPO, observation/action parameters), 4.2 Performance Metrics (reward R = K/[Tt(Sink 1 entry) - Tt(stocker exit)]), 4.3 Results (Tables 3, 5, 6; Figure 20), 4.4 Discussion, Section 5 Conclusions. Twin claim: Abstract and keywords ('digital twin'), 3.1 Overall Architecture, 4.1 (model of a BMS production-line component); no real-data validation reported anywhere, Data Availability Statement 'Not applicable'. HITL evidence: 2.3 Storage Devices (stockers initially managed by people), 3.3 Applying AI Technology (rule-based work order replaced by RTD AI model), Section 5 Conclusions (user's parameter settings vs AI-powered modelling; zero human handling / unmanned factories; reward-function design as a key open issue). MDPI article number 9690, no page numbers in the HTML.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "First, we defined an RL environment, modeled it, and validated its ability to simulate a real physical system.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The stocker simulation model was used to validate the effectiveness of RL. The model is a storage device that simulates logistics in a manufacturing production area.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The simulation environment that is validated in this study is a component of a production line that produces battery management systems.",
+      "section": "4.1 Simulation Environment"
+    },
+    {
+      "text": "Stockers operate in conjunction with a logistics automation system to streamline the supply chain process and can perform additional functions such as splitting, merging, and flipping as required.",
+      "section": "2.3 Storage Devices"
+    },
+    {
+      "text": "To implement RL, we used the PPO algorithm from the Stable-Baseline3 library [31], which is known for its effectiveness in solving numerous problems.",
+      "section": "4.1 Simulation Environment"
+    },
+    {
+      "text": "Intelligent logistics solutions can reduce the production lead time by calculating optimal routes through machine learning and zero human handling of products and data to promote unmanned factories.",
+      "section": "5. Conclusions"
+    }
+  ],
+  "ft_note": "Propuesto INCLUIR con reserva: modelo FlexSim de un tramo de línea BMS (stocker→routers) con PPO ejecutado; framing de logística intraplanta real (stocker, automatización logística, cola/espera). Duda criterio 1: 'gemelo' solo nominal (palabra clave y resumen); la 'validación' es RL vs FIFO dentro de la simulación, sin contraste con datos reales (Data Availability: not applicable). HITL: una frase (fábricas no tripuladas)."
+}

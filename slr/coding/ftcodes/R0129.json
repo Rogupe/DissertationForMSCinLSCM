@@ -1,0 +1,51 @@
+{
+  "id": "R0129",
+  "doi": "10.1080/00207543.2025.2507112",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-tandfonline-com.hull.idm.oclc.org/doi/full/10.1080/00207543.2025.2507112",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Classical ML",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed explicitly; the framework lists thresholds for triggering responses, update frequency, metrics and ML choices as 'decision variables', and cites organisational resistance to AI-driven financial policy adjustments as an adoption barrier.",
+  "key_finding": "Blockchain data sharing alone reduces but does not eliminate the cash-flow bullwhip; adding the digital twin (DES + supervised ML generating inventory/credit decision rules) eliminates it and further raises inventory turnover, shortens cash conversion cycles and lowers costs for distributors and manufacturer, with service level unchanged.",
+  "citation_locator": "Key finding: Sections 5.1-5.3 (Figures 7-10, Tables 1-4) and Section 6 Conclusions. HITL evidence: Section 4 Steps 2-4 ('decision variables'), Section 5.2 (decision rules for decision-makers), Sections 5.4.2 and 5.4.6 (managers adjust policies; organisational resistance to AI-driven adjustments). HTML version, no page numbers.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "In the context of our study, an SC digital twin is a virtual replica of a physical SC able to simulate financial and operational scenarios using data shared via blockchain",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "In this study, a single-product SC is analyzed. The SC contains three echelons: one manufacturer, two distributors, and three retailers, as illustrated in Figure 1.",
+      "section": "3.1. SC structure and modelling technique"
+    },
+    {
+      "text": "To answer the second question, the framework utilises machine learning, another component of the SC digital twin, to analyze the relationships between controllable working capital policies and performance.",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "Our proposed framework employs eight supervised learning algorithms, i.e. Decision Trees, Random Forests, K-Nearest Neighbours (kNN), Support Vector Machines (SVM), Logistic Regression, Naive Bayes, AdaBoost, and Neural Networks, to analyze simulation outputs",
+      "section": "5.2. Blockchain-enabled data sharing vs. integrated digital twin and blockchain"
+    },
+    {
+      "text": "The simulation model is then refreshed, generating an updated dataset that is fed into the ML model. The ML model subsequently produces revised policy recommendations tailored to the emerging situation.",
+      "section": "4. Integrated digital twin and blockchain framework, Step 4: Real-Time Disruption Response"
+    },
+    {
+      "text": "Although feature importance assessment helps identify the most influential factors, it does not provide clear decision rules for decision makers. Rule-based models, such as decision tree, create ‘if-then’ rules that directly describe the paths to classification outcomes.",
+      "section": "5.2. Blockchain-enabled data sharing vs. integrated digital twin and blockchain"
+    }
+  ],
+  "ft_note": "Incluir: gemelo digital de cadena de suministro (DES en SimPy + ML) con arquitectura de 4 pasos alimentada por blockchain; ML ejecutado (8 clasificadores; árboles de decisión generan reglas de política). Dudas: Make sólo como capacidad del fabricante; HITL implícito (reglas para decisores, sin discusión explícita); extensión 4 vs 5 según 'recomendaciones' o 'ajuste dinámico'. Texto vía proxy Hull."
+}

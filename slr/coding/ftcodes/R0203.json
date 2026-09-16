@@ -1,0 +1,51 @@
+{
+  "id": "R0203",
+  "doi": "10.5593/sgem2025/2.1/s10.25",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sgem.org/___SGEM_UPLOADS/23226_Aleksandr_Kochnev/SGEM2025_Papers/23226_Aleksandr_Kochnev_2.pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Warehousing (automotive components plant, Czech Republic)",
+  "scor_plan": "N",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Other",
+  "ai_role": "Control",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Replaced",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Humans exit the driving loop but stay outside it: safety engineers supply 2022-2025 incident data, set speed and geofence constraints, interpret the twin's risk maps, and keep calibrating; the deployment decision remains human.",
+  "key_finding": "A GIS/CAD digital twin of a 7000 m2 Czech automotive warehouse simulated replacing forklifts with three AMRs: risk scores fell ~40%, transport cycle time 28%, human-vehicle conflict zones 42%. All figures are simulated; AMRs are not deployed and the 'machine learning' is never specified.",
+  "citation_locator": "Twin: Materials and Methods I (PDF p.2 = journal p.216) and IV.2 Simulation Goals and Methodology (p.4 = 218). Setting/SCOR: IV.1 Operational Scenario and Layout (p.3 = 217; receiving->production->dispatch, 'Big Boxes Delivery (Production Line <-> Warehouse)', 'Pallet Delivery to Assembly' in Table 1, p.6 = 220). AI: II AI Algorithms Integrated into AMR Simulation (p.3 = 217) and IV.3 Key Outcomes (p.4 = 218). Key finding numbers: Results I (p.5 = 219) and Table 1 (p.6 = 220). HITL: Introduction (p.1 = 215), IV.3 Key Outcomes (p.4 = 218), Results II Ergonomics and Human-Robot Interaction (p.5 = 219), Discussion (p.6-7 = 220-221), Conclusion (p.7 = 221).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Using the digital twin of the warehouse (created via GIS software and CAD imports), we conducted simulations to assess: Optimal AMR paths for material transport, Zones of high human-robot interaction (shared working space)",
+      "section": "Materials and Methods, IV. Case Study Application, 2. Simulation Goals and Methodology (PDF p.4 = journal p.218)"
+    },
+    {
+      "text": "The selected facility is a 7000 m2 warehouse that supports a production plant manufacturing automotive component. Its internal logistics process involves material movement between receiving docks, storage zones, production lines, and dispatch areas.",
+      "section": "Materials and Methods, IV. Case Study Application, 1. Operational Scenario and Layout (PDF p.3 = journal p.217)"
+    },
+    {
+      "text": "Following SGEM recommendations, the simulation incorporated multiple AI-driven control systems, allowing for adaptive decision-making: Path Planning Algorithms: Dynamic shortest-path calculation using A*, D*, and probabilistic roadmaps adapted to real-time sensor feedback",
+      "section": "Materials and Methods, II. AI Algorithms Integrated into AMR Simulation (PDF p.3 = journal p.217)"
+    },
+    {
+      "text": "Moreover, in high-traffic simulations, the system's machine learning algorithms adapted routing to avoid repeat exposure to dynamic hazard zones - such as unloading zones with manual pallet jacks.",
+      "section": "Materials and Methods, IV. Case Study Application, 3. Key Outcomes (PDF p.4 = journal p.218)"
+    },
+    {
+      "text": "Ergonomic risk mapping identified zones with historically high injury rates, primarily linked to manual pallet handling, tight-space forklift maneuvering, and prolonged seated driving with repetitive neck-torso motion - all tasks targeted for full automation by AMRs.",
+      "section": "Results, II. Ergonomics and Human-Robot Interaction Improvements (PDF p.5 = journal p.219)"
+    },
+    {
+      "text": "Human-Robot Interaction (HRI) protocols, including controlled speed, transparent motion, and multimodal safety alerts, contributed to safer shared workspaces and improved operator trust",
+      "section": "Conclusion (PDF p.7 = journal p.221)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital GIS/CAD del almacen construido y simulado (Metodos I y IV.2), logistica interna, y algoritmos AI nombrados (A*, D*, VDO-SLAM, DynaSLAM, GroundSLAM, coordinacion de flota). Dudas: 'full AMR deployment has not yet been realized'; el 'machine learning' se afirma sin modelo, datos ni entrenamiento; resultados 100% simulados; SGEM = venue debil. Confirmar inclusion."
+}

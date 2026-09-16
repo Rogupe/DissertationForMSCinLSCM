@@ -1,0 +1,51 @@
+{
+  "id": "R0674",
+  "doi": "10.1007/s12351-024-00831-y",
+  "status": "FT_INCLUDE",
+  "url_read": "https://link.springer.com/article/10.1007/s12351-024-00831-y",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Hybrid",
+  "ai_role": "Anomaly detection; Forecasting/estimation",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs; Set objectives/constraints",
+  "hitl_conditions": "Decision-maker sets the detection-model sensitivity (nu) trading detection delay against false alarms within acceptable performance limits, and acts on detection, disrupted-echelon and TTR outputs to deploy recovery policies; no approval loop; optimisation engine left as future work.",
+  "key_finding": "CDSCT framework whose disruption-detection module (deep autoencoder + OCSVM) reached 97.6% recall, 2.5% false alarms and 7.1-day mean detection lag on a simulated make-to-order three-echelon supply chain; LSTM models identify the disrupted echelon and predict time-to-recovery; outputs inform human decision-makers, who deploy recovery policies and choose the sensitivity/false-alarm trade-off.",
+  "citation_locator": "Key finding: Abstract; Sect. 3 Problem statement (Fig. 1a operational phase, Fig. 1b training phase of the CDSCT); Sect. 5 System implementation and 5.1 (AnyLogic 8.7 DES, supplier-manufacturer-distributor plus demand); Sect. 5.2 (Fig. 5, disruption detection module); Sect. 6.2 (Table 2, Fig. 9: recall 97.6%, false alarms 2.5%, mean lag 7.1 days); Sect. 6.3-6.4 (Tables 3-4); Sect. 8 Conclusion. HITL: Abstract; Sect. 1 (decision-makers deploy recovery policies); Sect. 5.2.2 and 6.2 (decision-maker chooses the nu trade-off between lag and false alarms); Sect. 7 Managerial implications; Sect. 8 (optimisation engine and real-world case listed as future work). No page numbers visible (HTML, article number 23).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "CDTs which utilise machine learning can sense and detect complex and unpredictable behaviours. Therefore, a Cognitive Digital Supply Chain Twin (CDSCT) permits disruption detection in the supply chain and quick deployment of recovery plans in real-time upon disruption detection.",
+      "section": "1 Introduction"
+    },
+    {
+      "text": "Figure 1a demonstrates the CDSCT during the operational phase. Supply chain disruptions are detected based on a real-time data stream from an existing supply chain.",
+      "section": "3 Problem statement"
+    },
+    {
+      "text": "A single supplier, manufacturer, and distributor constitute the three-echelon virtual supply chain. An additional component, demand, corresponds to the initiated customer order quantity.",
+      "section": "5.1 The virtual supply chain structure"
+    },
+    {
+      "text": "Early disruption detection is enabled through a hybrid deep learning-based approach using a deep autoencoder neural network and the OCSVM algorithm. In addition to early disruption detection, the CDSCT permits disrupted echelon identification and TTR prediction.",
+      "section": "2.3 Cognitive digital twins"
+    },
+    {
+      "text": "Therefore, the decision-maker should compromise the combination between the acceptable limits for the performance measures. A suggested solution is to maintain shorter delays. The false alarms can be handled using the proposed LSTM neural network classification model.",
+      "section": "6.2 Disruption detection using deep autoencoders and one-class support vector machine algorithm"
+    },
+    {
+      "text": "DSCTs can help decision-makers make appropriate decisions based on real-time disruption detection data.",
+      "section": "7 Managerial implications"
+    }
+  ],
+  "ft_note": "Incluido: CDSCT con arquitectura explícita (Fig. 1a/b: datos en tiempo real → autoencoder+OCSVM detecta → LSTM identifica escalón y predice TTR); tres escalones; ML ejecutado. Humano (implícito): decisor externo que interpreta salidas y fija la sensibilidad (nu); sin aprobación. Dudas: el 'sistema físico' es simulación AnyLogic (sin caso real); Plan=Y discutible (gestión de riesgo); nivel 2 vs 3."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0178",
+  "doi": "10.3390/app15020601",
+  "status": "FT_INCLUDE",
+  "url_read": "https://doi.org/10.3390/app15020601 (resolved to the MDPI open-access article page; tool reported https://mdpi.com)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Road freight transport / logistics services",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Reinforcement learning",
+  "ai_role": "Optimisation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Planners accept/reject every recommendation; human judgement covers internal business rules and expertise absent from the data; each response feeds the RL reward so the model improves over time. No future reduction of the human role is stated.",
+  "key_finding": "A distributed logistics DT (Azure Digital Twins + Databricks) streams fleet telematics and ERP orders into an RL job-assignment/routing model; planners accept or reject its recommendations and their responses act as RL reward. Preliminary what-if simulations on 2023 company data indicate a 20-30% carbon-footprint reduction from avoided empty runs.",
+  "citation_locator": "Key finding: Abstract; Sect. 2.3 'Digital Twin Framework' (Tools); Sect. 2.4 'Fleet Utilization Using Reinforcement Learning and Traveling Salesman Problem'; Sect. 4.2 'Training and Inference'; Sect. 4.3 'Discussion: Preliminary Results'. HITL evidence: Sect. 1.3 'Case Study' (objectives); Sect. 2.4 (reward incorporates planner feedback, Fig. 4); Sect. 3 'Proposed Solution' incl. subsection 'Human in the Loop' (Figs. 6 and 8); Sect. 5.2 'Limitations'; Sect. 5.3 'Future Work'. No page numbers (article number 601).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Using the Digital Twin Definition Language (DTDL) [28], we created a JSON-based model depicting the virtual representation of our operations, syncing in real time with our data lakehouse.",
+      "section": "Sect. 2.3 Digital Twin Framework - Tools"
+    },
+    {
+      "text": "The case study is simply that of the pick-up and drop-off segment of the transport company in which assets are transported based on customer orders across the UK.",
+      "section": "Sect. 1.3 Case Study"
+    },
+    {
+      "text": "The recommendation system is based on a reinforcement learning with human feedback model and a traveling salesman problem algorithm for route optimization.",
+      "section": "Sect. 1 Introduction"
+    },
+    {
+      "text": "The RL model formulated as an MDP is trained with the environment, specifying the state, action, transition and reward, as described in Section 2 of this paper.",
+      "section": "Sect. 4.2 Training and Inference"
+    },
+    {
+      "text": "The system recommends optimized plans to transport planners, who accept or reject the proposal, from which the RL model uses as a reward (human feedback) to improve.",
+      "section": "Sect. 3 Proposed Solution"
+    },
+    {
+      "text": "The use of a human-in-the-loop approach enables the model to learn from other factors such as internal business rules that require human intelligence, which the data and trends about jobs and driver proximity do not take into account.",
+      "section": "Sect. 3 Proposed Solution - Human in the Loop"
+    }
+  ],
+  "ft_note": "Incluido: gemelo logístico implementado (Azure Digital Twins + Databricks, flujo bidireccional) en John G Russell Transport, con RL (MDP+TSP) que recomienda asignaciones/rutas y planificadores que aceptan/rechazan (feedback como recompensa). Dudas: resultados preliminares (escenarios what-if sobre datos reales 2023, no despliegue en vivo) → ¿Empirical case vs Simulation? Plan=Y por planificación de trabajos (sP4); hitl_role podría ser Elevated."
+}

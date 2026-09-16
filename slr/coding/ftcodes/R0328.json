@@ -1,0 +1,51 @@
+{
+  "id": "R0328",
+  "doi": "10.1016/j.ifacol.2022.09.678",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S2405896322019966/pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Discrete manufacturing (rail parts, Siemens use case)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation; Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Elevated",
+  "hitl_function": "Approve/override; Handle exceptions; Interpret outputs",
+  "hitl_conditions": "Human selects/overrides when the ML recommendation falls outside the training set's experience or mismatches the disruption; routine exogenous alerts (weather) are automated, rare events (war, terror) go to human experts; humans add bias/inconsistency across shifts.",
+  "key_finding": "Conceptual extension of the authors' ML-enabled digital twin for integrated production-logistics: AR overlays present ML rescheduling recommendations, KPIs and plan-vs-actual deviations so a human can select or override recommendations outside the model's learned experience; rare exogenous disruptions stay with human experts; cognitive twins are the longer-term path.",
+  "citation_locator": "Key finding: Sec. 4 (pp. 1914-1915, Fig. 3) and Sec. 6 (pp. 1916-1917). Twin/AI design: Sec. 3 (Fig. 1, three modules: Supplier Risk Prediction, DT Learning Engine, Customer Transit, p. 1914); Sec. 4 (Fig. 2 DT Learning Engine; DT linked to MES/APS/ERP via shared database and auxiliary services; ML model trained with RF/SVM/AdaBoost/NN; simulation-based validation of recommended schedules; three fidelity requirements, pp. 1914-1915). HITL design: Sec. 1 (AR gives HITL capability to inject reasoning/problem-solving, p. 1912); Sec. 2.2 (AR overlay lets the human track ML recommendations and act in the physical world, p. 1913); Sec. 2.3 (override when recommendation mismatches disruption or other models are better; human feedback into training, p. 1914); Sec. 4 (model outputs validated 'by human or machine' before MES update; AR shows recommendations, KPIs, plan-vs-actual deviations and decision levers to select/override; head-mounted, hand-held or smart-glass displays; three exogenous-event channels, p. 1915); Sec. 4 Siemens use case (weather alerts automated in AI scheduling, war/terror only displayed on KPI dashboard, mitigation by human experts, p. 1916); Sec. 5 (cognitive twin acting with minimal human intervention as future vision, p. 1916); Sec. 6 (humans catch bad model decisions before they cascade; human bias/inconsistency across shift workers, pp. 1916-1917). PDF pages 1-6 = journal pp. 1912-1917.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The Digital Twin is connected to production systems such as MES, APS, and ERP, receiving both production schedules and timestamped snapshots of machine status and order information. The Digital Twin also receives updated shipment arrival dates from the supplier.",
+      "section": "4. Digital Twin Learning Engine with Augmented Reality (p. 1914)"
+    },
+    {
+      "text": "The Supplier Risk Prediction Module uses historical data of supplier performance to update arrival dates based on patterns of shipment delays from the supplier to the manufacturer.",
+      "section": "3. Digital Twin Framework for Integrated Production and Logistics Processes (p. 1914)"
+    },
+    {
+      "text": "the Machine Learning Model which recommends mitigating adjustments in the production schedule [...] using a number of machine learning algorithms such as random forest, support vector machines, AdaBoost optimizers, or neural networks.",
+      "section": "4. Digital Twin Learning Engine with Augmented Reality (p. 1915)"
+    },
+    {
+      "text": "To ensure the robustness of the digital twin, human-in-the-loop capabilities are essential to override machine-learning-produced recommendations when they are not matched to the disruption or when other models may provide better results.",
+      "section": "2.3 Hybrid Intelligence (p. 1914)"
+    },
+    {
+      "text": "information from the physical world can be overlaid on a computer screen with recommendations and key performance measures, allowing the opportunity to select or override a recommended schedule change that would be a bad decision",
+      "section": "4. Digital Twin Learning Engine with Augmented Reality (p. 1915)"
+    },
+    {
+      "text": "some exogenous alerts (for example, weather) have been directly integrated into the scheduling process based on AI. However, some exogenous events or streaming news feeds (terrorist attacks, war) are only displayed on the dashboard.",
+      "section": "4. Digital Twin Learning Engine with Augmented Reality, Siemens use case (p. 1916)"
+    }
+  ],
+  "ft_note": "Incluido: extensión conceptual del marco de R0331 (Greis 2021). Aporte propio: capa RA/HITL (seleccionar/anular recomendaciones ML; eventos exógenos raros a expertos) y gemelo cognitivo; alto solapamiento con R0331 (Fig. 1 reutilizada). Dudas: ML solo enumerado (RF/SVM/AdaBoost/NN), sin resultados; validación 'by human or machine' admite vía autónoma (nivel 5); caso Siemens breve (¿Empirical case?); Deliver/E2E solo por Fig. 1."
+}

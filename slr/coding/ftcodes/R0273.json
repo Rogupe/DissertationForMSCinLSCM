@@ -1,0 +1,51 @@
+{
+  "id": "R0273",
+  "doi": "10.1080/00207543.2023.2217291",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-tandfonline-com.hull.idm.oclc.org/doi/full/10.1080/00207543.2023.2217291",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "Y",
+  "end_to_end": "Y",
+  "ai_technique": "Other",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Depends on the twin's design: in decision-support mode the human keeps final decisions (digital companion); the framework also admits decision-making by AI (e.g. order placement) and control signals back to the real system; roles change through bidirectional human–twin learning.",
+  "key_finding": "Proposes a 7-element SCOM digital twin framework (technology, people, management, organisation, scope, task, modelling) and five twin types; concludes twins are socio-technical systems with continuous human–AI interaction, where analytics (simulation, optimisation, neural networks, ML/RL) is the modelling backbone and decisions stay with humans or pass to AI by design.",
+  "citation_locator": "Key finding: Abstract; Section 1 (definition, Figure 1); Section 2.1 (Figure 2); Section 3 'Modelling' and 'Scope' (Figure 4); Section 5 Conclusion. HITL: Section 1 ('decision-making principles (AI algorithm vs human)'); Section 3 'People', 'Organisation', 'Modelling'; Section 4.1 (digital companion; 'integration with AI is possible'); Section 5 (bidirectional learning). HTML full text, no page numbers visible (vol. 62, no. 6).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "the digital twin always behaves synchronously with its real counterpart, and they influence each other. It mirrors both the state and the performance of the real system and can also send control signals back to the real system.",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "We define the seven major elements of a digital twin in SCOM: technology, people, management, organisation, scope, task, and modelling. We also distinguish five major types of digital twins in SCOM: product, process, organisation, supply chain and network-of-networks.",
+      "section": "Abstract"
+    },
+    {
+      "text": "Optimisation, discrete-event simulation, neural networks, machine and reinforcement learning, agent-based modelling and system dynamics allow for the implementation of the full variety of descriptive, predictive and prescriptive algorithms in SCOM.",
+      "section": "3. Framing the research landscape – Modelling"
+    },
+    {
+      "text": "Analytics capabilities are the backbone of digital twins. Modelling can presume decision-making support (final decisions with humans) or decision-making by AI.",
+      "section": "3. Framing the research landscape – Modelling"
+    },
+    {
+      "text": "Digital twins can also consider the competence of making decisions (e.g. placing orders in an inventory control system). Most centrally, digital twins offer real-time, data-driven decision-making support.",
+      "section": "3. Framing the research landscape – People"
+    },
+    {
+      "text": "The seven elements show that digital twins in SCOM are not merely a simulation-based replica of a real object but a complex sociotechnical phenomenon involving continuous human–artificial intelligence interactions.",
+      "section": "5. Conclusion"
+    }
+  ],
+  "ft_note": "Incluido como conceptual: la IA es constitutiva del concepto (analítica como componente iii de la definición; elemento Modelling nombra redes neuronales, ML y RL; conclusión: interacción continua humano-IA). Dudas: ningún método se ejecuta; la ilustración anyLogistix es simulación/optimización ('integration with AI is possible'); método = revisión integrativa, podría codificarse Review. Make/Return solo por 'production control' y logística inversa (4.2.2)."
+}

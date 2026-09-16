@@ -1,0 +1,51 @@
+{
+  "id": "R0081",
+  "doi": "10.1007/978-3-032-21157-6_47",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-3-032-21157-6_47",
+  "exclusion_reason": "No AI/ML component",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "With a preliminary dataset from AgriCycle, a preliminary simulation model was developed to demonstrate the practical application of the DT framework in a commercial context.",
+      "section": "3.2 Pilot Study Implementation with AgriCycle Innovation Ltd"
+    },
+    {
+      "text": "the main goal was to create a comprehensive DT simulation model to optimize productivity, yield, and resource efficiency in the mushroom waste supply chain.",
+      "section": "3.2 Pilot Study Implementation with AgriCycle Innovation Ltd"
+    },
+    {
+      "text": "six key stages in the mushroom waste bio-conversion workflow were identified: mushroom cultivation and SMS collection, controlled transport, bioprocessing with yeasts and microorganisms, twin screw processing, board formation via pressing, and quality testing.",
+      "section": "3.2 Pilot Study Implementation with AgriCycle Innovation Ltd (see also Table 1, row 'Collection and Transport')"
+    },
+    {
+      "text": "The conceptual simulation model represents the entire SMS conversion ecosystem, including supply chain partners, environmental monitoring systems, the processing system, quality control mechanisms, and feedback loops for continuous improvement.",
+      "section": "3.2 Pilot Study Implementation with AgriCycle Innovation Ltd"
+    },
+    {
+      "text": "the process optimization stage implements machine-learning testing within the DT environment to proactively adjust operational parameters.",
+      "section": "3.1 DT Framework Development"
+    },
+    {
+      "text": "However, this optimization phase remains at the conceptual level due to limited data availability.",
+      "section": "3.2 Pilot Study Implementation with AgriCycle Innovation Ltd"
+    }
+  ],
+  "ft_note": "Excluir por IA: solo 'machine learning algorithms' genéricos, sin método nombrado; la optimización 'remains at the conceptual level' (futuro, 3.2). FLAG: sí hay contenido de cadena de suministro (recolección y transporte de SMS, 'supply chain partners' en el modelo conceptual, Tabla 1), aunque la simulación cubre solo la conversión. Duda: 'energy optimization algorithms minimized power use' (3.2)."
+}

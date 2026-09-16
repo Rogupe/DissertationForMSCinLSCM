@@ -1,0 +1,51 @@
+{
+  "id": "R0272",
+  "doi": "10.1080/00207543.2023.2244604",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.tandfonline.com/doi/full/10.1080/00207543.2023.2244604",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "Periodic, not real-time, updates: when a disruption is detected the simulation and decision tree are re-run to give new rules, and the decision maker re-defines minimum inventory levels for the optimisation; master plan then output to the physical SC.",
+  "key_finding": "Hybrid DES-CART decision tree-MIP framework (a digital-twin precursor with periodic physical-digital data flow) updates the SC master plan under demand and lead-time disruptions; responsive planning raised DC service level (+16.88% for product 1) and cut total cost by 15% versus unresponsive planning.",
+  "citation_locator": "Key finding: Abstract; 3.1 Hybrid modelling framework (Figure 2); 5.1 (Figures 8-10, Table 10: CART, 10-fold CV, hit ratio 89-92%, max depth 4); 5.3 Responsive vs. unresponsive SC master planning (Table 13); 7.1. HITL evidence: 3.1 (Figure 2 description: decision maker defines minimum inventory levels for constraints 9-10 of the MIP), 3.1.1, 7.2 Managerial implications. Twin status: 2.4 (last paragraphs), 3.1, 6, 7.1, 7.3. HTML full text, no page numbers visible.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "To fill this gap, we develop a SC digital twin which incorporates simulation, optimisation, and machine learning to minimise the impact of lead time and demand disruptions on SC performance.",
+      "section": "2.4 Digital twins for production"
+    },
+    {
+      "text": "Figure 2 captures the essence of digital twins with the flow of data between the physical supply chain and the digital model equivalent and back.",
+      "section": "3.1 Hybrid modelling framework"
+    },
+    {
+      "text": "As it was shown in Figure 1, in this study, a two-echelon SC with 2 manufacturers and 3 DCs which supply 5 products to 6 customers is considered.",
+      "section": "3.1.2 Simulation model"
+    },
+    {
+      "text": "We employ the CART algorithm in the Scikit-learn library to structure the inventory management knowledge obtained from the training dataset into a decision tree. The 10-fold cross-validation method is used to validate the results.",
+      "section": "5.1 Insights on inventory management using the decision tree algorithm"
+    },
+    {
+      "text": "The decision maker defines the minimum inventory levels of products at SC members into an optimisation model where the SC master plan is determined (feature (b)).",
+      "section": "3.1 Hybrid modelling framework"
+    },
+    {
+      "text": "In turn, the SC master plan which consists of the optimal production, storage and distribution decisions is outputted to the physical SC for execution.",
+      "section": "3.1 Hybrid modelling framework"
+    }
+  ],
+  "ft_note": "Incluido: gemelo declarado (título; §2.4 'we develop a SC digital twin'; Fig. 2 flujo físico-digital, actualizaciones periódicas), SC dos escalones, CART ejecutado. Dudas: datos sintéticos; nivel 4 vs 5 (plan 'outputted to the physical SC for execution', pero el decisor fija inventarios mínimos); 'Classical ML' aunque híbrido DES+CART+MIP; Source=N (sin proveedores); HITL implícito (Maintained)."
+}

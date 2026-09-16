@@ -1,0 +1,51 @@
+{
+  "id": "R0001",
+  "doi": "10.1016/j.cie.2026.112044",
+  "status": "FT_INCLUDE",
+  "url_read": "local:/root/work/fulltext/R0001.txt (local PDF supplied by Rodrigo: 1-s2.0-S0360835226002457-main.pdf, pdftotext -layout; open access, Computers & Industrial Engineering 218 (2026) 112044)",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector (circular supply chain; construction benchmark, transfer to discrete manufacturing, process industries, waste management)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "Y",
+  "end_to_end": "N",
+  "ai_technique": "Reinforcement learning",
+  "ai_role": "Control",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Not discussed",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "No explicit conditions; runtime exceptions (persistent guard hits, KPI drift) trigger an automated heuristic fallback and offline retraining rather than a human; managers select the service-versus-externality operating point and calibrate site-specifically before deployment.",
+  "key_finding": "A five-agent cooperative MARL controller trained in a simulation-based circular-supply-chain DT cut lead time 4.5% and raised OTIF 1.8 p.p. versus no action with bounded cost/CO2 increases, preserved effect signs under shocks, transferred across sectors without retuning; integrated data shifted operations toward lower cost and CO2.",
+  "citation_locator": "Key finding: Section 5.1 Benchmark (Table 6, p. 13), 5.2 Shocks (Table 8, p. 15), 5.3 Cross-sector (Table 9, p. 17), 5.4 VoD (Table 10, p. 18), 5.7 Discussion and managerial implications (pp. 19-20), Section 6 Conclusions (pp. 20-21). HITL evidence: Section 3.1 (p. 7, levers 'routinely available to line managers and planners'), 3.2.1 (p. 9, weight vector calibrated to managerial SLA/ESG priorities; expedite policy gating), 3.2.3 Deployment protocol and Algorithm 3 (p. 10, greedy execution, automated guards and heuristic fallback, no human approval step), 5.1 (p. 14, operating point selected by priority), 5.7 (p. 20, manager assembles deployment brief and lever configuration), Section 6 (p. 21, shadow-mode pilots as future work).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "an integrated methodological framework is proposed by coupling a simulation-based DT with cooperative multi-agent reinforcement learning (MARL). Specifically, a five-agent controller was trained to coordinate planning, inventory, logistics, expediting, and recycling decisions under a shared multi-objective reward",
+      "section": "Abstract (p. 1)"
+    },
+    {
+      "text": "The focal system represents a single-commodity, two-echelon supply chain consisting of a production site, a consolidation node for outbound shipments, and customer demand aggregated at regional sinks. A reverse loop returns recovered materials to upstream stages",
+      "section": "3.1 Problem description (p. 6)"
+    },
+    {
+      "text": "Live data streams from physical operations were not used; instead, synthetic trajectories were generated according to the distributional assumptions and parameter ranges reported in Tables 3 and 4.",
+      "section": "3.1 Problem description (p. 7)"
+    },
+    {
+      "text": "At deployment, exploration is disabled and only greedy actions are executed. The feasibility (safety) layer remains active, enforcing capacity, non-negativity, service-window, and expedite limits before the DT advances the system.",
+      "section": "3.2.3 Deployment protocol (inference, monitoring, fallback) (p. 10)"
+    },
+    {
+      "text": "When any hook remains active for multiple consecutive steps, a conservative heuristic fallback policy is triggered and an offline retraining job is scheduled on the updated data distributions.",
+      "section": "3.2.3 Deployment protocol (inference, monitoring, fallback) (p. 10)"
+    },
+    {
+      "text": "It was shown that the preferred operating point is context-dependent, and it should be selected according to the relative priority placed on service versus externalities.",
+      "section": "5.1 Benchmark in the construction setting (p. 14)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital basado en simulación (datos sintéticos, sin flujos en vivo) acoplado a MARL cooperativo de cinco agentes que ejecuta decisiones de planificación, inventario, logística, expedición y reciclaje en cadena circular de dos escalones. Dudas: ¿DT o modelo digital?; rol humano no discutido (solo fija pesos/umbrales); Source y extremo a extremo no cubiertos."
+}

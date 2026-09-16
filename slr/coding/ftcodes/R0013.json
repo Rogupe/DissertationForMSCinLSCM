@@ -1,0 +1,51 @@
+{
+  "id": "R0013",
+  "doi": "10.1016/j.sca.2026.100221",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S2949863526000300?via%3Dihub",
+  "exclusion_reason": "No digital twin / digital model",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "When these systems are embedded within supply chain digital twin environments – where real-time scenario evaluation and rapid disruption response are expected – the gap between algorithmic output and human comprehension becomes a barrier to effective, accountable decision-making.",
+      "section": "Abstract"
+    },
+    {
+      "text": "In a digital twin deployment, the framework’s three-layer architecture maps naturally onto the twin’s operational cycle. Layer 1 (optimisation) executes during the twin’s scenario evaluation phase; Layers 2 and 3 (surrogate training and semantic abstraction) pre-compute the concept-level profiles",
+      "section": "5.2 Managerial implications (The framework as a preparedness tool)"
+    },
+    {
+      "text": "Finally, the case study operates on synthetic instances generated within predefined parameter ranges and a fixed network structure.",
+      "section": "5.3 Limitations"
+    },
+    {
+      "text": "The framework is evaluated on a four-tier cereal supply chain comprising 10 suppliers (𝒮), 3 mills (𝒫), 2 transformers (𝒟), and 8 retailers (ℛ).",
+      "section": "3.5.1 Case study and instance generation"
+    },
+    {
+      "text": "Layer 2 is a surrogate-based explanatory layer that trains a supervised model on the optimisation outputs and analyses it using SHAP (SHapley Additive exPlanations) to produce feature-level attribution values.",
+      "section": "3.1 Methodological rationale"
+    },
+    {
+      "text": "it provides managers with structured, surrogate-derived evidence on which operational factors to monitor, which interventions may warrant prioritisation, and when algorithmic recommendations merit scrutiny rather than automatic implementation.",
+      "section": "6. Concluding remarks"
+    }
+  ],
+  "ft_note": "Excluir: el gemelo digital es solo contexto y despliegue prospectivo (Abstract, 1, 5.1–5.2); no se implementa, simula ni diseña con componentes/flujos. Lo construido: MILP RAS, surrogates ML (RF, Extra Trees) y SHAP sobre 7.500 instancias sintéticas de cadena cerealera. Cumple criterios 2 y 3. Duda: si Rodrigo acepta el mapeo de 5.2 como diseño, sería nivel 4, HITL mantenido (interpretar/anular)."
+}

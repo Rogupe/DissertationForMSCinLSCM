@@ -1,0 +1,51 @@
+{
+  "id": "R0077",
+  "doi": "10.3390/systems14050469",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.mdpi.com/2079-8954/14/5/469 (opened via https://doi.org/10.3390/systems14050469; MDPI open-access HTML, full text)",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Manufacturing/digital fabrication (3D printing, CNC, laser)",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Control",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Operator policy in the Admission Controller sets autonomy: manual review of every incoming update, whitelisting (safety-critical firmware auto-applied, process-parameter changes need explicit approval), or fully autonomous AI agent; process compensation and federated propagation run without operator intervention.",
+  "key_finding": "Analytical framework: each fabrication node's Cognitive Gateway hosts a digital-twin nominal model whose twin gap trains a GP/neural-network disturbance estimator that automatically corrects control inputs; federated learning propagates corrections. FOSS governance provides redundancy, substitutability and informational persistence, absorbing supply chain (vendor lock-in), regulatory and process disturbances without central control.",
+  "citation_locator": "Key finding: Abstract; Sect. 3 (Cognitive Gateway, Figs. 1-2); Sect. 3.3 (Eqs. 6-8, 11); Sect. 4.3 Case C; Sect. 4.4; Sect. 5.1; Sect. 5.3 Limitations; Sect. 6. HITL: Sect. 1 ('degree of autonomy governed by operator policy'); Sect. 3 (Admission Controller spectrum); Sect. 5.2 (node autonomy spectrum, Klipper example); Sect. 6. Article no. 469, no page numbers (MDPI HTML).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "node-local digital twins—each hosting a machine learning (ML) disturbance estimator—provide local adaptive compensation without centralised data aggregation. A defining property of the architecture is automatic improvement propagation: learned corrections distribute via federated learning to structurally similar nodes without operator intervention",
+      "section": "Abstract"
+    },
+    {
+      "text": "The third disturbance class addresses supply chain disruptions arising from proprietary vendor actions: firmware lock-down, component discontinuation, or deliberate incompatibility introduced to capture market share.",
+      "section": "4.3.1 Case C: Supply Chain Disturbance - Disturbance Characterisation"
+    },
+    {
+      "text": "is the disturbance estimate produced by a local estimator (e.g., a Gaussian Process [47] or neural network [48]) trained on historical process data",
+      "section": "3.3 ML as Disturbance Estimator and Distributed Adaptive Compensator (Eq. 8)"
+    },
+    {
+      "text": "It is software running on the node’s co-located compute substrate, automating what an experienced human operator would otherwise do manually: diagnosing process drift, fitting compensation models, and closing the gap between nominal design intent and physical output.",
+      "section": "3. Proposed Framework (Cognitive Gateway description)"
+    },
+    {
+      "text": "At the other extreme, a manual operator reviews and approves each incoming change before it is applied to the local node. Between these poles, semi-autonomous configurations allow operators to whitelist categories of updates",
+      "section": "5.2 Implications for Manufacturing Systems Design"
+    },
+    {
+      "text": "Second, the ML compensation layer is treated as a conceptual component of the framework; no specific learning algorithms are implemented or benchmarked.",
+      "section": "5.3 Limitations"
+    }
+  ],
+  "ft_note": "Propuesta de inclusión con dudas. Gemelo digital nodal (máquina) diseñado con componentes y flujos (Fig. 2, Ecs. 6–8); estimador GP/red neuronal y aprendizaje federado especificados, no implementados (marco analítico, sin simulación). Duda principal: el 'supply chain' es dependencia de proveedor (firmware, hardware, filamento), sin flujos de material ni inventario; verificar alcance logístico. HITL: admisión configurable manual↔autónoma; rol Reducido (alternativa: Reemplazado)."
+}

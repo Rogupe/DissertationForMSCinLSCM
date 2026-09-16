@@ -1,0 +1,51 @@
+{
+  "id": "R0520",
+  "doi": "10.3390/a19030218",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.mdpi.com/1999-4893/19/3/218",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Food/cold chain",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Hybrid",
+  "ai_role": "Optimisation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "Not explicitly discussed. Humans appear only upstream (fuzzy acceptable limits for cost, waste and quality encode decision-makers' preferences) and as managers who may pick among Pareto policies; inside the loop the system selects and implements policies itself.",
+  "key_finding": "Embedding a fuzzy multi-objective model in an adaptive digital twin whose agentic layer re-weights objectives from the twin state cut logistics cost ~4-5% and waste ~13% and raised service level ~4% versus static weights, with faster post-disruption recovery; the loop selects and implements policies with no human step.",
+  "citation_locator": "Key finding: Abstract; Sect. 9 Analysis of Results and Discussion (Figs. 5-6 and Tables 4-5, with/without adaptive twin and agentic AI; Fig. 8 resilience; Fig. 9/Table 6 scalability); Sect. 10 Conclusions. AI method: Sect. 6 Algorithm 1 (agentic reprioritisation), Sect. 8 (multi-objective gray wolf and SPEA2, Python 3.10, GAMS validation). HITL/autonomy: Sect. 5 autonomy paragraph ('semi-autonomous decision-support system'); Sect. 6 ('only transferred to the execution phase after assessing the systemic consequences'); Sect. 7 (fuzzy limits represent decision-makers' preferences); Sect. 9 Pareto discussion ('allows the decision-maker to choose a more diverse set of decisions'); Sect. 10 ('appropriate to management preferences'). No page numbers visible (HTML version).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Although the current implementation is carried out within a simulation-based evaluation environment, its architecture is explicitly designed to synchronize with real-time data. The digital twin continuously updates the system state vector St",
+      "section": "5. Self-Deciding Adaptive Digital Twin Architecture"
+    },
+    {
+      "text": "The network under study consists of several interconnected layers that start with raw material suppliers and end with processing centers, cold storage, transportation fleets, distribution centers, and retail outlets.",
+      "section": "4. Problem Description and System Overview"
+    },
+    {
+      "text": "For each decision epoch t: / Extract system state St from the digital twin [...] Normalize weights / Solve fuzzy multi-objective model with updated weights / Select and implement the preferred Pareto solution",
+      "section": "6. Agentic AI Decision Mechanism, Algorithm 1: Agentic AI Dynamic Reprioritization Procedure"
+    },
+    {
+      "text": "operates at the level of a semi-autonomous decision-support system. It independently monitors the system state and dynamically adjusts the priorities of the objectives; however, the final execution of the selected policies is performed within the framework of the optimization engine.",
+      "section": "5. Self-Deciding Adaptive Digital Twin Architecture (autonomy paragraph)"
+    },
+    {
+      "text": "the use of a fuzzy multi-objective optimization framework allows for a more realistic representation of decision-makers’ preferences and operational conditions.",
+      "section": "7. Fuzzy Multi-Objective Optimization Model"
+    },
+    {
+      "text": "the agentic AI mechanism in this study is designed based on decision-making rules and priority resetting, and the use of more advanced learning approaches can enrich the agent’s behavior in the long run.",
+      "section": "10. Conclusions (limitations)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital adaptativo (simulación calibrada con datos reales anonimizados) de logística alimentaria proveedor–minorista; la capa 'agentic AI' reprioriza objetivos y el bucle selecciona e implementa políticas sin aprobación humana (nivel 5), aunque los autores lo llaman 'semi-autonomous decision-support' y admiten que es basada en reglas, sin aprendizaje; metaheurísticas GWO/SPEA2. Dudas: nivel 4 vs 5; Make (centros de procesamiento)."
+}

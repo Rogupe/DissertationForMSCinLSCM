@@ -1,0 +1,51 @@
+{
+  "id": "R0591",
+  "doi": "10.1109/tmc.2025.3567284",
+  "status": "FT_INCLUDE",
+  "url_read": "https://ieeexplore.ieee.org/document/10989527",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "UAV logistics (parcel delivery)",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Optimisation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Replaced",
+  "hitl_function": "None",
+  "hitl_conditions": "Not discussed",
+  "key_finding": "Edge-hosted double digital twin (learned resource-scheduling twin plus PSO path-planning twin, built from GAN-augmented data with attention-based learning and MA-DDPG) plans UAV parcel deliveries fully autonomously; hardware-in-the-loop Gazebo tests show 63.9% lower distribution latency and 10.9% higher successful-delivery ratio than benchmarks.",
+  "citation_locator": "Key finding: Abstract; Sec. I (contributions); Sec. VI-F (Fig. 27, 63.9%) and VI-G (Fig. 29, 10.9%); Sec. VII. AI methods: Sec. V-A (GAN/CNN data augmentation), V-B (multi-modal attention model acquisition, Algorithm 1), V-C (MA-DDPG resource scheduling), V-D (PSO-PP path planning, Algorithm 2). HITL: Abstract ('without the aid of a workforce'); Sec. I ('autonomously adjust distribution paths'); Sec. VI-D ('autonomously associate feasible logistics missions'). Pages 10099-10117.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Our VerDT can assist logistic UAVs in exploring optimal distribution paths through accurate imitation and derivation with two kinds of DT models: a resource scheduling twin model and a path planning twin model.",
+      "section": "III. System Model"
+    },
+    {
+      "text": "We deploy multiple UAVs randomly to implement 10 logistics distribution missions (represented by spheres and cubes) which are deployed in three different logistics warehouses.",
+      "section": "VI-A. Preliminary"
+    },
+    {
+      "text": "our algorithm can efficiently integrate the computing resources of one-hop neighbors to implement cooperative computing for obtaining optimal cooperators based on a Multi-agent Deep Determined Policy Gradient (MA-DDPG) architecture.",
+      "section": "V-C. Resource Scheduling Twin Model Implementation"
+    },
+    {
+      "text": "we propose a Particle Swarm Optimization (PSO)-based path planning algorithm in the virtual space.",
+      "section": "V-D. Path Planning Twin Model Implementation"
+    },
+    {
+      "text": "As an attractive industry application, UAVs-based intelligent logistics has been widely investigated to achieve a fully automated distribution manner without the aid of a workforce.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The DT models can empower UAVs to autonomously adjust distribution paths. It can significantly reduce frequency of model updates for low computing latency.",
+      "section": "I. Introduction"
+    }
+  ],
+  "ft_note": "Incluido: gemelo doble (RST+PPT) en UAV de borde para reparto de paquetes; métodos IA explícitos (GAN/CNN, atención multimodal, MA-DDPG, PSO), no solo scheduling. Evaluación HIL: datos de DJI reales + Gazebo. Humano: solo 'sin ayuda de mano de obra' en el resumen; no se discute operador. Duda: Plan=Y si el scheduling se considera planificación; 'Replaced' vs 'Not discussed'."
+}

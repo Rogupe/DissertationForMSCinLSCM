@@ -65,3 +65,17 @@ venv/
 
 # Personal documents that live next to the docs but must never be published
 docs/Comprobante*
+
+# SLR (slr/): saved full texts, workbook backups and raw database exports are never committed
+slr/fulltext/
+slr/**/fulltext/
+slr/**/pre_audit_backup.xlsx
+slr/**/*.bak
+slr/**/scopus_export*.csv
+slr/**/savedrecs*.xlsx
+slr/**/*_prefilled.xlsx
+slr/**/keywords_by_id.json
+slr/**/batch*.txt
+# the curated SLR deliverables are tracked despite the global data patterns above
+!slr/data/*.csv
+!slr/workbook/SLR_PRISMA_workbook_screening.xlsx

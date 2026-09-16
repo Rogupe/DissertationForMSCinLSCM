@@ -1,0 +1,51 @@
+{
+  "id": "R0116",
+  "doi": "10.5391/ijfis.2025.25.1.97",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.ijfis.org/journal/view.html?uid=1108&vmd=Full",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical data",
+  "sector": "Maritime/port",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Other deep learning",
+  "ai_role": "Other",
+  "integration_extent": "1 Descriptive",
+  "hitl_role": "Reduced",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "User adjusts polygon vertices when unsatisfied with AI contours, marks anchors, confirms integration into the twin and triggers updates when offline monitoring alerts to changes; the system can run unvalidated, but quality needs the corrections.",
+  "key_finding": "A GIS-integrated editor with two U-Nets and a YOLOv8-obb detector reconstructs port container-yard topology from satellite images (mAP@0.5 0.95, mean contour deviation -0.153) and exports it to a digital twin's 3D scene; an expert test halved reconstruction labour (20 h to 10 h), with users still correcting contours.",
+  "citation_locator": "Key finding: Abstract; 4. Results and Tests (Tables 3-5, Figs. 9-14); 5. Conclusions and Discussion (expert comparison paragraph). HITL: 3. Methodology (workflow paragraphs after Fig. 1: manual vertex adjustment, user-performed integration, offline monitoring/user-initiated update); 3.3 ('minimizing human involvement'); 3.6 (user marks two anchor points); 5. Conclusions and Discussion (limitations paragraph). Twin scope: 2. Related Works (last paragraphs), 3.2, 3.6 ('two separate modules'), 5. Conclusions (roadmap paragraph). HTML page shows no page numbers (journal pp. 97-111).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "In this study, we proposed an approach for reconstructing container yard topologies using a digital twin object editor, powered by AI technology and integrated with a GIS system for topology data extraction.",
+      "section": "2. Related Works"
+    },
+    {
+      "text": "The editor of the territories and digital twin are two separate modules. The first is responsible for generating the necessary data, processing, pre-visualization, and transmission, whereas the second handles receiving and integrating the data into the software system.",
+      "section": "3.6 Algorithm for Transformation of Topology Coordinate Representations"
+    },
+    {
+      "text": "Logistics automation is a key component in the digitalization of transport infrastructure companies. Particularly, solutions aimed at optimizing container yard management processes at sea and river ports are being actively proposed.",
+      "section": "Abstract"
+    },
+    {
+      "text": "A set of computer vision algorithms, consisting of two U-Net models and a refined YOLOv8 model, was developed. The contour detection achieved an mAP@0.5 score of 0.95.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The editor is then switched to offline mode, where it passively monitors the placement of container yards and alerts the user if significant changes occur. In such cases, the user can initiate a topology update",
+      "section": "3. Methodology"
+    },
+    {
+      "text": "Additionally, the editor requires additional confirmation. Minor geometric adjustments by users are often needed for high-quality reconstructions. While the system can operate without such validation, optimal efficiency is achieved with these external corrections.",
+      "section": "5. Conclusions and Discussion"
+    }
+  ],
+  "ft_note": "Incluido con reservas: el gemelo operativo no se implementa; un editor reconstruye en 3D patios de contenedores y exporta la topología a un gemelo externo. Nivel 1; ai_role=Other (visión por computador construye la geometría); Deliver solo por el patio, sin datos de proceso. Si una topología 3D estática no es gemelo, excluir: 'No digital twin / digital model'."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0289",
+  "doi": "10.46855/energy-proceedings-10547",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://www.energy-proceedings.org/wp-content/uploads/iccusc2023/1690608573151593000.pdf",
+  "exclusion_reason": "No digital twin / digital model",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "The demand for carbon dioxide is predicted through artificial intelligence technology, and carbon capture is conducted according to the prediction results",
+      "section": "Abstract (p. 1)"
+    },
+    {
+      "text": "realizes the accurate evaluation, standardized management, visual real-time early warning, personalized analysis, intelligent decision-making and fine control of the whole process of agricultural CCUS supply chain",
+      "section": "Abstract (p. 1)"
+    },
+    {
+      "text": "a typical model of deep reinforcement learning, namely deep Q learning network (DQN), is used as the basis. To enable the DQN controller to meet control requirements, the DQN controller needs to constantly interact with the thermal process environment",
+      "section": "2. Material and Methods (p. 2)"
+    },
+    {
+      "text": "the data amount of each cycle running of the system can be recorded in the server without manual participation in the process",
+      "section": "2. Material and Methods (p. 2)"
+    },
+    {
+      "text": "The purpose of this design is to provide a self-learning and self-deployment system based on the field of CCUS, real-time data collection of different modules, and through the self-analysis ability to give the optimization scheme",
+      "section": "3. Results (p. 3)"
+    },
+    {
+      "text": "In the process of experimental design and verification, we found that digital empowerment is extremely advantageous in this field.",
+      "section": "5. Conclusions (p. 4)"
+    }
+  ],
+  "ft_note": "Excluir: el gemelo solo se esboza (Fig 1 flujo, Fig 2 render 3D) más listas genéricas de beneficios; sin implementación ni resultados pese a afirmar 'verificación experimental'. IA especificada (DQN) solo para control del proceso de captura; la predicción de demanda no tiene método. Cadena de suministro solo en título/resumen. Calidad baja (5 pp., 3 refs). Duda: revisar Fig 1."
+}

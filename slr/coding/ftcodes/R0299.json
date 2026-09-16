@@ -1,0 +1,51 @@
+{
+  "id": "R0299",
+  "doi": "10.1109/ieeeconf58110.2023.10520525",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.researchgate.net/profile/Aman-Sharma-167/publication/377749177_Real-Time_Logistics_and_Warehouse_Integration_via_Networks_of_the_Future_and_Dynamic_Digital_Twins/links/65b5abcf1e1ec12eff518161/Real-Time-Logistics-and-Warehouse-Integration-via-Networks-of-the-Future-and-Dynamic-Digital-Twins.pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical data",
+  "sector": "Warehousing",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Classical ML",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Maintained",
+  "hitl_function": "Handle exceptions",
+  "hitl_conditions": "Humans retained where tasks are physical or exceptional (loading/unloading, manual goods inspection, exception handling); routine order release and AGV re-routing become automatic. 5G human-machine interfaces and ergonomic design sustain real-time worker-system communication.",
+  "key_finding": "A proof-of-concept warehouse digital twin couples Ridge-regularised polynomial regression on real packing data (RMSE 14.72 s vs 19.04 s linear, 89% cohesion) with a grid-adapted A* pathfinder, plus Node-RED/Traccar/RFID and 5G, to auto-release orders and re-route AGVs after layout changes.",
+  "citation_locator": "Abstract (p. 1); III.A Order management (p. 2); V Integration of AI and Machine Learning (p. 3); VI Integration of Dynamic Layouts and Human Operations (p. 3); VII.A-C Case Study / A* algorithm (pp. 3-4); IX Methodology and IX.D Model validation (pp. 5-7); XIII Outcomes (p. 9)",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "This research presents a novel approach to integrate human-based operations with AMR to generate a real-time digital twin of automated warehouses.",
+      "section": "Abstract (p. 1)"
+    },
+    {
+      "text": "For model development, we employed linear and second-degree polynomial regression techniques. Linear regression assumes a linear relationship, while polynomial regression accommodates non-linear patterns.",
+      "section": "IX. Methodology (p. 5)"
+    },
+    {
+      "text": "Conversely, the polynomial regression model exhibited superior performance by attaining a Root Mean Square Error (RMSE) value of 14.72 seconds.",
+      "section": "IX.D Model validation (p. 7)"
+    },
+    {
+      "text": "The present study introduces a significant alteration in the methodology employed, wherein a bespoke heuristic function is employed to direct the A* algorithm, which is specifically tailored to suit a warehouse layout that is based on a grid system.",
+      "section": "VII.B Application of the A* algorithm (p. 4)"
+    },
+    {
+      "text": "Once the ETA of the vehicle aligns with the projected duration for processing the order, the order is authorised for immediate execution.",
+      "section": "III.A Order management (p. 2)"
+    },
+    {
+      "text": "Notwithstanding the considerable degree of automation, human labourers play a crucial role in specific tasks, including the loading and unloading of cargo, the manual inspection of goods, and the management of exceptional scenarios.",
+      "section": "VI. Integration of Dynamic Layouts and Human Operations (p. 3)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital de almacen (proof-of-concept) con ML ejecutado - regresion polinomica Ridge, RMSE 14.72 s sobre datos reales de packing - y A* adaptado a rejilla. Texto de autor en ResearchGate (IEEE de pago). Dudas: evidence_type Empirical data vs case; integration_extent 5 (libera pedidos y re-rutea AGV sin aprobacion) vs 4; Make=N pese a 'production line' del abstract."
+}

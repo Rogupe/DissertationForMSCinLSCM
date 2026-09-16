@@ -1,0 +1,43 @@
+{
+  "id": "R0162",
+  "doi": "10.1007/978-3-031-78531-3_20",
+  "status": "NOT_RETRIEVED",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-3-031-78531-3_20",
+  "exclusion_reason": null,
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "these techniques support the goal to provide AI generated plans which are to be understood, assessed, modified, and approved by the human planner.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "A logistics-based land delivery scenario looks at a constrained set of routes from the departure point to delivery destinations. Metrics applied were distance, time, risk, and delivery point.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "Phase Two is a continuation of examining the validation of the approach through use of digital twin simulation with an embedded Goal-Oriented Action Planning (GOAP) AI algorithm.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "This is a preview of subscription content, log in via an institution to check access.",
+      "section": "Body placeholder, immediately after the Abstract (paywall marker on the Hull-proxied Springer page after waiting 8 s)"
+    }
+  ],
+  "ft_note": "NO RECUPERADO: la página Springer vía proxy Hull muestra solo el resumen y 'This is a preview of subscription content' (esperé 8 s). Semantic Scholar: DOI no indexado; sin copia abierta. Requiere PDF manual (CCIS 2320, HCII 2024 poster). Ojo: el gemelo con GOAP es 'Phase Two' en futuro; escenario de entrega terrestre logística de origen militar (NIWC Pacific)."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0249",
+  "doi": "10.19691/j.cnki.1004-4493.2024.03.006",
+  "status": "FT_INCLUDE",
+  "url_read": "http://www.cnref.cn/EN/article/downloadArticleFile.do?attachType=PDF&id=3294 (via http://www.cnref.cn/EN/10.19691/j.cnki.1004-4493.2024.03.006)",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Steel/metals manufacturing (intra-plant hot metal logistics)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Reinforcement learning",
+  "ai_role": "Optimisation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Reduced",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Human role shrinks where RL replaces operators' FIFO choice; humans stay relevant only because AI must be coupled to physics/knowledge models to be explainable and avoid black-box bias.",
+  "key_finding": "Validated digital twins of Tata Steel's torpedo and hot-metal-ladle cycles (within 5% / 8 min of real operation), fed by FEM-derived reduced-order thermal models, let reinforcement-learning agents select ladles/torpedoes and schedule the hot metal route, cutting simulated hot metal temperature loss by 15 degC versus the FIFO baseline.",
+  "citation_locator": "Abstract (p.37); 1 Introduction (p.37, HITL: operators currently decide); 2 Hot Metal Route (p.38, FIFO baseline); 3.1 Thermal Calculations (p.38); 3.2 Digital Environment (p.39); 3.3 Optimization Algorithms (p.39, HITL: RL without explicit human expertise); 4 Results incl. Fig.4, Fig.5, Table 1 (pp.39-40); 6 Conclusions (pp.40-41)",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "This paper integrated digital twins with reinforcement learning algorithms to investigate the logistics of torpedoes and hot metal ladles.",
+      "section": "Abstract (p. 37)"
+    },
+    {
+      "text": "A digital environment was set up to simulate torpedo operations, as shown in Fig. 4. This environment represents a simplified version of torpedo movements, including the blast furnace, buffers, and BOS plant.",
+      "section": "4 Results (p. 39); figure caption reads \"Fig. 4 Digital twin for the torpedo operation\""
+    },
+    {
+      "text": "The hot metal ladles cycles in the digital twin were compared with the actual data and process. It showed a good agreement, with a maximum average difference of eight minutes, demonstrating its potential use in optimizing hot metal ladle logistics.",
+      "section": "4 Results (p. 40)"
+    },
+    {
+      "text": "Reinforcement learning models (Table 1) were then used in the digital environment. The agents were responsible not only for selecting the most thermally suitable ladle and torpedo but also for optimizing the entire hot metal route.",
+      "section": "4 Results (p. 40)"
+    },
+    {
+      "text": "Currently, most decisions are made by human operators and involve a significant amount of data, multiple factors, constraints, and conflicting objectives, which add complexity to the decision-making process.",
+      "section": "1 Introduction (p. 37)"
+    },
+    {
+      "text": "RL systems can be adapted to diverse problem domains without explicit human expertise as they learn from experiences and feedback over time",
+      "section": "3.3 Optimization Algorithms (p. 39)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital implementado y validado con datos reales de Tata Steel IJmuiden (desviacion 5% y 8 min) para logistica intraplanta de torpedos y cucharas; RL optimiza la ruta del arrabio (-15 grados C, Tabla 1). Dudas: no nombran el algoritmo RL concreto ni recompensa; el rol humano solo se infiere (decision support + explicabilidad); paper corto de 5 paginas."
+}

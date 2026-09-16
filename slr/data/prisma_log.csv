@@ -1,0 +1,45 @@
+stage,n,note
+Stage,n,
+IDENTIFICATION,,
+Records identified: Scopus,662,
+Records identified: Web of Science,379,
+Total identified,1041,
+Duplicates removed,329,
+Records for title/abstract screening,712,
+SCREENING,,
+Records excluded at title/abstract,595,
+Reports sought for full-text retrieval,117,
+Reports not retrievable,42,"Confirmado 2026-09-06: 31 actas de congreso IEEE Xplore (sin suscripcion en Hull ni Tec, sin copia abierta) + 8 capitulos Springer (R0076, R0089, R0162, R0233, R0253, R0295, R0500, R0643; R0233 y R0253 en HAL con embargo hasta 2027-01-01) + 3 articulos de pago sin copia abierta (R0026 Emerald, R0064 SPIE, R0324 ASCE) = 42. IDs de IEEE: R0003, R0004, R0018, R0029, R0048, R0051, R0068, R0082, R0105, R0107, R0108, R0127, R0142, R0148, R0158, R0166, R0167, R0172, R0183, R0192, R0226, R0255, R0261, R0290, R0297, R0302, R0341, R0350, R0521, R0551, R0584."
+Reports assessed for eligibility (full text),75,
+ELIGIBILITY: full-text exclusions by reason,,
+Excluded: no AI/ML component,5,Confirmado 2026-09-06 por el cribador de registro (Fulltext_eligibility)
+Excluded: no digital twin / digital model,5,Confirmado 2026-09-06 por el cribador de registro (Fulltext_eligibility)
+Excluded: no supply chain / logistics scope,0,Confirmado 2026-09-06 por el cribador de registro (Fulltext_eligibility)
+Excluded: not peer-reviewed / low-quality venue,1,Confirmado 2026-09-06 por el cribador de registro (Fulltext_eligibility)
+Excluded: other (note reason in Screening sheet),2,Confirmado 2026-09-06 por el cribador de registro (Fulltext_eligibility)
+Total full-text exclusions,13,
+INCLUDED,,
+Studies included in review,62,= reportes evaluados (75) menos exclusiones (13) = 62 estudios incluidos; confirmado 2026-09-06
+TA SCREENING PROGRESS (final; B10 above is the confirmed-exclusion count),,
+Updated,2026-09-06 (final audit applied),
+Records screened and confirmed,712,
+  of which Include (sought for full text),117,
+  of which Exclude,595,
+  of which Unsure (DUDA pending),0,
+Records still to screen,0,
+Confirmed batches,"1 to 14, then final audit",
+Code I  (include for full text),117,
+Code E1 (no digital twin / model),148,
+Code E2 (no supply chain / logistics framing),88,
+Code E3 (no AI / ML),38,
+Code E4 (review; retained for backward snowballing),314,
+Code E5 (out of range / not English / grey),5,
+Code E6 (duplicate / companion report of an included study),2,
+Make-annotated includes,25,
+E3 retained as background (Antecedente C8 pool),32,
+"FULL-TEXT STAGE (final, confirmed 2026-09-06)",,
+Reports sought for retrieval,117,
+Reports not retrievable,42,
+Reports assessed for eligibility,75,
+Full-text exclusions,13,
+Studies included in the review,62,

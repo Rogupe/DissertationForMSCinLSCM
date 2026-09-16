@@ -1,0 +1,51 @@
+{
+  "id": "R0525",
+  "doi": "10.1016/j.omega.2025.103447",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S0305048325001732",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Automotive",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Delegating decisions (e.g., order placement, schedule changes) to the twin/agentic AI is envisaged only 'potentially'; it hinges on trust in data quality, hallucination and reasoning-consistency risks; the feasible extent of human-AI collaboration is left to future research.",
+  "key_finding": "Ford's at-scale SCDT is a federated, three-layer (intracompany/Tier-1/deep-tier) twin whose executed AI is deep-learning-plus-survival-analysis supplier-shortfall forecasting; agentic AI is designed in as an orchestrator of point tools that alerts managers and recommends actions, while final decisions stay with humans; autonomous execution remains prospective (only e-mail alerts run unattended).",
+  "citation_locator": "Key finding: Abstract; 2.2 Supply chain digital twin design at the Ford Motor Company (2.2.1 Intracompany layer: truckload, returnable-packaging and intermodal twins; 2.2.2 Tier-1 network layer: deep learning + survival analysis; 2.2.3 Deep-tier layer: regression-based stress testing); 3.1.1 Data-driven architecture; 3.1.2 Agentic AI (Supply Chain 360 Portal, Fig. 6b); 5 Conclusions. HITL evidence: 3.1.2 Agentic AI (incl. quotations of Ivanov [1]); 3.2.2 Implementation scale layers (human-machine interfaces, LLM queries); 4.2.1 Limitations; 4.2.2 Challenges. HTML version, no page numbers.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "Ford's SCDT design is composed of three major layers: intracompany supply chain, Tier-1 network, and deep-tier network.",
+      "section": "2.2 Supply chain digital twin design at the Ford Motor Company"
+    },
+    {
+      "text": "As its physical counterpart, the SCDT is a federated network of interconnected digital twins or digital shadows representing individual manufacturing or logistics operations, such as assembly plants, stamping or powertrain plants, warehouses, transshipment nodes, and individual transportation units.",
+      "section": "2.2.1 Intracompany layer"
+    },
+    {
+      "text": "For example, forecasting supplier shortfalls (i.e., incidents where assembly parts delivery is delayed beyond their scheduled production date at Ford assembly plants) is performed using deep learning and survival analysis [15].",
+      "section": "2.2.2 Tier-1 network layer"
+    },
+    {
+      "text": "Agentic AI can act as intelligent orchestrators and adapters, enabling seamless interaction between the digital twins, LLMs, models, and IT systems. We can now deploy AI agents designed to understand the interfaces and capabilities of specific existing systems.",
+      "section": "3.1.2 Agentic AI"
+    },
+    {
+      "text": "agentic AI can integrate systems like anyLogistix with external data sources (e.g., data from logistics service providers, weather data, financial market data) to provide analysis of potential shortages, provide recommendations on schedule changes, and potentially even execute these changes",
+      "section": "3.1.2 Agentic AI"
+    },
+    {
+      "text": "Leveraging agentic AI, digital twins will not only enable the extraction of information but also inform and alert managers about current problems and bottlenecks, suggesting improvement policies and directions through performance visualization.",
+      "section": "3.1.2 Agentic AI"
+    }
+  ],
+  "ft_note": "Incluir: caso a escala (Ford) de SCDT federado en tres capas. IA ejecutada: deep learning + análisis de supervivencia para pronosticar faltantes de proveedores (Tier-1, ref. [15]); IA agéntica/LLM diseñada como orquestador que alerta y recomienda, decisión final humana; ejecución autónoma solo 'potencial'. Dudas: Make/Deliver/Return (logística inbound, envases retornables, solo aguas arriba); detalle técnico de la IA remitido a [15]."
+}

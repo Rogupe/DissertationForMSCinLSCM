@@ -1,0 +1,51 @@
+{
+  "id": "R0113",
+  "doi": "10.3390/smartcities8020056",
+  "status": "FT_INCLUDE",
+  "url_read": "https://doi.org/10.3390/smartcities8020056 (resolved to www.mdpi.com, Smart Cities 2025, 8(2), 56, open-access HTML full text)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical data",
+  "sector": "Urban logistics / last-mile delivery",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Reduced",
+  "hitl_function": "Set objectives/constraints",
+  "hitl_conditions": "Autonomy applies to real-time operational adjustments (routes, schedules) because urban conditions change too fast for manual management; humans retain strategic and policy-level oversight, defining objectives, constraints and long-term targets, and use dashboards/simulations for proactive planning.",
+  "key_finding": "Framework combining IoT data, XGBoost/MLP predictors, a digital twin and a cybernetic feedback loop for last-mile delivery; on real data from a UK logistics firm, delivery-quality prediction accuracy rose from 76.3% (AUC 0.45) to 85.0% with the feedback loop; operational decisions are autonomous, humans set objectives.",
+  "citation_locator": "Key finding: Sect. 2.7 (three-layer architecture, Fig. 1); Sect. 3.2-3.4 (XGBoost/MLP formulation, Yorkshire dataset, case study); Sect. 4.2.1 (Fig. 7, 76.3% accuracy) and Sect. 4.3.1-4.3.3 (Figs. 10-12, AUC 0.453, 85.0% accuracy with feedback loop); Sect. 6 Conclusions. HITL evidence: Sect. 3.2.2 (final two paragraphs), Sect. 3.3.3, Sect. 2.6.2, Sect. 5.4. No page numbers visible in the HTML version.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The predictive outputs feed into a digital twin simulation, creating a virtual model that mirrors real-world urban logistics scenarios. The digital twin evaluates multiple scenarios and adjusts routes accordingly, ensuring adaptive and optimized freight movement.",
+      "section": "2.7 Integrating Systems and Cybernetic Theories for Smart City Logistics (Digital Twin and Cybernetic Feedback Loop component, Fig. 1)"
+    },
+    {
+      "text": "To validate the proposed framework, a case study was conducted in collaboration with a large logistics enterprise based in Yorkshire, UK. The study utilized real-time operational data collected from the company’s IoT-enabled logistics infrastructure",
+      "section": "3.4 Case Study: Application in Smart City Logistics"
+    },
+    {
+      "text": "The system utilizes this IoT dataset to apply advanced gradient boosting algorithms (XGBoost) and neural networks (MLPs). The model predicts future congestion, estimated delivery times, and optimal routing paths.",
+      "section": "2.7 Integrating Systems and Cybernetic Theories for Smart City Logistics (Machine Learning and Predictive Analytics Layer)"
+    },
+    {
+      "text": "After the feedback mechanism is applied, the model’s ability to distinguish between correctly and incorrectly predicted delivery outcomes improves significantly, reflected in the 85.0% accuracy.",
+      "section": "4.3.1 ROC Curve for Predictive Model Performance"
+    },
+    {
+      "text": "While core operational efficiency is achieved through this autonomous decision-making capability, human oversight at the strategic and policy-making levels remains necessary. Rather than managing real-time logistics adjustments, managers and policymakers engage with the system primarily to define objectives, constraints",
+      "section": "3.2.2 Dataset and Feature Engineering (final paragraph)"
+    },
+    {
+      "text": "For example, if the system detects a sudden increase in congestion in a specific urban corridor, alternative delivery routes are automatically suggested, ensuring that delays are minimized.",
+      "section": "3.3.3 Impact of the Feedback Loop"
+    }
+  ],
+  "ft_note": "Incluir: gemelo digital diseñado (arquitectura Fig. 1, tres capas) con XGBoost/MLP ejecutados sobre datos reales de un operador logístico de Yorkshire; última milla. Dudas: el gemelo solo se describe, los resultados son del clasificador (AUC 0,45 base); autonomía operativa declarada (nivel 5) vs. rutas «sugeridas» (nivel 4); evidencia: datos empíricos vs. caso; técnica híbrida (XGBoost+MLP)."
+}

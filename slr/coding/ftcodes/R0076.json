@@ -1,0 +1,39 @@
+{
+  "id": "R0076",
+  "doi": "10.1007/978-3-032-19167-0_15",
+  "status": "NOT_RETRIEVED",
+  "url_read": "https://link-springer-com.hull.idm.oclc.org/chapter/10.1007/978-3-032-19167-0_15",
+  "exclusion_reason": null,
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "artificial intelligence has been one of the most promising innovation frontiers of manufacturing, especially when integrated into broader architectures such as digital twin simulations or data spaces.",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "the collection by transport and logistics operators of the E-mobility battery systems which reach their end-of-life; a preliminary tests of the battery reusability without any manipulation to directly reuse them",
+      "section": "Abstract (only part visible; not usable for coding)"
+    },
+    {
+      "text": "This is a preview of subscription content, log in via an institution to check access.",
+      "section": "Body, immediately after the Abstract (paywall marker shown on the Hull-proxied page link-springer-com.hull.idm.oclc.org)"
+    }
+  ],
+  "ft_note": "NO RECUPERADO: vía proxy Hull (8 s) Springer sigue mostrando 'This is a preview of subscription content' (paquete Mathematics and Statistics sin suscripción). Semantic Scholar: DOI no encontrado, sin copia OA. Requiere PDF manual. Pendiente verificar el FLAG: el resumen solo menciona 'digital twin simulations' genéricamente; confirmar si hay un gemelo digital propio y método de IA."
+}

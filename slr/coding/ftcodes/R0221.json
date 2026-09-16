@@ -1,0 +1,51 @@
+{
+  "id": "R0221",
+  "doi": "10.1016/j.dte.2025.100058",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S2950550X2500024X (resolved from https://doi.org/10.1016/j.dte.2025.100058; Elsevier ScienceDirect, open access under Creative Commons license, full HTML text, sections 1-10 plus declarations)",
+  "exclusion_reason": null,
+  "evidence_type": "Empirical case",
+  "sector": "Shipbuilding/maritime (case: leading global shipbuilding company); framework itself generic/cross-sector LSCM structured by SCOR",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "N",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "LLM/agent",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Elevated",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Humans keep ethical monitoring, interpretation of complex scenarios and strategic decisions; operators prompt/query the system and steer simulations in natural language; co-pilots augment less-experienced workers; repetitive roles face displacement requiring retraining; expert-written documentation conditions LLM effectiveness (case).",
+  "key_finding": "Proposes a CPPS (5C) functional/technical architecture where a fine-tuned LLM AI kernel with RAG, AI agents and a knowledge-based model drive per-machine digital twins for virtual testing and predictive maintenance; maps FM tools to all six SCOR processes; shipyard case (VFM drones, predictive maintenance, surrogate simulations) reports qualitative benefits only.",
+  "citation_locator": "Key finding / twin: Sec. 6 'A FM integration framework for industrial operations' (Fig. 1 CPSS functional: physical space = conversion + connection; virtual space (cloud) = configuration, cyber (AI + DT simulation, monitoring, optimizing) and cognition); Sec. 6.1 FM-powered DT ('FM-driven DT for each machine within the physical plant'; 'DTs can learn and adapt over time using FM algorithms'); Sec. 6.2.1 Architecture (Fig. 2 technical; hybrid proprietary/public training data); Sec. 6.2.2 Components (Table 2 CPPS Technical Framework: User Interaction, Command Input, AI Agents, LLM Extensions and Monitoring (RAG + vector database), AI Kernel (fine-tuned LLM decision engine), KBS Model (diagnostics/predictions that influence DT behaviour), Digital Twins (digital replicas of physical machines), Field and IIoT (sensors/actuators), Data Analytics). SCOR mapping (FMs, not the twin): Sec. 5 and Table 1 'AI Tools in LSCM via SCOR Model' - Plan: demand forecasting (DRL, LSTM, genetic algorithms; Sec. 5.1.1); Source: supplier relationship management and procurement execution (FMs, real-time data integration, workflow automation; Sec. 5.2); Make: visual FMs (VFMs, LLMs), digital manufacturing co-pilot (what-if scenarios), process design (CNNs, GANs, DT, transfer learning - the only Table 1 row naming DT), quality control (VFM image analysis; Sec. 5.3); Deliver: logistics (FMs, NLP-generated simulation code) and inventory management (no-code AI, predictive models; Sec. 5.4); Return: return logistics (VFM visual inspection) and other return functions (multimodal FMs; Sec. 5.5); Enable: predictive maintenance (LLMs, sensor analytics) and other enabling functions (LLMs, chatbots, risk monitors; Sec. 5.6); Sec. 8 Results (Fig. 3 heat map, intensity 1-5 of FM tool impact per SCOR dimension Plan/Source/Make/Deliver/Return/Enable). Case: Sec. 7 An implementation (shipyard: VFMs + autonomous drones for quality control / weld detection, LLM-based predictive maintenance, surrogate simulations 'closely aligned with the concept of DT', LLMs for partner management; 'measurable results are still in development'; KPI figures cited from McKinsey [56] and Fincantieri digital thread [57], not measured in the case). HITL evidence: Sec. 5.3.2 Digital manufacturing co-pilot ('allowing managers and maintenance personnel to make more informed decisions'; 'consolidates the skills of less experienced operators'); Sec. 5.4.3 ('collaborative environment between humans and FM'); Sec. 6.2.2 User interaction ('make queries, retrieve specific information, and influence simulations with intuitive natural language commands'); Sec. 7 ('the effectiveness of an LLM depends on the quality of the technical solutions provided by experts'; 'reduce the need for manual labor'); Sec. 9 Discussion ('human expertise remains essential ...'; displacement of repetitive roles; retraining; 'symbiotic collaboration between humans and AI'). No page numbers visible (HTML version, article 100058).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "This component includes creating an FM-driven DT for each machine within the physical plant. These DTs act as virtual counterparts to physical operations, allowing for in-depth analysis and virtual testing of production processes without interrupting production lines",
+      "section": "6.1. FM-powered DT"
+    },
+    {
+      "text": "The KBS model harnesses the advanced capabilities of the fine-tuned AI kernel and provides expert knowledge, diagnostics, and predictions that influence DT's behavior or outcomes",
+      "section": "6.2.2. Components of the technical framework"
+    },
+    {
+      "text": "The AI kernel, a centralized decision engine, is a key component of the system. It leverages the refined LLM to gain predictive insights and make decisions based on real-time data streams",
+      "section": "6.2.2. Components of the technical framework"
+    },
+    {
+      "text": "This paper analyzes these improvements and looks at them through the SCOR components by modeling and extending them: plan, source, make, deliver, return, and enable",
+      "section": "5. FMs for LSCM (Table 1: AI Tools in LSCM via SCOR Model)"
+    },
+    {
+      "text": "Surrogate simulations, closely aligned with the concept of DT, support design and development activities and enable engineers to evaluate and optimize performance in a virtual environment.",
+      "section": "7. An implementation"
+    },
+    {
+      "text": "While FMs threaten to disrupt traditional workflows, human expertise remains essential to monitor ethical compliance, interpret complex scenarios, and make strategic decisions.",
+      "section": "9. Discussion"
+    }
+  ],
+  "ft_note": "Incluido: arquitectura CPPS/5C con gemelos FM por máquina (AI kernel LLM+RAG, agentes, KBS) y caso astillero. Dudas: gemelo solo diseñado (nivel arquitectura); caso descriptivo por entrevistas sin resultados medidos (¿Conceptual?); FMs mapeados a los seis procesos SCOR (Tabla 1, Fig. 3) pero el DT solo en Make/Enable; nivel 4 vs 5; residuo de ChatGPT en Sección 8 (calidad)."
+}

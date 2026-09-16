@@ -1,0 +1,51 @@
+{
+  "id": "R0614",
+  "doi": "10.3390/machines11040425",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.mdpi.com/2075-1702/11/4/425 (resolved from https://doi.org/10.3390/machines11040425; MDPI open access, full HTML text, sections 1-8)",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector (manufacturing; factory and supply chain process twins, examples from semiconductor, battery, healthcare, consumer goods)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Hybrid",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Not discussed explicitly; humans remain recipients of recommendations (plant managers via dashboards/UI) and suppliers of domain expertise and expert opinions; RL agents trained in simulation are deployed to make real-time recommendations (no autonomous execution stated).",
+  "key_finding": "Conceptual framing of process (factory/supply chain) digital twins as evolving, learning systems built on four elements (Data, Domain, Analytics, Outcome) and three functions (offline model development, real-time synchronization, online learning); discrete-event simulation augmented by ML surrogates, RL agents and computer vision describes, predicts and prescribes actions on factory/supply-chain KPIs.",
+  "citation_locator": "Key finding: Abstract; Sec. 1 Introduction (four characteristics incl. 'ability to learn and adapt'; 'simulation augmented by machine learning (ML) and reinforcement learning (RL)'); Sec. 2 Foundational Elements (Data, Domain, Analytics, Outcome; Fig. 1; supply chain network paragraph); Sec. 4 Building and Operationalizing Digital Twins (Offline Model Development, Real-Time Synchronization, Online Learning; Fig. 5 closed feedback loop); Sec. 5.1 (Fig. 7 prediction and prescription steps); Sec. 7.3 (ML fit to simulation output, Fig. 10); Sec. 7.4 (RL agents, Fig. 11); Sec. 8 Conclusions. HITL evidence: Abstract ('enable users to replay history ... and identify corrective actions'); Sec. 1 ('guided by domain knowledge'); Sec. 2 (Data element includes experts' opinions; Domain element = domain expertise); Sec. 4 ('offer decision support for optimal performance'; 'actions that are recommended to control the factory floor'; input models built from domain expertise); Sec. 5.1 (plant manager focuses on key risk drivers; 'prescription including dashboard visualization'); Sec. 5.5 ('explainable analytics'); Sec. 6 (criterion 10 business user experience: plant managers' easy-to-interpret UI); Sec. 7.4 (RL agents 'make real-time recommendations'); Sec. 7.5 (data model requires expertise; coordination with all stakeholders). No page numbers visible (article number 425, HTML version).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "We do not consider all simulations a digital twin because synchronization and learning are required for the simulations to serve as true digital twins.",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "Consequently, we would gain enhanced visibility not only into factory performance but also into the effectiveness of production, inventory, and delivery plans across the entire network of suppliers, plants, distribution centers, and customers.",
+      "section": "2. Factory and Supply Chain Twin Foundational Elements"
+    },
+    {
+      "text": "Focusing on the role of simulation augmented by machine learning (ML) and reinforcement learning (RL), we touch on several challenges that arise in industrial twin use cases and how they can be overcome.",
+      "section": "1. Introduction"
+    },
+    {
+      "text": "Once the training of the RL agents is completed, they can be deployed into the real environment where they make real-time recommendations about queue and resource control.",
+      "section": "7.4. Providing an Environment to Train Reinforcement Learning Agents"
+    },
+    {
+      "text": "They are the actions that are recommended to control the factory floor and establish a closed feedback loop between physical and digital representations.",
+      "section": "4. Building and Operationalizing Digital Twins"
+    },
+    {
+      "text": "It helps to identify the key risk drivers and allows the plant manager to focus on the most critical inputs enabling effective factory control.",
+      "section": "5.1. Factory Analytics Module"
+    }
+  ],
+  "ft_note": "Incluido: artículo conceptual cuyo objeto es el gemelo de proceso (fábrica/cadena) que aprende, con simulación de eventos discretos, ML (metamodelo), RL (agentes de control) y visión por computador. Dudas: foco en el gemelo de fábrica (el de cadena solo se esboza: Source/end_to_end débiles); rol humano implícito (recomendaciones al gerente de planta), no discutido; nivel 4 vs 5 por lazo cerrado."
+}

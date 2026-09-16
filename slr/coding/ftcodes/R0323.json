@@ -1,0 +1,51 @@
+{
+  "id": "R0323",
+  "doi": "10.1016/j.ijpe.2021.108353",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www-sciencedirect-com.hull.idm.oclc.org/science/article/pii/S0925527321003297",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Warehousing",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Forecasting/estimation; Optimisation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Reduced",
+  "hitl_function": "Interpret outputs; Provide data/labels",
+  "hitl_conditions": "Not discussed as such; the framework aims to minimise human effort in picking and replenishment while workers remain the executors in manual picker-to-parts hubs; deployment in robotic parts-to-picker warehouses is left to future research.",
+  "key_finding": "A DT/IoT-based framework for Physical Internet city hubs embeds ANFIS demand forecasting and a joint order-fulfilment/replenishment optimisation model; simulation of a 600-SKU forward-reserve hub shows joint, forecast-driven operations cut daily picker travel by 80.9% and reserve-area visits by 79.8% versus standalone operations.",
+  "citation_locator": "Key finding: Sec. 5.2.1-5.2.2 (Tables 3-4) and Sec. 6. Twin/AI design: Sec. 4 (4.1-4.3.3), Appendix A. HITL evidence: Sec. 3 (decision-support definition), 4.1 (worker data capture), 4.2 (direct CS-to-PS feedback, worker task notifications), 5.2.1 (manpower savings), 7 (minimise human effort). HTML version, no page numbers.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "DTs in the CS are the virtual representations of the physical entities such as PI containers. They abstract the features of a physical entity based on the heterogeneous IoT data streamed from the PS and PI-orders from WMS.",
+      "section": "4.2 Digital twins in cyberspace"
+    },
+    {
+      "text": "the physical environment is a PI-hub with a storage area subdivided into a forward area and a reserve area [...] workers can indicate the start and end of each of their assigned tasks via the devices",
+      "section": "4.1 Physical space"
+    },
+    {
+      "text": "machine learning-based models are constructed for three tasks: (i) order synchronization mechanism using a proactive lookahead scheme, (ii) order arrival prediction using an adaptive neuro-fuzzy inference system and (iii) optimization of joint OFR based on predicted order arrival",
+      "section": "4.2 Digital twins in cyberspace"
+    },
+    {
+      "text": "the TIS strategy is defined as the integration of cyber-physical systems and internet of things for digitally visualizing and sharing all relevant internal information and decisions among stakeholders in a warehouse with operational decision support enabled by machine learning-based optimizations",
+      "section": "3 Total Inbound Synchronization Strategy"
+    },
+    {
+      "text": "an important feature of the cyber-to-physical communication is to allow direct feedback fed from the CS to the PS [...] workers can receive notifications from their handheld devices about new order picking tasks assigned to them",
+      "section": "4.2 Digital twins in cyberspace"
+    },
+    {
+      "text": "Human still plays a leading role in the management and execution of both the inbound and outbound order fulfillment process in the coming decade [...] in order to minimize human efforts in the OFR while maintaining an adequate level of throughput",
+      "section": "7 Conclusion and directions for future research"
+    }
+  ],
+  "ft_note": "Incluido: gemelo digital+IoT diseñado como arquitectura (espacio físico/ciberespacio, flujos de datos) para un hub PI urbano; IA = ANFIS neuro-difuso que prevé llegadas de pedidos, acoplado a un MIP de picking/reposición conjunta; el gemelo no se implementa, solo se simula el modelo OFR. Dudas: extensión 4 vs 5 (tareas enviadas directamente a operarios, sin aprobación explícita); técnica Hybrid vs Other."
+}

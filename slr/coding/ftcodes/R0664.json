@@ -1,0 +1,51 @@
+{
+  "id": "R0664",
+  "doi": "10.1080/00207543.2024.2372008",
+  "status": "FT_EXCLUDE",
+  "url_read": "https://www.tandfonline.com/doi/full/10.1080/00207543.2024.2372008 (full HTML text accessible without proxy; Chrome mode)",
+  "exclusion_reason": "No AI/ML component",
+  "evidence_type": null,
+  "sector": null,
+  "scor_plan": null,
+  "scor_source": null,
+  "scor_make": null,
+  "scor_deliver": null,
+  "scor_return": null,
+  "end_to_end": null,
+  "ai_technique": null,
+  "ai_role": null,
+  "integration_extent": null,
+  "hitl_role": null,
+  "hitl_function": null,
+  "hitl_conditions": null,
+  "key_finding": null,
+  "citation_locator": null,
+  "use_in_typology": null,
+  "quotes": [
+    {
+      "text": "In summary, all these three levels constitute a digital twin that provides data and information for analysis of behaviours in the supply chain.",
+      "section": "3. IoB SCOM framework (twin: three-level architecture data collection / data integration / data analytics and knowledge management, Figure 1)"
+    },
+    {
+      "text": "Since the topic of the IoB is relatively new, we do not delve into empirical case studies or technological implementations, as these are currently lacking.",
+      "section": "1. Introduction (position paper; nothing executed)"
+    },
+    {
+      "text": "At the third level of the digital management system and decision support, data analytics, simulation and optimisation, AI and generative AI, process mining, and performance visual analytics enable the transformation of information into knowledge.",
+      "section": "3. IoB SCOM framework (only AI statement inside the proposed model: AI listed among six enabling technologies, no named method)"
+    },
+    {
+      "text": "Generative AI helps in prediction, optimisation, and anomaly/failure detection in SCOM (Jackson et al. 2024; Jackson, Saenz, and Ivanov 2024). As such, generative AI is an important contributor to the IoB in SCOM.",
+      "section": "4. Implications of IoB on SCOM (AI roles attributed by citation to other works, not designed into the framework)"
+    },
+    {
+      "text": "Their mutual combinations can help develop decision-support systems that do not only replicate the logical rules of humans but also allow understanding the supply chains better through self-learning.",
+      "section": "4. Implications of IoB on SCOM (paragraph 'A very important part of IoB in SCOM is related to human-AI collaboration', citing Ivanov 2023 iDT)"
+    },
+    {
+      "text": "IoB can help in decision-making support in SCOM enhancing the expertise of managers, their knowledge and skills through real-time data and information about customers, the firm’s supply chain, and supplier behaviours.",
+      "section": "5. Conclusion (HITL statement: manager remains the decision-maker whose expertise is augmented; 'cognitive biases in human-AI interactions' left as future research)"
+    }
+  ],
+  "ft_note": "Excluir (propuesta): position paper sin implementación; IA solo como habilitador enumerado en el nivel 3 del gemelo (‘AI and generative AI’) y agenda futura, sin método ni mecanismo; gemelo como lente, no objeto. Duda: Secc. 4 atribuye a IA generativa predicción/optimización/anomalías y DSS autoaprendientes (iDT, cf. R0309); si constitutiva: Conceptual, Other, Decision support, nivel 3-4, HITL Elevated (alt. Maintained)/Interpret outputs."
+}

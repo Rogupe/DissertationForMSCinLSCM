@@ -1,0 +1,51 @@
+{
+  "id": "R0009",
+  "doi": "10.1038/s41598-026-43380-4",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.nature.com/articles/s41598-026-43380-4",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Warehousing",
+  "scor_plan": "N",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Human review when classification confidence is below a predefined threshold (e.g., <0.85); technicians validate/correct predicted fault type during interventions (active learning); operator verification tolerated for mobile equipment; crews intensify inspections within ~200 cycles of predicted end-of-life.",
+  "key_finding": "Three-layer IoT-digital twin-ML architecture for predictive maintenance of distribution-centre equipment (forklifts, conveyors, AGVs): ensemble anomaly detection (F1 0.915), LSTM/RF RUL prediction (R2 0.907), fault classification (92.1%); reported 42% less unplanned downtime and 4.5-month payback; low-confidence predictions routed to technicians, whose corrections retrain models.",
+  "citation_locator": "Key finding: Abstract; Introduction (contributions list); Research methodology - Digital twin model construction; Results and discussion - Tables 4, 7, 9, 12, 13 and Fig. 11. HITL: Research methodology - Failure classification (HITL validation via dashboards, confidence threshold <0.85, active learning, Cross-Verification Protocol with two experts); Results and discussion - Anomaly detection performance (Table 5 commentary, operator verification for forklifts) and final paragraph (XAI 3D visualization, 'integrative Human-Machine setting'); Future directions (autonomously controlled DT). No page numbers visible (HTML version).",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "The DT in this paper is considered as a time-dependent multi-physics mapping. This DT is based on the Data-Model-Fusion (DMF) principle rather than on a static model.",
+      "section": "Research methodology - Digital twin model construction"
+    },
+    {
+      "text": "The predictive maintenance solution was tested in a 12-month pilot for a midsize distribution center with 150 pieces of equipment, such as conveyors, forklifts, AGVs, and sorting systems.",
+      "section": "Results and discussion"
+    },
+    {
+      "text": "For anomaly detection, Remaining Unit Life (RUL) prediction, and failure classification, this study utilized Isolation Forest (iForest), Autoencoders, Long Short-Term Memory (LSTM) networks, and Random Forest (RF) machine learning models.",
+      "section": "Abstract"
+    },
+    {
+      "text": "The system includes HITL (Human-in-the-Loop) validation via real-time dashboards. When the ML layer produces a class with a confidence score lower than a predefined threshold (e.g., < 0.85), the event is flagged for manual analysis.",
+      "section": "Research methodology - Failure classification"
+    },
+    {
+      "text": "Prediction is validated as maintenance teams validate or correct the predicted fault type during intervention. This feedback enriches the classification model in an active learning fashion",
+      "section": "Research methodology - Failure classification"
+    },
+    {
+      "text": "The implementation simulates sensor data and does not rely on any external datasets. All data for the digital twin system are generated dynamically within the SensorNetwork class using predefined baseline values combined with controlled random variations",
+      "section": "Data availability"
+    }
+  ],
+  "ft_note": "Incluido: gemelo de activos logísticos (montacargas, transportadores, AGV) en centro de distribución; ML ejecutado (iForest, autoencoder, LSTM, RF, CNN); HITL explícito (umbral 0,85, aprendizaje activo, XAI). Dudas: 'Data availability' afirma que todos los datos de sensores son simulados, contradiciendo el piloto de 12 meses/150 equipos (evidence_type); frases incoherentes; nivel 3 vs 4; SCOR solo Deliver (mantenimiento = Enable)."
+}

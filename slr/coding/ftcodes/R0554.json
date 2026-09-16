@@ -1,0 +1,51 @@
+{
+  "id": "R0554",
+  "doi": "10.1016/j.omega.2025.103356",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.sciencedirect.com/science/article/pii/S0305048325000829?via%3Dihub (resolved from https://doi.org/10.1016/j.omega.2025.103356; Open access, Creative Commons; full HTML text read in Chrome, Hull proxy not needed; Omega, December 2025, Article 103356; saved to /root/work/fulltext/R0554.txt, chars=78251)",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Generic/cross-sector (illustrative scenarios: tariff-shock resilience stress testing; agri-food cereal supply chain in MENA via the CERERE platform under development)",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Hybrid",
+  "ai_role": "Decision support",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Approve/override",
+  "hitl_conditions": "Allocation of control blocks (Fig. 8) to human, automation or AI is configurable by degree of human-AI collaboration; decision rights follow who holds the most complete information; humans keep non-standardized situations and verify AI outputs against hallucination.",
+  "key_finding": "Theory-building paper: defines the digital supply chain ecosystem, formalizes the twin as a control-theoretic decision-support loop (plan, control, observe, adapt) and a cyber-physical framework with a human-AI collaboration space; AI generates/adapts models and scenarios and recommends actions, while humans verify and decide (AI agent is support, not decision-maker).",
+  "citation_locator": "Key finding: Abstract and Highlights; Section 2.2 Digital ecosystems (definition; Figs. 3-6; four information sources object/subject/environment/modeling); Section 3 Generalized models of digital twinning (Fig. 8 decision-making view as dynamic control system, Eqs. 1-6; Fig. 9 model adaptation); Section 4 (object-driven vs data-driven approaches, Figs. 10-11); Section 5.1 Framework (Fig. 12); Section 6 Discussion and conclusion. HITL evidence: Section 2.1 (Fig. 1 three DT levels by degree of human-AI collaboration; Fig. 2 areas of human-AI collaboration: AI for standardized tasks, humans for non-standardized situations, delegation, AI enhances human metaknowledge; hallucination paragraph: 'human-in-the-loop oversight' and explainable AI); Section 3, paragraph after Eq. 6 (which Fig. 8 blocks are controlled by a human, automatically, or AI-driven is left configurable; the 'subject (decision-maker)' owns the control vector u(t) and correction actions v(x(t),t)); Section 5.1 (procedure: 'Supplemented by human knowledge, verification and assessment take place leading to the recognition and control of the physical supply chain'); Section 5.3 (CERERE Cognitive Human Interface & Governance: human-in-the-loop + reinforcement learning with human feedback + explainable AI; INC 'recommend next-best action', 'automated workflows'); Section 6, last two paragraphs (decision allocation by who has the most complete information; 'An AI agent is a decision-making support, not a decision-maker'). Note: the 'human-AI collaboration space' component of Fig. 12 is not formally defined in the text; it is characterized only through these statements. No page numbers visible in the HTML version.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "we outline a generalized framework of the cyber-physical supply chain comprised of a digital ecosystem, digital twin, human-AI collaboration space, and the physical supply chain",
+      "section": "Abstract (repeated in 1. Introduction, contributions paragraph)"
+    },
+    {
+      "text": "A digital ecosystem is a set of digital technologies, AI-based knowledge management systems, cloud spaces, and platforms that encapsulate supply chain data enabling digital twins and simulation models.",
+      "section": "2.2 Digital ecosystems (definition, before Fig. 3)"
+    },
+    {
+      "text": "Different degrees of human-AI collaboration can define which blocks in Fig. 8 are controlled by a human, what is controlled/adjusted automatically, what is AI-driven, and where a human-AI collaboration takes place.",
+      "section": "3. Generalized models of digital twinning in the supply chain (paragraph after Eq. 6, before Fig. 9)"
+    },
+    {
+      "text": "human-in-the-loop approaches coupled with reinforcement learning to embed human feedback into the recommendation engine and explainable AI methods will be adopted.",
+      "section": "5.3 Application scenario 2: supply chain collaboration (Cognitive Human Interface & Governance, CERERE)"
+    },
+    {
+      "text": "Depending on who has the most complete information about a physical object – an AI agent in a digital twin or a human in the physical space, decision-making can be performed in a human-AI collaboration fashion.",
+      "section": "6. Discussion and conclusion (third paragraph)"
+    },
+    {
+      "text": "the importance of combining expert knowledge and AI should be strengthened to avoid automatic decisions based on wrong AI recommendations. An AI agent is a decision-making support, not a decision-maker.",
+      "section": "6. Discussion and conclusion (last paragraph, barriers: AI hallucination)"
+    }
+  ],
+  "ft_note": "Incluido como artículo teórico: el objeto es el concepto de gemelo (modelos conceptuales y formales, teoría de control) con IA constitutiva (IA generativa, agentes, RL con retroalimentación humana, XAI en CERERE). Dudas: la IA se especifica a nivel de arquitectura, no ejecutada; nivel de integración configurable (3-5), postura normativa = 4; hitl_role podría ser Elevated."
+}

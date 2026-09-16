@@ -1,0 +1,51 @@
+{
+  "id": "R0174",
+  "doi": "10.1109/icosec67334.2025.11459761",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.researchgate.net/profile/Jyoti_Dhanke2/publication/403602539_Digital_Twin-Enabled_Supply_Chain_Management_in_Cloud-based_Smart_Enterprises/links/69da6f0500864436152c14f8/Digital-Twin-Enabled-Supply-Chain-Management-in-Cloud-based-Smart-Enterprises.pdf",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "Y",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Control",
+  "integration_extent": "5 Prescriptive-autonomous",
+  "hitl_role": "Replaced",
+  "hitl_function": "None",
+  "hitl_conditions": "Not discussed",
+  "key_finding": "A designed DT-FL-MASChain framework pairs an asset-level digital twin with an autonomous agent at each node; federated averaging trains local predictive models (efficiency label, downtime) without sharing raw data, and agents plus smart contracts trigger maintenance, restocking and routing automatically, with no human approval step.",
+  "citation_locator": "IV. Methodology B 'Digital Twin-Based Condition Monitoring and Maintenance Feedback' (p.3, eqns 3-4); IV.C 'Distributed Decision-Making via Multi-Agent System Integration' (p.4, eqns 5-6); IV.D 'Federated Learning Architecture' (p.4, eqn 7); IV.E 'Smart Contract-Driven Blockchain Layer' (p.4, HITL evidence: 'eliminates the need for manual verification'); Algorithm 1 (p.5); V. Result and Discussion, Tables I-III and Figs 4-5 (pp.5-6); VI. Conclusion and Future Work (p.6)",
+  "use_in_typology": "N",
+  "quotes": [
+    {
+      "text": "a digital twin model is constructed for each critical asset or location represented in the BDT MBA Supply Chain Dataset. These digital twins serve as virtual replicas that continuously mirror the real-time state of physical entities",
+      "section": "IV. Methodology, B. Digital Twin-Based Condition Monitoring and Maintenance Feedback (p.3)"
+    },
+    {
+      "text": "Each agent autonomously handles maintenance scheduling, inventory restocking, and route adjustments using digital twin data like Condition_Score, Inventory_Level, and Downtime_Hours to enable real-time, localized decision-making in smart supply chains.",
+      "section": "IV. Methodology, C. Distributed Decision-Making via Multi-Agent System Integration (p.4)"
+    },
+    {
+      "text": "Federated Learning (FL) is employed to enable decentralized yet collaborative machine learning across multiple supply chain nodes, without requiring raw data transfer to a central server.",
+      "section": "IV. Methodology, D. Federated Learning Architecture for Distributed Supply Chain Intelligence (p.4)"
+    },
+    {
+      "text": "Decision-making can follow either a rule-based approach (for structured control tasks) or a RL strategy for dynamic environments. In RL-based agents, decisions are driven by reward maximization.",
+      "section": "IV. Methodology, C. Distributed Decision-Making via Multi-Agent System Integration (p.4)"
+    },
+    {
+      "text": "This trust layer eliminates the need for manual verification and ensures that all stakeholder actions (agents, twins, service providers) are verifiable, consistent, and tamper-resistant",
+      "section": "IV. Methodology, E. Smart Contract-Driven Blockchain Layer for Secure Event Automation and Trust (p.4)"
+    },
+    {
+      "text": "By integrating MAS into the digital twin architecture, the system achieves autonomous decision-making, collaborative behavior, and real-time responsiveness",
+      "section": "IV. Methodology, C. Distributed Decision-Making via Multi-Agent System Integration (p.4)"
+    }
+  ],
+  "ft_note": "Incluido: gemelo por activo con degradacion (ec.3-4), ambito logistico claro y FL+MAS sobre dataset sintetico de Kaggle; agentes deciden y ejecutan sin humano. DUDAS: F1 98,9 imposible con P96,5/R98,7 y choca con el ~90% de Fig.4; refs [10],[12],[14],[16] no corresponden al texto; URL con utm_source=chatgpt.com. Sugiero baja calidad en sensibilidad. Make dudoso: solo mantenimiento de activos fabriles."
+}

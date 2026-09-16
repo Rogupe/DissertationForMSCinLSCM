@@ -1,0 +1,51 @@
+{
+  "id": "R0639",
+  "doi": "10.4018/ijkm.402393",
+  "status": "FT_INCLUDE",
+  "url_read": "https://www.igi-global.com/gateway/article/full-text-html/402393",
+  "exclusion_reason": null,
+  "evidence_type": "Simulation/synthetic",
+  "sector": "Generic/cross-sector",
+  "scor_plan": "Y",
+  "scor_source": "Y",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "Y",
+  "ai_technique": "Hybrid",
+  "ai_role": "Forecasting/estimation",
+  "integration_extent": "4 Prescriptive-advisory",
+  "hitl_role": "Maintained",
+  "hitl_function": "Interpret outputs",
+  "hitl_conditions": "Human involvement depends on interpretable, attributed risk scores and twin outcomes reported in managerial terms; adoption is incremental as data integration and analytics maturity increase, with decisions staying with managers rather than models.",
+  "key_finding": "Three-layer framework (ML/DL risk scoring, digital-twin scenario testing, performance linkage) on a synthetic MNC panel: Federated GCN gave the best disruption prediction (AUC 0.94); twin scenarios showed cross-border diversity, digitalization and ESG dampened climate-shock losses and cut recovery from eight to five months.",
+  "citation_locator": "Methodology > Analytical Framework > Prescriptive Layer: Optimisation and Digital Twins; Methodology > Translating Predictions Into Implementable Action; Methodology > Dataset Construction (Sample and Period); Results > Predictive Model Performance (Table 3); Results > Scenario Simulations (Table 4, Figure 2); Discussion > Interpretation of Results Through the Knowledge Framework (HTML full text, no page numbers)",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "A digital twin was created for each corporation and its subsidiaries, integrating risk predictions, optimization policies, and supply network topology to enable scenario analysis.",
+      "section": "Results > Scenario Simulations"
+    },
+    {
+      "text": "A digital twin, a virtual replica with embedded data and models, executes what-if scenarios (e.g., port closure, upstream failure, last-mile congestion) to compare policies under controlled shocks.",
+      "section": "Methodology > Analytical Framework > Prescriptive Layer: Optimisation and Digital Twins"
+    },
+    {
+      "text": "A synthetic panel was constructed comprising 50 MNCs, each with 20 subsidiaries (N = 1,000 units), observed monthly from January 2020 to December 2024.",
+      "section": "Methodology > Dataset Construction > Sample and Period"
+    },
+    {
+      "text": "Four models, random forest, XGBoost, LSTM, and FGCN, were trained to estimate disruption risk scores",
+      "section": "Results > Predictive Model Performance"
+    },
+    {
+      "text": "The digital twin supports this translation by evaluating these levers under baseline and stress scenarios and reporting outcomes in managerial terms (cost efficiency, service stability, and recovery time).",
+      "section": "Methodology > Translating Predictions Into Implementable Action"
+    },
+    {
+      "text": "the managerial interface of the framework is intentionally simple: The key operational output is a risk score and an explanation of its dominant drivers, followed by scenario-tested mitigation options with measurable trade-offs.",
+      "section": "Discussion > Interpretation of Results Through the Knowledge Framework"
+    }
+  ],
+  "ft_note": "Incluido: el gemelo digital se construye y ejecuta ('A digital twin was created for each corporation'), con resultados propios (Tabla 4, Figura 2) y el indice de resiliencia derivado de el. Duda para Rodrigo: todo es sintetico, sin sistema real ni arquitectura del gemelo; si exiges contraparte fisica, excluir por 'No digital twin / digital model'."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "R0530",
+  "doi": "10.1109/mcomstd.2025.3641867",
+  "status": "FT_INCLUDE",
+  "url_read": "https://ieeexplore.ieee.org/document/11349661",
+  "exclusion_reason": null,
+  "evidence_type": "Conceptual",
+  "sector": "Global logistics / multimodal freight (vessels, trucks, ports, warehouses, cold chain)",
+  "scor_plan": "Y",
+  "scor_source": "N",
+  "scor_make": "N",
+  "scor_deliver": "Y",
+  "scor_return": "N",
+  "end_to_end": "N",
+  "ai_technique": "Hybrid",
+  "ai_role": "Anomaly detection",
+  "integration_extent": "3 Predictive",
+  "hitl_role": "Maintained",
+  "hitl_function": "Handle exceptions",
+  "hitl_conditions": "Operators intervene when the twin raises risk alerts from thresholds (dwell time >2x average, route deviation >5%, cold-chain temperature >8 C, vibration >3x baseline), tuned by rolling-window AI models; fail-safe AI (IEEE P7009) should enter safe states on failure.",
+  "key_finding": "Standards-aligned, security-centred AI-driven DT architecture for global logistics: 5G/6G sensor streams pass an edge node to a secure cloud that updates per-asset twins; gradient-boosted trees and LSTM models trained by federated learning detect anomalies and forecast volatility, and alerts go to operators for proactive intervention. Conceptual, no empirical validation.",
+  "citation_locator": "Key finding and AI method: section 'Case Study: Market Volatility Warning and Risk Detection in Global Logistics Supply Chains' (Figure 3 architecture paragraph; paragraph on federated learning, gradient-boosted trees and LSTM models). HITL: same section, Figure 3 paragraph ('fed back to operators for proactive intervention') and the anomaly-threshold paragraph ('dynamically adjusted using rolling-window AI models'). Governance/oversight: 'Countermeasures and Defense Mechanisms > Privacy-Preserving AI and Trusted Intelligence' (XAI logs, model cards, IAM); 'Standardization Landscape and Gaps > International Standards Bodies' (IEEE P7009 fail-safe AI: detect failures and enter safe states) and '> Proposed Research Directions' (AI Governance Integration: XAI logs, bias detection, accountability frameworks); 'Future Research Directions > Digital-Twin-Aware AI Trust Frameworks' and '> Dynamic Certification and Compliance' (run-time compliance monitoring, certification revoked/renewed by continuous assessment). Sections are unnumbered in the Xplore HTML; article pp. 147-156.",
+  "use_in_typology": "Y",
+  "quotes": [
+    {
+      "text": "A digital-twin-enabled logistics platform can monitor the entire supply chain by creating virtual representations of vessels, trucks, warehouses and transportation routes.",
+      "section": "Case Study: Market Volatility Warning and Risk Detection in Global Logistics Supply Chains (opening paragraph)"
+    },
+    {
+      "text": "The cloud updates the digital twin of each asset and runs AI algorithms to detect volatility indicators such as sudden delays, increased dwell times at ports or unusual environmental conditions.",
+      "section": "Case Study (Figure 3 architecture paragraph)"
+    },
+    {
+      "text": "The anomaly-detection pipeline is based on lightweight gradient-boosted trees, and LSTM forecasting models",
+      "section": "Case Study (paragraph after Figure 3, on federated learning and computational needs of the volatility-detection models)"
+    },
+    {
+      "text": "Risk alerts are displayed on dashboards and fed back to operators for proactive intervention.",
+      "section": "Case Study (Figure 3 architecture paragraph)"
+    },
+    {
+      "text": "Model behaviour and data lineage are recorded in explainable AI (XAI) logs and model cards, which are accountable and trustworthy.",
+      "section": "Countermeasures and Defense Mechanisms > Privacy-Preserving AI and Trusted Intelligence"
+    },
+    {
+      "text": "Future studies shall come up with DT conscious AI trust paradigms which offer traceability of sensor data up to models to regulate actions to enable explainability, accountability and real time certification.",
+      "section": "Future Research Directions > Digital-Twin-Aware AI Trust Frameworks"
+    }
+  ],
+  "ft_note": "Incluido: gemelo logístico con arquitectura edge-nube 5G/6G y componente IA especificado (GBT + LSTM, aprendizaje federado) para detectar anomalías y pronosticar volatilidad; alertas a operadores. Dudas: artículo tipo tutorial, caso ilustrativo sin datos ni resultados (métricas 'indicativas'); HITL implícito en una frase; gobernanza (XAI logs, P7009 fail-safe, certificación dinámica) institucional; end_to_end N pese a decir 'entire supply chain'."
+}
