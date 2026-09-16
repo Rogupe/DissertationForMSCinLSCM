@@ -23,7 +23,7 @@ REASON = {'E1': 'No digital twin/model', 'E2': 'No supply chain scope', 'E3': 'N
 
 def norm(s):
     s = s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
-    s = s.replace('–', '-').replace('—', '-').replace(' ', ' ')
+    s = s.replace('\u2013', '-').replace('\u2014', '-').replace(' ', ' ')
     s = unicodedata.normalize('NFKC', s)
     return re.sub(r'\s+', ' ', s).casefold()
 

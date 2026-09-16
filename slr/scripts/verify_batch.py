@@ -10,7 +10,7 @@ h = index_map(ws)
 rec = {r[h['ID']]: r for r in ws.iter_rows(min_row=2, values_only=True)}
 def norm(s):
     s = s.replace('’',"'").replace('‘',"'").replace('“','"').replace('”','"')
-    s = s.replace('–','-').replace('—','-').replace(' ',' ')
+    s = s.replace('\u2013','-').replace('\u2014','-').replace(' ',' ')
     s = unicodedata.normalize('NFKC', s)
     return re.sub(r'\s+',' ', s).casefold()
 codes_ok = {'I','E1','E2','E3','E4','E5','E6','DUDA'}

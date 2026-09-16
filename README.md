@@ -1,6 +1,6 @@
 # sc-transport-optimization
 
-Multi-objective transport optimisation with a learned corrector for the SCOR Deliver function of an automotive Tier 1 export supply chain. Practical component of an MSc dissertation in Logistics and Supply Chain Management (University of Hull, 2026) on AI integration in supply chain digital twins.
+Multi-objective transport optimisation with a learned corrector for the SCOR Deliver function of an automotive Tier 1 export supply chain. Practical component and literature-review record of an MSc dissertation in Logistics and Supply Chain Management (University of Hull, 2026) on AI integration in supply chain digital twins.
 
 The thesis in one sentence: a supply chain runs on promises (a planned departure, a quoted lead time, a nominal route time, a contractual return cycle); a small recurrent network can learn each promise's systematic error from execution data, and feeding that correction back into an optimiser reveals operational reality the deterministic planning model cannot represent.
 
@@ -49,6 +49,14 @@ flowchart LR
     E --> F[Pareto front vs<br/>incumbent]
 ```
 
+## Systematic literature review
+
+The theoretical half of the dissertation is a PRISMA 2020 review of AI integration in supply chain digital twins, coded with the SCOR structure and focused on the role the human keeps as integration deepens. The flow in one line: 1,041 records identified (Scopus 662, Web of Science 379), 329 duplicates removed, 712 screened on title and abstract, 117 sought in full text, 42 not retrievable, 75 assessed for eligibility, 13 excluded, **62 studies included**, 53 of them with a legible AI-role and human-role configuration that forms the typology.
+
+Screening was shared between the author and AI under a fixed division of labour. Claude proposed every title-and-abstract decision with a code and a justification quoting the abstract verbatim; a script verified that every quoted fragment existed in the record; an independent second model instance re-screened each batch adversarially; and the author, as screener of record, confirmed or overruled each of the 14 batches. A final audit of all 712 decisions (six independent re-screenings and a seventh adjudicator) produced 30 dated recodes. At full text, coding agents filled the 17 extraction fields against a written protocol with three to six verbatim quotes per study, each verified by script, and the author confirmed every eligibility decision. Every rule change is dated in the Codebook with the record that triggered it.
+
+The workbook, the decision exports, the 117 full-text coding records, the protocols and the scripts that produced each stage are documented in [slr/README.md](slr/README.md).
+
 ## Repository layout
 
 ```
@@ -68,6 +76,7 @@ tests/                          # 48 tests
 docs/formulation.md             # mathematical formulation with nomenclature tables
 docs/plan.md                    # build plan with phase-by-phase status
 docs/figures/                   # the four result figures above
+slr/                            # PRISMA 2020 systematic literature review: workbook, decisions, coding records, protocols, scripts
 ANONYMIZATION_README.md         # the pseudonymisation scheme the dataset follows
 ```
 

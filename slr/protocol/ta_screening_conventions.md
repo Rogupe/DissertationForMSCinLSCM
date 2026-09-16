@@ -1,6 +1,6 @@
-# Screening conventions (final, 2026-09-06) — PRISMA 2020 title/abstract stage
+# Screening conventions (final, 2026-09-06): PRISMA 2020 title/abstract stage
 
-Review: AI integration in supply chain digital twins, human-in-the-loop (HITL) focus; SCOR used for coding. Search Scopus + WoS 2010–2026.
+Review: AI integration in supply chain digital twins, human-in-the-loop (HITL) focus; SCOR used for coding. Search Scopus + WoS 2010 to 2026.
 
 INCLUSION requires all three, evidenced in title, abstract or keywords (never inferred):
 1. Digital twin or digital model (of an operational system, asset or process).
@@ -24,7 +24,7 @@ CODES: I include; E1 no twin/model; E2 no supply chain/logistics framing (also o
 - Language: database language discrepancy with a journal in another language → E5 (R0053, R0132, R0344); WoS Language = German → E5 (R0712). One-sentence extended abstract → E5 (R0339).
 - Sensitivity at title/abstract: when the twin and the supply chain setting are central and a concrete AI method or component is named in the abstract as part of the proposed system, include and let the full text decide (R0012, R0013, R0076).
 
-## Final audit (2026-09-06) — clarifications applied
+## Final audit (2026-09-06): clarifications applied
 - C3 covers every record whose abstract declares a review-type method or genre: literature review/synthesis as the basis of a conceptual framework, perspective or position article, compilation of a research stream, trend analysis with secondary case synthesis, state-of-the-art review followed by a framework, sector overview with company examples, editorial column → E4 with a snowballing value, even in the exact intersection (R0093, R0335 → E4 alto). Theory-building conceptual papers not resting on a declared review whose object is the AI-enabled supply chain twin remain includes (Ivanov line: R0011, R0084, R0137, R0273, R0309, R0554, R0614, R0664). Expository papers with no declared review method and no twin of their own follow C1/C2 (R0207, R0288 → E1). R0389 is no longer in the Ivanov list (AI only enunciated → E3 pool medio).
 - C8 label versus articulated role: AI only as a label of the systems described → E3 (pool when twin and setting are central): R0147, R0133, R0234, R0389. Proposed SC twin frameworks with AI constitutive and its role articulated stay I (R0530, R0022); AI used without a named method stays I (R0347, R0201); R0107 (implemented twin, ML a proposed component) stays I per the third ruling.
 - Companion reports (pairs): second appearance → E6 "Duplicate", note "informe compañero de R0xxx" (R0155 ← R0152; R0315 ← R0298). Distinct studies by the same group are kept (R0272 vs R0298; R0328 vs R0331, cross-linked).
