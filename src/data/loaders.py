@@ -94,7 +94,7 @@ def load_inventory(fert_only: bool = False) -> pd.DataFrame:
     pivot feeding the shipping views, so only the ERP lot extract
     (columns G onwards) is read - which also sidesteps the duplicated
     column names between the two blocks. Padding rows below the real lots 
-    are dropped via the item number — 290 genuine stock rows carry no lot 
+    are dropped via the item number, 290 genuine stock rows carry no lot 
     number at source.
 
     fert_only=True keeps finished goods (Item Type FERT) - the stock

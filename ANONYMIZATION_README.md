@@ -1,4 +1,4 @@
-# Anonymised Supply Chain Dataset — Scheme Documentation
+# Anonymised Supply Chain Dataset: Scheme Documentation
 
 Research dataset for MSc dissertation: AI integration in supply chain digital twins
 (SCOR Deliver function, automotive Tier 1 export supply chain). All identifying
