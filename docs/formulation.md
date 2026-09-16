@@ -204,6 +204,97 @@ the network is intelligent. The claim is that it is the minimal recurrent
 estimator that captures all the mechanisms present at once, and the scorecards
 measure exactly when that capacity pays.
 
+## Nomenclature
+
+### Shared: the corrector pattern and the GRU
+
+| Symbol | Meaning | Domain or value |
+|---|---|---|
+| $p_f(t)$ | promised value of function $f$ at time $t$ | function units |
+| $a_f(t)$ | realised value | function units |
+| $e_f(t)$ | promise error, $a_f - p_f$ | function units |
+| $\hat{e}$ | corrector estimate of the next error | function units |
+| $\tilde{p}$ | corrected promise, $p + \hat{e}$ | function units |
+| $x_t$ | input feature vector at window step $t$ | $\mathbb{R}^5$ |
+| $v_t$ | volume feature (orders, batches, shipments) | count |
+| $s$ | scale feature (quoted lead time, nominal route, contract cycle) | normalised |
+| $\tau_t, P$ | calendar position and its period | week of year, weekday, day of month |
+| $h_t$ | hidden state, the network's memory | $\mathbb{R}^{16}$ |
+| $h_{t-1}$ | previous state, entering through the unit delay $z^{-1}$ | $\mathbb{R}^{16}$ |
+| $z_t$ | update gate, adaptive pole position | $(0,1)^{16}$ |
+| $r_t$ | reset gate, feedback modulation | $(0,1)^{16}$ |
+| $\tilde{h}_t$ | candidate state | $\mathbb{R}^{16}$ |
+| $\sigma$, $\tanh$ | sigmoid and hyperbolic tangent (saturation) | scalar functions |
+| $\odot$ | element-wise (Hadamard) product | operator |
+| $W_\ast, U_\ast, b_\ast$ | input weights, recurrent weights, biases per gate | learned, 1,073 in total |
+| $w, b$ | linear head weights and bias | $\mathbb{R}^{16}$, scalar |
+| $h_W$ | hidden state at the last window step, $W$ the window length | $\mathbb{R}^{16}$ |
+
+### Deliver
+
+| Symbol | Meaning | Domain or value |
+|---|---|---|
+| $t^{\mathrm{GI}}_i$ | realised goods-issue (departure) date of shipment $i$ | date |
+| $t^{\mathrm{ETD}}_i$ | planned departure date | date |
+| $e^{\mathrm{dep}}_i$ | departure deviation | days |
+| $\bar{e}_\ell(d)$ | lane-day mean deviation, lane $\ell$, day $d$ | days |
+| $r(w), a(w)$ | released and actual quantity in week $w$ | pieces |
+| $\hat{d}$ | demand-weighted departure correction | $-0.79$ days per pallet |
+| $\omega_\ell$ | demand weight of lane $\ell$ | fraction |
+
+### Plan
+
+| Symbol | Meaning | Domain or value |
+|---|---|---|
+| $x_w$ | pallets shipped in week $w$, the decision | $\mathbb{Z}_{\ge 0}$ |
+| $d_w, D$ | weekly and total released demand | pallets, $D = 20{,}293$ |
+| $C$ | truck capacity | 210 pallets |
+| $X_w, D_w$ | cumulative shipped and cumulative due | pallets |
+| $(\cdot)^+$ | positive part, $\max(0, \cdot)$ | operator |
+| $f_1, f_2, f_3$ | trucks, earliness, backlog objectives | trucks, pallet-weeks |
+| $s_k, d_k$ | ship week and due week of pallet $k$ | week index |
+| $l_k$ | day-level lateness of pallet $k$ | days |
+
+### Source
+
+| Symbol | Meaning | Domain or value |
+|---|---|---|
+| $q_s$ | quoted lead time of supplier $s$, the promise | days |
+| $a_s(t)$ | realised lead time in week $t$ | days |
+| $\beta_s$ | systematic log-bias of supplier $s$ | Section 5 table |
+| $\delta_s$ | drift, non-zero only for S05 | 0.15 |
+| $T$ | scenario horizon | 104 weeks |
+| $\gamma$ | seasonal amplitude | 0.06 |
+| $\sigma_s$ | noise scale of supplier $s$ | Section 5 table |
+| $\omega_s, c_s$ | spend share and criticality | fraction, days |
+
+### Make
+
+| Symbol | Meaning | Domain or value |
+|---|---|---|
+| $R$ | nominal route time, the promise | 90 minutes |
+| $o_g(t)$ | daily mean overrun of family $g$ | minutes |
+| $\mu_g$ | family bias | $(4.0, 0.0, 8.0)$ min |
+| $\kappa(t)$ | machine-congestion state, AR(1) | minutes |
+| $\phi$ | congestion persistence | 0.85 |
+| $\eta_t$ | congestion innovation | $\mathcal{N}(0, 1.4^2)$ |
+| $\lambda(t)$ | weekday load, Mondays and Fridays | 2.5 min |
+| $\sigma_g$ | family noise scale | $(2.0, 1.2, 3.5)$ min |
+
+### Return
+
+| Symbol | Meaning | Domain or value |
+|---|---|---|
+| $c^*$ | contractual cycle, the promise | 10 days |
+| $c_u(t)$ | realised rack cycle with customer $u$ | days |
+| $\tau^{\mathrm{out}}, \tau^{\mathrm{ret}}$ | outbound and return transit | jointly $\mathcal{N}(4.0, 1.2^2)$ days |
+| $\delta_u(t)$ | customer dwell | days |
+| $\mu_u, \sigma_u$ | dwell mean and noise per customer | Section 7 |
+| $m(t)$ | month-end hold, day of month 25 or later | 1.8 days |
+| $N$ | rack fleet required | racks |
+| $\lambda_r$ | shipment rate | 12 per day |
+| $\mathbb{E}[c], c_{p95}$ | mean and 95th percentile cycle | days |
+
 ## References
 
 Chung, J., Gulcehre, C., Cho, K. and Bengio, Y. (2014) Empirical evaluation of
